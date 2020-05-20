@@ -17,7 +17,7 @@ namespace WhiteboardCSharp
             //Loop through the inputArray for first value
             for (int i = 0; i < inputArray.Length; i++)
             {
-                Console.WriteLine(inputArray[i]);
+                //Console.WriteLine(inputArray[i]);
                 //Loop through secondArray for the second value
                 for (int j = 0; j < (inputArray.Length); j++)
                 {
@@ -27,12 +27,12 @@ namespace WhiteboardCSharp
                     }
                     else
                     {
-                        Console.WriteLine(inputArray[i] + inputArray[j]);
+                        //Console.WriteLine(inputArray[i] + inputArray[j]);
                         if(inputArray[i] + inputArray[j] == inputTarget)
                         {
-                            returnArray[0] = inputArray[i];
-                            returnArray[1] = inputArray[j];
-                            Console.WriteLine(i + " " + j);
+                            returnArray[0] = i;
+                            returnArray[1] = j;
+                            //Console.WriteLine(i + " " + j);
                         }
                     }
                 }
