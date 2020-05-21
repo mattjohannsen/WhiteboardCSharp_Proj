@@ -79,7 +79,7 @@ namespace WhiteboardCSharp
 
     }
 
-    //    Step 1) Capture user input <== DONE!
+    //    Step 1) Capture user input 
     //    Step 2) Get word length
     //    Step 3) Divide by 2
     //    Step 4) If odd...

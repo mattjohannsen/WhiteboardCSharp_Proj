@@ -10,13 +10,15 @@ namespace WhiteboardCSharp
     {
         public void ShowWhiteboard()
         {
-            Challenge1 challenge1 = new Challenge1();
-            Challenge2 challenge2 = new Challenge2();
+            //Challenge1 challenge1 = new Challenge1();
+            //Challenge2 challenge2 = new Challenge2();
+            Challenge3 challenge3 = new Challenge3();
             
             Console.WriteLine("\n\n       Welcome to Matt's C# Whiteboard!");
             
-            challenge1.RunChallenge();
-            challenge2.RunChallenge();
+            //challenge1.RunChallenge();
+            //challenge2.RunChallenge();
+            challenge3.RunChallenge();
 
             
         }
