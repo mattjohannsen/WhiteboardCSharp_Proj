@@ -24,11 +24,7 @@ namespace WhiteboardCSharp
             ChallengeDescription();
             SelectList();
             selectedList.Sort();
-            Console.WriteLine(DoesListIncrement(selectedList));
-            for (int i = 0; i < selectedList.Count; i++)
-            {
-                Console.WriteLine(selectedList[i]);
-            }
+            Console.WriteLine("         " + DoesListIncrement(selectedList));
         }
         public bool DoesListIncrement(List<int> inputList)
         {
