@@ -13,6 +13,9 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
+            Console.WriteLine("       What word would you like to check?");
+            wordToCheck =GetUserInput();
+            CheckIfPalindrome(wordToCheck);
         }
 
         public void ChallengeDescription()
@@ -22,6 +25,18 @@ namespace WhiteboardCSharp
             Console.WriteLine("       madam. Write code that takes a user input and checks to see if it is a Palindrome and reports");
             Console.WriteLine("       the result. You must handle spaces.");
 
+        }
+
+        public string GetUserInput()
+        {
+            string returnString;
+            returnString = Console.ReadLine();
+            return returnString;
+        }
+
+        public void CheckIfPalindrome(string inputString)
+        {
+            Console.WriteLine($"You entered: {inputString}");
         }
     }
 
