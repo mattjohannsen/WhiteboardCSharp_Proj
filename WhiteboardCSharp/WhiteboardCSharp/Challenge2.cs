@@ -24,7 +24,6 @@ namespace WhiteboardCSharp
             Console.WriteLine("       Palindrome is a word, phrase, or sequence that reads the same backward as forward i.e.");
             Console.WriteLine("       madam. Write code that takes a user input and checks to see if it is a Palindrome and reports");
             Console.WriteLine("       the result. You must handle spaces.");
-
         }
 
         public string GetUserInput()
@@ -40,13 +39,12 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       It is this long: {inputString.Length}");
             int loopLength = inputString.Length / 2;
             bool isPalindrome = true;
-            if (inputString.Length%2==0) //Even number length
+            if (inputString.Length%2==0)
             {
                 Console.WriteLine($"       Even string");
                 int counter = 1;
                 for (int i = 0; i < loopLength; i++)
                 {
-                    Console.WriteLine(inputString[(inputString.Length/2 - counter)] + "|" + inputString[(inputString.Length / 2 + i)]);
                     if (inputString[(inputString.Length / 2 - counter)] != inputString[(inputString.Length / 2 + i)])
                     {
                         isPalindrome = false;
@@ -54,15 +52,13 @@ namespace WhiteboardCSharp
                     }
                     counter++;
                 }
-
             }
-            else //Odd number length
+            else
             {
                 Console.WriteLine($"       Odd string");
                 int counter = 1;
                 for (int i = 0; i < loopLength; i++)
                 {
-                    Console.WriteLine(inputString[loopLength - counter] +"|"+inputString[loopLength + counter]);
                     if (inputString[loopLength - counter]!= inputString[loopLength + counter])
                     {
                         isPalindrome = false;
@@ -82,7 +78,6 @@ namespace WhiteboardCSharp
         }
 
     }
-
 
     //    Step 1) Capture user input <== DONE!
     //    Step 2) Get word length
