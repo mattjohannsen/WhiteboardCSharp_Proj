@@ -43,6 +43,17 @@ namespace WhiteboardCSharp
             if (inputString.Length%2==0) //Even number length
             {
                 Console.WriteLine($"       Even string");
+                int counter = 1;
+                for (int i = 0; i < loopLength; i++)
+                {
+                    Console.WriteLine(inputString[(inputString.Length/2 - counter)] + "|" + inputString[(inputString.Length / 2 + i)]);
+                    if (inputString[(inputString.Length / 2 - counter)] != inputString[(inputString.Length / 2 + i)])
+                    {
+                        isPalindrome = false;
+                        break;
+                    }
+                    counter++;
+                }
 
             }
             else //Odd number length
@@ -55,7 +66,7 @@ namespace WhiteboardCSharp
                     if (inputString[loopLength - counter]!= inputString[loopLength + counter])
                     {
                         isPalindrome = false;
-                        continue;
+                        break;
                     }
                     counter++;
                 }
