@@ -23,12 +23,28 @@ namespace WhiteboardCSharp
         {
             ChallengeDescription();
             SelectList();
+            selectedList.Sort();
+            Console.WriteLine(DoesListIncrement(selectedList));
             for (int i = 0; i < selectedList.Count; i++)
             {
                 Console.WriteLine(selectedList[i]);
             }
         }
-
+        public bool DoesListIncrement(List<int> inputList)
+        {
+            bool doesListIncrement = true;
+            for (int i = 0; i < inputList.Count; i++)
+            {
+                if (i < (inputList.Count - 1))
+                {
+                    if ((inputList[i] + 1) != (inputList[i + 1]))
+                    {
+                        doesListIncrement = false;
+                    }
+                }
+            }
+            return doesListIncrement;
+        }
         public void SelectList()
         {
             Console.WriteLine("       Select 1 or 2:");
