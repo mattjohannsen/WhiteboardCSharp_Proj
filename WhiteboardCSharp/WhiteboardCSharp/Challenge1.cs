@@ -33,12 +33,8 @@ namespace WhiteboardCSharp
         public int[] GetIndeces(int[] inputArray, int inputTarget)
         {
             int[] returnArray = new int[2];
-
-            //Loop through the inputArray for first value
             for (int i = 0; i < inputArray.Length; i++)
             {
-                //Console.WriteLine(inputArray[i]);
-                //Loop through secondArray for the second value
                 for (int j = 0; j < (inputArray.Length); j++)
                 {
                     if (i == j)
@@ -47,12 +43,10 @@ namespace WhiteboardCSharp
                     }
                     else
                     {
-                        //Console.WriteLine(inputArray[i] + inputArray[j]);
                         if (inputArray[i] + inputArray[j] == inputTarget)
                         {
                             returnArray[0] = i;
                             returnArray[1] = j;
-                            //Console.WriteLine(i + " " + j);
                         }
                     }
                 }
