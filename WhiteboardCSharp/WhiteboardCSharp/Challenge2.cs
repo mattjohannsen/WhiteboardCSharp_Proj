@@ -8,14 +8,14 @@ namespace WhiteboardCSharp
 {
     class Challenge2
     {
-        string wordToCheck;
+        string stringToCheck;
 
         public void RunChallenge()
         {
             ChallengeDescription();
-            Console.WriteLine("       What word would you like to check?");
-            wordToCheck =GetUserInput();
-            CheckIfPalindrome(wordToCheck);
+            Console.Write("       What word would you like to check?  ");
+            stringToCheck = GetUserInput();
+            CheckIfPalindrome(stringToCheck);
         }
 
         public void ChallengeDescription()
@@ -36,12 +36,44 @@ namespace WhiteboardCSharp
 
         public void CheckIfPalindrome(string inputString)
         {
-            Console.WriteLine($"You entered: {inputString}");
+            Console.WriteLine($"       You entered: {inputString}");
+            Console.WriteLine($"       It is this long: {inputString.Length}");
+            int loopLength = inputString.Length / 2;
+            bool isPalindrome = true;
+            if (inputString.Length%2==0) //Even number length
+            {
+                Console.WriteLine($"       Even string");
+
+            }
+            else //Odd number length
+            {
+                Console.WriteLine($"       Odd string");
+                int counter = 1;
+                for (int i = 0; i < loopLength; i++)
+                {
+                    Console.WriteLine(inputString[loopLength - counter] +"|"+inputString[loopLength + counter]);
+                    if (inputString[loopLength - counter]!= inputString[loopLength + counter])
+                    {
+                        isPalindrome = false;
+                        continue;
+                    }
+                    counter++;
+                }
+            }
+            if (isPalindrome == true)
+            {
+                Console.WriteLine($"       {inputString} is a palindrome!");
+            }
+            else
+            {
+                Console.WriteLine($"       Sorry, {inputString} is NOT a palindrome.");
+            }
         }
+
     }
 
 
-    //    Step 1) Capture user input
+    //    Step 1) Capture user input <== DONE!
     //    Step 2) Get word length
     //    Step 3) Divide by 2
     //    Step 4) If odd...
