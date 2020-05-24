@@ -12,7 +12,7 @@ namespace WhiteboardCSharp
         int target;
         int[] indecesArray;
 
-        public Challenge1()
+        public Challenge1() 
         {
             target = 55;
         }
@@ -61,5 +61,6 @@ namespace WhiteboardCSharp
                 Console.Write(inputArray[i] + " ");
             }
         }
+
     }
 }

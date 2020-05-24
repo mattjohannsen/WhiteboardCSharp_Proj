@@ -46,8 +46,10 @@
     <Compile Include="Challenge1.cs" />
     <Compile Include="Challenge2.cs" />
     <Compile Include="Challenge3.cs" />
+    <Compile Include="Challenge4.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solution.cs" />
     <Compile Include="Whiteboard.cs" />
   </ItemGroup>
   <ItemGroup>
