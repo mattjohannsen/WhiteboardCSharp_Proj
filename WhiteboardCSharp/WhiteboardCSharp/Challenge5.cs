@@ -11,16 +11,23 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             string startingString = "3 9 0 1 4 8 10 2";
+            ChallengeDescription();
+            Console.WriteLine("\n       The Solution: " + GetSolution(startingString));
 
-            Console.WriteLine("       This is challenge 5");
-            Console.WriteLine(GetSolution(startingString));
-
+        }
+        public void ChallengeDescription()
+        {
+            {
+                Console.WriteLine("\n\n       Challenge 5");
+                Console.WriteLine("       Create a method that accepts a string of space separated numbers and returns the highest ");
+                Console.WriteLine("       and lowest number as a string");
+                Console.WriteLine("               Use case: “3 9 0 1 4 8 10 2” --> “0 10”");
+            }
         }
 
         public string GetSolution(string inputString)
         {
             string solutionString = "";
-            int solutionInt;
             List<string> startingStringList = inputString.Split(' ').ToList();
             List<int> startingIntList = startingStringList.Select(int.Parse).ToList();
             List<int> solutionList = new List<int>();
@@ -33,15 +40,9 @@ namespace WhiteboardCSharp
             {
                 solutionStringList.Add(solutionList[i].ToString());
             }
-            for (int i = 0; i < solutionStringList.Count; i++)
-            {
-                Console.WriteLine(solutionStringList[i]);
-            }
             solutionString = solutionStringList.ToString();
             solutionString = string.Join(" ", solutionStringList.ToArray());
-            //solutionString = string.Join(";", myList.ToArray());
             return solutionString;
-            //List<int> startingIntList = 
         }
     }
 }
