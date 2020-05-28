@@ -11,9 +11,9 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             Console.WriteLine("       Challenge 6");
-            string emailToTest = "t@t.tt";
+            string emailToTest = "test@test.com";
             Console.WriteLine($"       Testing to see if {emailToTest} is a valid email address.");
-            Console.WriteLine(ValidateEmail(emailToTest));
+            Console.WriteLine($"       {ValidateEmail(emailToTest)}");
         }
 
         public bool ValidateEmail(string inputEmail)
@@ -34,19 +34,7 @@ namespace WhiteboardCSharp
                             emailIsValid = true;
                         }
                     }
-                    else
-                    {
-                        return emailIsValid;
-                    }
                 }
-                else
-                {
-                    return emailIsValid;
-                }
-            }
-            else
-            {
-                return emailIsValid;
             }
 
             return emailIsValid;
