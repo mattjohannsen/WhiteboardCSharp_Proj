@@ -10,43 +10,36 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            string initialString = "abc";
+            //string initialString = "abc";
+            string initialString = "CODING is fun";
             Console.WriteLine("       Challenge 7");
             string displayString = GetAlphabetPositionString(initialString);
-            Console.WriteLine(displayString);
+            Console.WriteLine("       " + displayString);
         }
 
         public string GetAlphabetPositionString(string inputString)
         {
             string returnString;
-            List<char> stringToCharList = inputString.ToList();
             List<int> stringAsAlphabetPosition = new List<int>();
             for (int i = 0; i < inputString.Length; i++)
             {
                 int alphabetPosition = (int)inputString[i] % 32;
-                stringAsAlphabetPosition.Add(alphabetPosition);
+                if (alphabetPosition != 0)
+                {
+                    stringAsAlphabetPosition.Add(alphabetPosition);
+                }
             }
-            for (int i = 0; i < stringAsAlphabetPosition.Count; i++)
-            {
-                Console.WriteLine(stringAsAlphabetPosition[i]);
-            }
-            //for (int i = 0; i < stringAsAlphabetPosition.Count; i++)
-            //{
-            //    stringToCharList[i] = stringAsAlphabetPosition[i].ToString();
-            //}
             returnString = string.Join("", stringAsAlphabetPosition.ToArray());
             return returnString;
         }
 
     }
 }
-// Create a string variable initialString xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Create a GetAlphabetPosition Method xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Send initialString into GetAlphabetPosition Method xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Create a variable to hold the string as a list of Char xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Turn the string into a list .ToList xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Create a stringAsAlphabetPosition string List variable xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Create a string returnString variable xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// Create a string variable initialString 
+// Create a GetAlphabetPosition Method 
+// Send initialString into GetAlphabetPosition Method 
+// Create a stringAsAlphabetPosition string List variable 
+// Create a string returnString variable 
 // Loop through initialString whichi is now inputString and get the alphabet position xxxxxx
 // Using (int)inputString[i] % 32 to get position 
 // Add this variable to the stringAsAlphabetPosition list as a String ToString()
