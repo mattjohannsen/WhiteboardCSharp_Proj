@@ -11,11 +11,22 @@ namespace WhiteboardCSharp
 
         public void RunChallenge()
         {
-            Console.WriteLine("       This is Challenge 8");
+            ChallengeDescription();
             string currentLock = "3893";
             string targetLock = "5296";
             int theSolution = GetTotalTurns(currentLock, targetLock);
-            Console.WriteLine($"The solution: {theSolution}");
+            Console.WriteLine($"       The solution: {theSolution}");
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("\n\n       Challenge 8");
+            Console.WriteLine("       A briefcase has a four-digit rolling-lock. Each digit is a number from 0-9 that can be rolled");
+            Console.WriteLine("       either forwards or backwards. Write a method that returns the smallest number of turns it ");
+            Console.WriteLine("       takes to transform the lock from current combination to the target combination. One turn is ");
+            Console.WriteLine("       equivalent to rolling a number forwards or backwards by one.");
+            Console.WriteLine("               a.	Use case:");
+            Console.WriteLine("                    i.	Current lock: 3893");
+            Console.WriteLine("                    ii.	Target lock: 5296");
         }
         public int GetTotalTurns(string currentLock, string targetLock)
         {
@@ -69,16 +80,12 @@ namespace WhiteboardCSharp
 //i.Current lock: 3893
 //ii.Target lock: 5296
 // Steps
-// Create currentLock variable = xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Creaet targetLock variable = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Creaet turnUpSolution variable xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Creaet turnDownSolution variable xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Create totalTurns variablex xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// Create currentLock variable
+// Create targetLock variable
+// Create turnUpSolution variable 
+// Create turnDownSolution variable 
+// Create totalTurns variablex 
 // Loop through current lock and compare currentLock[i] to targetLock[i]
-// substract currentLock[i]-targetLock[i]
-// if the number is <0 then multiply by -1 
-// else
-// Add to solutionOneTurns
 // turnUpSolution
 // if currentLock is less that targetLock
 // turnUpSolution = targetLock[i]-currentLock[i]
