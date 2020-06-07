@@ -23,7 +23,6 @@ namespace WhiteboardCSharp
                 Console.WriteLine($"       {numberToTest} is not a happy number.");
             }        
         }
-
         public bool IsNumberHappy(int inputNumber)
         {
             bool isNumberHappy = false;
@@ -36,18 +35,8 @@ namespace WhiteboardCSharp
                 {
                   return IsNumberHappy(numberToCheck);
                 }
-                //GetSumOfSquare(inputNumber);
-
-
             return isNumberHappy;
         }
-
-        //public int[] GetArrayOfNumbers(int inputNumber)
-        //{
-        //    //int[] returnArray = inputNumber.ToString().Select(n => Convert.ToInt32(n)).ToArray();
-        //    int[] returnArray = inputNumber.ToString().Select(n => Convert.ToInt32(n.ToString())).ToArray();
-        //    return returnArray;
-        //}
         public int GetSumOfSquare(int inputNumber)
         {
             int sumOfSquares = 0;
@@ -55,7 +44,6 @@ namespace WhiteboardCSharp
             Console.Write("       ");
             for (int i = 0; i < intArray.Length; i++)
             {
-                
                 int squareOfNumber;
                 squareOfNumber = intArray[i] * intArray[i];
                 sumOfSquares += squareOfNumber;
@@ -72,9 +60,9 @@ namespace WhiteboardCSharp
 //    replace the number by the sum of the squares of its digits, and repeat the process until the 
 //    number equals 1. An example of a happy number is 19
 // Steps
-// Create an integer numberToTest variable xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Create a IsNumberHappy method xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxx
-// Create sumOfSquares variable xxxxxxxxxxxxxxxxxxxx
+// Create an integer numberToTest variable 
+// Create a IsNumberHappy method 
+// Create sumOfSquares variable 
 // Keep checking the sum of the numbers, and if the sum of the squares equals 1 then return true.
 // Turn the number into a string, and turn it into an array
 // Create a loop that sums each iteration and adds it to sumOfSquares variable
