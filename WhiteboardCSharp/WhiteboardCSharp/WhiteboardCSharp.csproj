@@ -51,9 +51,9 @@
     <Compile Include="Challenge6.cs" />
     <Compile Include="Challenge7.cs" />
     <Compile Include="Challenge8.cs" />
+    <Compile Include="Challenge9.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solution.cs" />
     <Compile Include="Whiteboard.cs" />
   </ItemGroup>
   <ItemGroup>

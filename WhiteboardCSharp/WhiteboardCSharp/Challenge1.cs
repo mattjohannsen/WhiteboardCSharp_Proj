@@ -9,13 +9,8 @@ namespace WhiteboardCSharp
     public class Challenge1
     {
         int[] challengeArray = { 5, 17, 77, 50 };
-        int target;
+        int target = 55;
         int[] indecesArray;
-
-        public Challenge1() 
-        {
-            target = 55;
-        }
         public void RunChallenge()
         {
             ChallengeDescription();

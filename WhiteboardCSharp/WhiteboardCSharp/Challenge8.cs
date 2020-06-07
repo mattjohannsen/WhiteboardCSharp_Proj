@@ -33,8 +33,8 @@ namespace WhiteboardCSharp
             int totalTurns = 0;
             int[] currentLockArray = new int [4];
             int[] targetLockArray = new int[4];
-            int turnUpSolution = 0;
-            int turnDownSolution = 0;
+            int turnUpSolution;
+            int turnDownSolution;
             for (int i = 0; i < currentLock.Length; i++)
             {
                 currentLockArray[i] = (int)Char.GetNumericValue(currentLock[i]);
@@ -47,7 +47,7 @@ namespace WhiteboardCSharp
                     turnUpSolution = targetLock[i] - currentLock[i];
                     if (turnUpSolution<0)
                     {
-                        turnUpSolution = turnUpSolution * -1;
+                        turnUpSolution *= -1;
                     }
                     turnDownSolution = currentLock[i] + (10 - targetLock[i]);
                 }
@@ -57,16 +57,16 @@ namespace WhiteboardCSharp
                     turnDownSolution = targetLock[i] - currentLock[i];
                     if (turnDownSolution<0)
                     {
-                        turnDownSolution = turnDownSolution * -1;
+                        turnDownSolution *= -1;
                     }
                 }
                 if (turnUpSolution < turnDownSolution)
                 {
-                    totalTurns = totalTurns + turnUpSolution;
+                    totalTurns += turnUpSolution;
                 }
                 else
                 {
-                    totalTurns = totalTurns + turnDownSolution;
+                    totalTurns += turnDownSolution;
                 }
             }
             return totalTurns;

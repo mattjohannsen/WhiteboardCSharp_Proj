@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WhiteboardCSharp
 {
-    class Challenge3
+    public class Challenge3
     {
-        List <int> listOne;
-        List <int> listTwo;
-        List<int> selectedList;
+        public List <int> listOne;
+        public List<int> listTwo;
+        public List<int> selectedList;
 
         public Challenge3()
         {
