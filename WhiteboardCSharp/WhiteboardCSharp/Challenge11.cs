@@ -41,7 +41,7 @@ namespace WhiteboardCSharp
         }
     }
 }
-//Check if the Same Case
+//Check if the Same Case https://edabit.com/challenge/ivaEWKZbFMcR8emJ8
 //Create a function that returns true if an input string contains only uppercase or only lowercase letters.
 //Examples
 //SameCase("hello") --> true
