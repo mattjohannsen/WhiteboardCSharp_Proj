@@ -8,59 +8,40 @@ namespace WhiteboardCSharp
 {
     class Challenge12
     {
-        //int numberOne = 25; 
-        //int numberTwo = 21;
-        //int numberThree = 125;
-        //int numberOne = 55;
+        //public int numberOne = 25; //Returns true
+        //public int numberTwo = 21;
+        //public int numberThree = 125;
+        //int numberOne = 55; //Returns true
         //int numberTwo = 226;
         //int numberThree = 5190;
-        int numberOne = 12;
+        int numberOne = 12; //Returns false
         int numberTwo = 215;
         int numberThree = 2142;
         public void RunChallenge()
         {
-            Console.WriteLine("       This is Challenge 12");
+            ChallengeDescription();
             bool theAnswer = DoesTwoIntProductEqualThird(numberOne, numberTwo, numberThree);
-            Console.WriteLine(theAnswer);
+            Console.WriteLine($"\n       Does ({numberOne}, {numberTwo}, {numberThree}) pass Last Digit Ultimate Challenge?: " + theAnswer);
         }
 
         public bool DoesTwoIntProductEqualThird(int firstNum, int secondNum, int thirdNum)
         {
-            bool doesSolutionWork = false;
-            int firstNumLast;
-            int secondNumLast;
-            int thirdNumLast;
-            int productLast;
-            int sumOfFirstTwoLasts;
-            List<int> firstNumList = firstNum.ToString().Select(c => Convert.ToInt32(c.ToString())).ToList();
-            List<int> secondNumList = secondNum.ToString().Select(c => Convert.ToInt32(c.ToString())).ToList();
-            List<int> thirdNumList = thirdNum.ToString().Select(c => Convert.ToInt32(c.ToString())).ToList();
-            
-            firstNumLast = firstNumList[firstNumList.Count - 1];
-            secondNumLast = secondNumList[secondNumList.Count - 1];
-            sumOfFirstTwoLasts = firstNumLast * secondNumLast;
-            List<int> productLastList = sumOfFirstTwoLasts.ToString().Select(c => Convert.ToInt32(c.ToString())).ToList();
+            bool doesSolutionWork = ((GetLastDigit(thirdNum)) == (GetLastDigit(GetLastDigit(firstNum) * GetLastDigit(secondNum)))) ? true : false;
 
-            thirdNumLast = thirdNumList[thirdNumList.Count - 1];
-            //for (int i = 0; i < firstNumList.Count; i++)
-            //{
-            //    Console.WriteLine(firstNumList[i]);
-            //    firstNumLast = firstNumList[firstNumList.Count -1];
-            //}
-            //for (int i = 0; i < secondNumList.Count; i++)
-            //{
-            //    Console.WriteLine(secondNumList[i]);
-            //    secondNumLast = secondNumList[secondNumList.Count - 1];
-            //}
-            if (firstNumLast* secondNumLast == thirdNumLast)
-            {
-                doesSolutionWork = true;
-            }
-            else
-            {
-                doesSolutionWork = false;
-            }
             return doesSolutionWork;
+        }
+
+        public int GetLastDigit(int inputNumber)
+        {
+            List<int> numberList = inputNumber.ToString().Select(c => Convert.ToInt32(c.ToString())).ToList();
+            return numberList[numberList.Count - 1];
+
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       This is Challenge 12: Last Digit Ultimate");
+            Console.WriteLine("       Your job is to create a function that takes 3 numbers: a, b, c and returns true if the last digit");
+            Console.WriteLine("       of(the last digit of a* the last digit of b) = the last digit of c.");
         }
     }
 }
@@ -71,7 +52,7 @@ namespace WhiteboardCSharp
 // Create two Lists for each int,
 //  Turn the int into a string, and then to an array --> num.ToString().Select(c => Convert.ToInt32(c.ToString())).ToArray();
 // Find the last digits of each List by using a for loop
-// If the product of firstNumLast multiplied by secondNumLast is equal to the third number THEN
+// If the product of firstNumLast multiplied by secondNumLast is equal to the thirdNumLast number THEN
 // return true
 // Else return false.
 
