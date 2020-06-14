@@ -8,7 +8,7 @@ namespace WhiteboardCSharp
 {
     public class Challenge10
     {
-        int initialNumber = 17;
+        public int initialNumber = 17;
         public void RunChallenge()
         {
             Console.WriteLine("       This is Challenge 10");

@@ -8,7 +8,7 @@ namespace WhiteboardCSharp
 {
     public class Challenge9
     {
-        int numberToTest = 331;
+        public int numberToTest = 331;
         public void RunChallenge()
         {
             Console.WriteLine("         Challenge 9");
@@ -25,7 +25,7 @@ namespace WhiteboardCSharp
         }
         public bool IsNumberHappy(int inputNumber)
         {
-            bool isNumberHappy = false;
+            bool isNumberHappy;
             int numberToCheck = GetSumOfSquare(inputNumber);
                 if (numberToCheck == 1)
                 {

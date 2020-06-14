@@ -8,10 +8,10 @@ namespace WhiteboardCSharp
 {
     public class Challenge11
     {
-        //string inputString = "hello";
-        //string inputString = "HELLO";
-        //string inputString = "Hello";
-        string inputString = "ketcHUp";
+        //public string inputString = "hello";
+        //public string inputString = "HELLO";
+        //public string inputString = "Hello";
+        public string inputString = "ketcHUp";
         public void RunChallenge()
         {
             Console.WriteLine("       This is Challenge 11");
