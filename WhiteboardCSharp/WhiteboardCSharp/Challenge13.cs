@@ -14,13 +14,14 @@ namespace WhiteboardCSharp
             ChallengeDescription();
             string initialString = "javascript is cool";
             Console.WriteLine("\n       Initial String: " + initialString);
-            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak(initialString));
+            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak2(initialString));
             initialString = "programming is fun";
             Console.WriteLine("\n       Initial String: " + initialString);
-            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak(initialString));
+            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak2(initialString));
             initialString = "become a coder";
             Console.WriteLine("\n       Initial String: " + initialString);
-            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak(initialString));
+            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak2(initialString));
+            //Console.WriteLine(GetHackerSpeak2(initialString));
         }
 
         public string GetHackerSpeak(string inputString)
@@ -49,6 +50,26 @@ namespace WhiteboardCSharp
             Console.WriteLine("       HackerSpeak('javascript is cool') --> 'j4v45cr1pt 15 c00l'");
             Console.WriteLine("       HackerSpeak('programming is fun') --> 'pr0gr4mm1ng 15 fun'");
             Console.WriteLine("       HackerSpeak('become a coder') --> 'b3c0m3 4 c0d3r'");
+        }
+
+        public string GetHackerSpeak2(string inputString)
+        {
+            char[][] charactersToReplace = new char[][] { new char[] { 'a', '4' }, new char[] { 'e', '3' }, new char[] { 'i', '1' }, new char[] { 'o', '0' }, new char[] { 's', '5' } };
+            return new string(MakeArrayReplacements(inputString.ToCharArray(), charactersToReplace));
+        }
+        public char[] MakeArrayReplacements(char[] inputArray, char[][] replacementsArray)
+        {
+            for (int i = 0; i < replacementsArray.Length; i++)
+            {
+                for (int j = 0; j < inputArray.Length; j++)
+                {
+                    if (inputArray[j] == replacementsArray[i][0])
+                    {
+                        inputArray[j] = replacementsArray[i][1];
+                    }
+                }
+            }
+            return inputArray;
         }
     }
 }
