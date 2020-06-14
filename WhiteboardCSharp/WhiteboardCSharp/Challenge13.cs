@@ -11,34 +11,28 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             Console.WriteLine("       This is Challenge 13");
-            //string initialString = "javascript is cool";
-            //string initialString = "programming is fun";
-            string initialString = "become a coder";
-            Console.WriteLine(initialString);
-            Console.WriteLine(GetHackerSpeak(initialString));
+            ChallengeDescription();
+            string initialString = "javascript is cool";
+            Console.WriteLine("\n       Initial String: " + initialString);
+            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak(initialString));
+            initialString = "programming is fun";
+            Console.WriteLine("\n       Initial String: " + initialString);
+            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak(initialString));
+            initialString = "become a coder";
+            Console.WriteLine("\n       Initial String: " + initialString);
+            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak(initialString));
         }
 
         public string GetHackerSpeak(string inputString)
         {
-            List<char> initialList = TurnStringIntoList(inputString);
-            List<char> listWithNoAs = GetListWithNewCharacters(initialList, 'a', '4');
-            List<char> listWithNoEs = GetListWithNewCharacters(listWithNoAs, 'e', '3');
-            List<char> listWithNoIs = GetListWithNewCharacters(listWithNoEs, 'i', '1');
-            List<char> listWithNoOs = GetListWithNewCharacters(listWithNoIs, 'o', '0');
-            List<char> listWithNoSs = GetListWithNewCharacters(listWithNoOs, 's', '5');
-            string hackerCodeString = new string(listWithNoSs.ToArray());
-            return hackerCodeString;
+            return new string((ReplaceChar(ReplaceChar(ReplaceChar(ReplaceChar(ReplaceChar(TurnStringIntoList(inputString), 'a', '4'), 'e', '3'), 'i', '1'), 'o', '0'), 's', '5')).ToArray());
         }
-
         public List<char> TurnStringIntoList(string inputString)
         {
-            List<char> returnList = inputString.ToCharArray().ToList();
-            return returnList;
+            return inputString.ToCharArray().ToList();
         }
-
-        public List<char> GetListWithNewCharacters(List<char> inputList, char unwantedCharacter, char replacmentCharacter)
+        public List<char> ReplaceChar(List<char> inputList, char unwantedCharacter, char replacmentCharacter)
         {
-            List<char> returnList = inputList;
             for (int i = 0; i < inputList.Count; i++)
             {
                 if (inputList[i] == unwantedCharacter)
@@ -46,7 +40,15 @@ namespace WhiteboardCSharp
                     inputList[i] = replacmentCharacter;
                 }
             }
-            return returnList;
+            return inputList;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       This is Challenge 13: H4ck3r Sp34k");
+            Console.WriteLine("       Create a function that takes a string as an argument and returns a coded (h4ck3r 5p34k) version of the string.");
+            Console.WriteLine("       HackerSpeak('javascript is cool') --> 'j4v45cr1pt 15 c00l'");
+            Console.WriteLine("       HackerSpeak('programming is fun') --> 'pr0gr4mm1ng 15 fun'");
+            Console.WriteLine("       HackerSpeak('become a coder') --> 'b3c0m3 4 c0d3r'");
         }
     }
 }
@@ -64,7 +66,6 @@ namespace WhiteboardCSharp
 // create a variable listWithNoSs which is equal to GetListWithNewCharacters(listWithNoOs, s, 5)
 // create a variable hackerCodeString is equal to listWithNoSs turned into a String
 // return string
-
 
 //H4ck3r Sp34k
 //Create a function that takes a string as an argument and returns a coded(h4ck3r 5p34k) version of the string.

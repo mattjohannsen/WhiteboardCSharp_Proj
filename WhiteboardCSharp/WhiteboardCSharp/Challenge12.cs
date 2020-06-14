@@ -11,12 +11,12 @@ namespace WhiteboardCSharp
         //public int numberOne = 25; //Returns true
         //public int numberTwo = 21;
         //public int numberThree = 125;
-        //int numberOne = 55; //Returns true
-        //int numberTwo = 226;
-        //int numberThree = 5190;
-        int numberOne = 12; //Returns false
-        int numberTwo = 215;
-        int numberThree = 2142;
+        //public int numberOne = 55; //Returns true
+        //public int numberTwo = 226;
+        //public int numberThree = 5190;
+        public int numberOne = 12; //Returns false
+        public int numberTwo = 215;
+        public int numberThree = 2142;
         public void RunChallenge()
         {
             ChallengeDescription();
