@@ -88,7 +88,7 @@ namespace WhiteboardCSharp
 // create a variable hackerCodeString is equal to listWithNoSs turned into a String
 // return string
 
-//H4ck3r Sp34k
+//H4ck3r Sp34k https://edabit.com/challenge/7nzfry4P3WrrL7t38
 //Create a function that takes a string as an argument and returns a coded(h4ck3r 5p34k) version of the string.
 
 //Examples
