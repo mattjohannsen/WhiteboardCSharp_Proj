@@ -11,8 +11,13 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             Console.WriteLine("       This is Challenge14");
+            ChallengeDescription();
             string theString = "String";
-            Console.WriteLine(DoubleCharactersInString(theString));
+            Console.WriteLine($"       {theString} doubled = {DoubleCharactersInString(theString)}");
+            theString = "Hello World!";
+            Console.WriteLine($"       {theString} doubled = {DoubleCharactersInString(theString)}");
+            theString = "1234!_ ";
+            Console.WriteLine($"       {theString} doubled = {DoubleCharactersInString(theString)}");
         }
 
         public string DoubleCharactersInString(string inputString)
@@ -26,16 +31,19 @@ namespace WhiteboardCSharp
                     doubleList.Add(stringAsList[i]);
                 }
             }
-            //List<char> doubleList = stringAsList.Zip(duplicateList, (x,y) => x + y);
-            //List<char> doubleList = stringAsList.Zip(duplicateList, (l, n) => l + n).ToList();
-            //foreach (var n in stringAsList.Concat(duplicateList))
-            //{
-            //    // enumerates 1, 2, 3, 4
-            //}
             string doubleString = string.Join("", doubleList);
             return doubleString;
         }
 
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Repeating Letters");
+            Console.WriteLine("       Create a function that takes a string and returns a string in which each character is repeated once.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       DoubleChar('String') ➞ 'SSttrriinngg'");
+            Console.WriteLine("       DoubleChar('Hello World!') ➞ 'HHeelllloo  WWoorrlldd!!'");
+            Console.WriteLine("       DoubleChar('1234!_ ') ➞ '11223344!!__  '");
+        }
 
     }
 }
