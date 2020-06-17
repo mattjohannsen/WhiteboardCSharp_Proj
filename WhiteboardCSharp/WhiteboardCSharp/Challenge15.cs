@@ -10,18 +10,23 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("        This is Challenge15");
-            string originalString = "benefit";
-            Console.WriteLine(RemoveFirstLastChar(originalString));
+            ChallengeDescription();
+            string originalString = "hello";
+            Console.WriteLine($"       Original String: {originalString} Modified String: {RemoveFirstLastChar(originalString)}");
+            originalString = "maybe";
+            Console.WriteLine($"       Original String: {originalString} Modified String: {RemoveFirstLastChar(originalString)}");
+            originalString = "benefit";
+            Console.WriteLine($"       Original String: {originalString} Modified String: {RemoveFirstLastChar(originalString)}");
+            originalString = "a";
+            Console.WriteLine($"       Original String: {originalString} Modified String: {RemoveFirstLastChar(originalString)}");
         }
         public string RemoveFirstLastChar(string inputString)
         {
-            string returnString = inputString;
             List<char> stringAsList = inputString.ToList();
             List<char> modifiedList = new List<char>();
-            if (stringAsList.Count <= 0)
+            if (stringAsList.Count <= 2)
             {
-                return returnString;
+                return inputString;
             }
             else
             {
@@ -30,9 +35,20 @@ namespace WhiteboardCSharp
                     modifiedList.Add(stringAsList[i]);
                 }
             }
-            returnString = string.Join("", modifiedList);
+            return string.Join("", modifiedList);
+        }
 
-            return returnString;
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Remove the First and Last Characters");
+            Console.WriteLine("       Create a function that removes the first and last characters from a string.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       RemoveFirstLast('hello') ➞ 'ell'");
+            Console.WriteLine("       RemoveFirstLast('maybe') ➞ 'ayb'");
+            Console.WriteLine("       RemoveFirstLast('benefit') ➞ 'enefi'");
+            Console.WriteLine("       RemoveFirstLast('a') ➞ 'a'");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       If the string is 2 or fewer characters long, return the string itself(See example #4).");
         }
     }
 }
