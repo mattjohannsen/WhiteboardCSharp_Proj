@@ -10,21 +10,20 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       This is Challenge 16");
+            ChallengeDescription();
             string originalString = "loop";
-            Console.WriteLine(AreThereDoubles(originalString));
+            Console.WriteLine($"       Original String: {originalString} --> {AreThereDoubles(originalString)}");
              originalString = "yummy";
-            Console.WriteLine(AreThereDoubles(originalString));
-             originalString = "orange";
-            Console.WriteLine(AreThereDoubles(originalString));
-             originalString = "munchkin";
-            Console.WriteLine(AreThereDoubles(originalString));
+            Console.WriteLine($"       Original String: {originalString} --> {AreThereDoubles(originalString)}");
+            originalString = "orange";
+            Console.WriteLine($"       Original String: {originalString} --> {AreThereDoubles(originalString)}");
+            originalString = "munchkin";
+            Console.WriteLine($"       Original String: {originalString} --> {AreThereDoubles(originalString)}");
 
         }
 
         public bool AreThereDoubles(string inputString)
         {
-            bool containsDouble = false;
             List<char> stringAsList = inputString.ToList();
             char previousChar = stringAsList[0];
             for (int i = 0; i < stringAsList.Count; i++)
@@ -33,8 +32,7 @@ namespace WhiteboardCSharp
                 {
                     if (stringAsList[i] == previousChar)
                     {
-                        containsDouble = true;
-                        return containsDouble;
+                        return true;
                     }
                     else
                     {
@@ -42,17 +40,28 @@ namespace WhiteboardCSharp
                     }
                 }
             }
-            return containsDouble;
+            return false;
+        }
+
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 16: Double Letters");
+            Console.WriteLine("       Create a function that takes a word and returns true if the word has two consecutive identical letters.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       DoubleLetters('loop') --> True");
+            Console.WriteLine("       DoubleLetters('yummy') --> True");
+            Console.WriteLine("       DoubleLetters('orange') --> False");
+            Console.WriteLine("       DoubleLetters('munchkin') --> False");
         }
     }
 }
 //Double Letters https://edabit.com/challenge/ugg9ZK7xY5vk5qJXr
 //Create a function that takes a word and returns true if the word has two consecutive identical letters.
 //Examples
-//DoubleLetters("loop") ➞ true
-//DoubleLetters("yummy") ➞ true
-//DoubleLetters("orange") ➞ false
-//DoubleLetters("munchkin") ➞ false
+//DoubleLetters('loop') ➞ true
+//DoubleLetters('yummy') ➞ true
+//DoubleLetters('orange') ➞ false
+//DoubleLetters('munchkin') ➞ false
 // Steps
 // Create a variable originalString which is equal to "loop"
 // Create a method AreThereDoubles which takes in an inputString and returns a bool value containsDouble which is set to false at the beginning of method
