@@ -10,23 +10,22 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       This is Challenge 18");
+            ChallengeDesription();
             string orignalString = "mice";
             int nTimes = 5;
-            Console.WriteLine(RepeatNTimes(orignalString, nTimes));
+            Console.WriteLine($"       Original string: '{orignalString}', n times: ({nTimes}) --> {RepeatNTimes(orignalString, nTimes)}");
             orignalString = "hello";
             nTimes = 3;
-            Console.WriteLine(RepeatNTimes(orignalString, nTimes));
+            Console.WriteLine($"       Original string: '{orignalString}', n times: ({nTimes}) --> {RepeatNTimes(orignalString, nTimes)}");
             orignalString = "stop";
             nTimes = 1;
-            Console.WriteLine(RepeatNTimes(orignalString, nTimes));
+            Console.WriteLine($"       Original string: '{orignalString}', n times: ({nTimes}) --> {RepeatNTimes(orignalString, nTimes)}");
         }
 
         public string RepeatNTimes(string inputString, int inputNumber)
         {
             List<char> stringAsList = inputString.ToList();
             List<char> returnList = new List<char>();
-            string returnString = returnList.ToString();
             for (int i = 0; i < stringAsList.Count; i++)
             {
                 for (int j = 0; j < inputNumber; j++)
@@ -34,13 +33,18 @@ namespace WhiteboardCSharp
                     returnList.Add(stringAsList[i]);
                 }
             }
-            returnString = string.Join("", returnList);
-
-
-
-            return returnString;
+            return string.Join("", returnList);
         }
 
+        public void ChallengeDesription()
+        {
+            Console.WriteLine("       Challenge 18: Repeating Letters N Times");
+            Console.WriteLine("       Create a function that repeats each character in a string n times.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       Repeat('mice', 5) --> 'mmmmmiiiiiccccceeeee'");
+            Console.WriteLine("       Repeat('hello', 3) --> 'hhheeellllllooo'");
+            Console.WriteLine("       Repeat('stop', 1) --> 'stop'");
+        }
     }
 }
 //Repeating Letters N Times https://edabit.com/challenge/Lmhmtj3QZw9cF5Zew
