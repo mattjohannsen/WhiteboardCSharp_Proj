@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       This is challenge 17");
+            ChallengeDesription();
             int ourInteger = 5;
             Console.WriteLine($"       The input: {ourInteger} The Answer: {GetFactorial(ourInteger)}");
             ourInteger = 3;
@@ -23,19 +23,26 @@ namespace WhiteboardCSharp
         {
             if (inputInteger != 1)
             {
-                Console.WriteLine(inputInteger);
                 return inputInteger * GetFactorial(inputInteger - 1); 
             }
             else
             {
-                Console.WriteLine(inputInteger);
                 return inputInteger;
             }
+        }
 
+        public void ChallengeDesription()
+        {
+            Console.WriteLine("       Challenge 17: Recursion & Factorials");
+            Console.WriteLine("       Create a recursive function that gives the factorial of an integer.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       GetFactorial(5) --> 120");
+            Console.WriteLine("       GetFactorial(3) --> 3");
+            Console.WriteLine("       GetFactorial(2) --> 2");
         }
     }
 }
-// Recursion & Factorials
+// Recursion & Factorials https://edabit.com/challenge/39Gcue6NXfLigSN6k
 // Create a function that gives the factorial of an integer
 // Create a ourInteger variable
 // Create a function that takes in an integer inputInteger and returns an integer theFactorial
