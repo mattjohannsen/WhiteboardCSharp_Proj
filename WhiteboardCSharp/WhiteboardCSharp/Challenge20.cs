@@ -10,15 +10,22 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 20");
-            //int[] originalArray = { 1, 2, 3, 4, 5, 6, 7, 8 };
-            //int[] originalArray = { 43, 65, 23, 89, 53, 9, 6 };
-            int[] originalArray = { 718, 991, 449, 644, 380, 440 };
-            int[] answerArray = EliminateOddNumbers(originalArray);
-            for (int i = 0; i < answerArray.Length; i++)
-            {
-                Console.WriteLine(answerArray[i]);
-            }
+            ChallengeDesription();
+            int[] arrayOne = { 1, 2, 3, 4, 5, 6, 7, 8 };
+            Console.WriteLine($"       Original Array:");
+            ShowArray(arrayOne);
+            Console.WriteLine($"       Array With No Odd Numbers:");
+            ShowArray(EliminateOddNumbers(arrayOne));
+            int[] arrayTwo = { 43, 65, 23, 89, 53, 9, 6 };
+            Console.WriteLine($"       Original Array:");
+            ShowArray(arrayTwo);
+            Console.WriteLine($"       Array With No Odd Numbers:");
+            ShowArray(EliminateOddNumbers(arrayTwo));
+            int[] arrayThree = { 718, 991, 449, 644, 380, 440 };
+            Console.WriteLine($"       Original Array:");
+            ShowArray(arrayThree);
+            Console.WriteLine($"       Array With No Odd Numbers:");
+            ShowArray(EliminateOddNumbers(arrayThree));
         }
 
         int[] EliminateOddNumbers(int[] inputArray)
@@ -33,6 +40,28 @@ namespace WhiteboardCSharp
             }
 
             return solutionList.ToArray();
+        }
+
+        public void ShowArray(int[] inputArray)
+        {
+            for (int i = 0; i < inputArray.Length; i++)
+            {
+                Console.WriteLine($"         {inputArray[i]}");
+            }
+            Console.WriteLine();
+        }
+
+        public void ChallengeDesription()
+        {
+            Console.WriteLine("       Challenge 20: Eliminate Odd Numbers within an Array");
+            Console.WriteLine("       Create a function that takes an array of numbers and returns only the even values.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       NoOdds([1, 2, 3, 4, 5, 6, 7, 8]) --> [2, 4, 6, 8]");
+            Console.WriteLine("       NoOdds([43, 65, 23, 89, 53, 9, 6]) --> [6]");
+            Console.WriteLine("       NoOdds([718, 991, 449, 644, 380, 440]) --> [718, 644, 380, 440]");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Return all even numbers in the order they were given.");
+            Console.WriteLine("       All test cases contain valid numbers ranging from 1 to 3000. \n");
         }
     }
 }
