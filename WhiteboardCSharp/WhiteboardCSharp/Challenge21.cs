@@ -10,22 +10,37 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 21");
-            int[][] originalArray = { new int[]{ 4, 2, 7, 1 }, new int[] { 20, 70, 40, 90 }, new int[] { 1, 2, 0 } };
-            string theSolution = String.Join(",", FindLargest(originalArray));
-            Console.WriteLine(theSolution);
+            ChallengeDescription();
+            double[][] arrayOne = { new double[]{ 4, 2, 7, 1 }, new double[] { 20, 70, 40, 90 }, new double[] { 1, 2, 0 } };
+            Console.WriteLine($"         {String.Join(",", FindLargest(arrayOne))}");
+            double[][] arrayTwo = { new double[] { -34, -54, -74 }, new double[] { -32, -2, -65 }, new double[] { -54, 7, -43 } };
+            Console.WriteLine($"         {String.Join(",", FindLargest(arrayTwo))}");
+            double[][] arrayThree = { new double[] { 0.4321, 0.7634, 0.652 }, new double[] { 1.324, 9.32, 2.5423, 6.4314 }, new double[] { 9, 3, 6, 3 } };
+            Console.WriteLine($"         {String.Join(",", FindLargest(arrayThree))}");
         }
 
-        public int[] FindLargest(int[][] inputArray)
+        public double[] FindLargest(double[][] inputArray)
         {
-            List<int> solutionList = new List<int>();
+            List<double> solutionList = new List<double>();
             for (int i = 0; i < inputArray.Length; i++)
             {
-                int largestValue = inputArray[i].Max();
-                solutionList.Add(largestValue);
+                solutionList.Add(inputArray[i].Max());
             }
 
             return solutionList.ToArray();
+        }
+
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 21: Find the Largest Numbers in a Group of Arrays");
+            Console.WriteLine("       Create a function that takes an array of arrays with numbers.");
+            Console.WriteLine("       Return a new(single) array with the largest numbers of each.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       FindLargest([[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]]) --> [7, 90, 2]");
+            Console.WriteLine("       FindLargest([[-34, -54, -74], [-32, -2, -65], [-54, 7, -43]]) --> [-34, -2, 7]");
+            Console.WriteLine("       FindLargest([[0.4321, 0.7634, 0.652], [1.324, 9.32, 2.5423, 6.4314], [9, 3, 6, 3]]) --> [0.7634, 9.32, 9]");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Watch out for negative numbers.\n");
         }
     }
 }
