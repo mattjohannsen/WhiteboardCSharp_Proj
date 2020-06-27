@@ -10,17 +10,16 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge22");
-            string stringOne = "hAPPY bIRTHDAY";
-            Console.WriteLine(stringOne);
-            Console.WriteLine(ReverseCase(stringOne));
+            ChallengeDescription();
+            string stringOne = "Happy Birthday";
+            Console.WriteLine($"       Original Case: {stringOne}");
+            Console.WriteLine($"        Reverse Case: {ReverseCase(stringOne)}");
             string stringTwo = "MANY THANKS";
-            Console.WriteLine(stringTwo);
-            Console.WriteLine(ReverseCase(stringTwo));
+            Console.WriteLine($"       Original Case: {stringTwo}");
+            Console.WriteLine($"        Reverse Case: {ReverseCase(stringTwo)}");
             string stringThree = "sPoNtAnEoUs";
-            Console.WriteLine(stringThree);
-            Console.WriteLine(ReverseCase(stringThree));
-
+            Console.WriteLine($"       Original Case: {stringThree}");
+            Console.WriteLine($"        Reverse Case: {ReverseCase(stringThree)}");
         }
         public string ReverseCase(string inputString)
         {
@@ -39,7 +38,16 @@ namespace WhiteboardCSharp
             }
             return string.Join("", solutionList); ;
         }
-
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 22: Reverse the Case");
+            Console.WriteLine("       Given a string, create a function to reverse the case.");
+            Console.WriteLine("       All lower-cased letters should be upper-cased, and vice versa.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       ReverseCase('Happy Birthday') --> 'hAPPY bIRTHDAY'");
+            Console.WriteLine("       ReverseCase('MANY THANKS') --> 'many thanks'");
+            Console.WriteLine("       ReverseCase('sPoNtAnEoUs') --> 'SpOnTaNeOuS'\n");
+        }
 
     }
 }
