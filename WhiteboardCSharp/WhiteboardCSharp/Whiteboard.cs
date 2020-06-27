@@ -28,7 +28,8 @@ namespace WhiteboardCSharp
             //Challenge16 challenge16 = new Challenge16();
             //Challenge17 challenge17 = new Challenge17();
             //Challenge18 challenge18 = new Challenge18();
-            Challenge19 challenge19 = new Challenge19();
+            //Challenge19 challenge19 = new Challenge19();
+            Challenge20 challenge20 = new Challenge20();
             
             Console.WriteLine("\n\n       Welcome to Matt's C# Whiteboard!");
 
@@ -50,7 +51,8 @@ namespace WhiteboardCSharp
             //challenge16.RunChallenge();
             //challenge17.RunChallenge();
             //challenge18.RunChallenge();
-            challenge19.RunChallenge();
+            //challenge19.RunChallenge();
+            challenge20.RunChallenge();
 
         }
     }
