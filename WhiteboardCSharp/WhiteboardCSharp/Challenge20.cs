@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            ChallengeDesription();
+            ChallengeDescription();
             int[] arrayOne = { 1, 2, 3, 4, 5, 6, 7, 8 };
             Console.WriteLine($"       Original Array:");
             ShowArray(arrayOne);
@@ -51,7 +51,7 @@ namespace WhiteboardCSharp
             Console.WriteLine();
         }
 
-        public void ChallengeDesription()
+        public void ChallengeDescription()
         {
             Console.WriteLine("       Challenge 20: Eliminate Odd Numbers within an Array");
             Console.WriteLine("       Create a function that takes an array of numbers and returns only the even values.");

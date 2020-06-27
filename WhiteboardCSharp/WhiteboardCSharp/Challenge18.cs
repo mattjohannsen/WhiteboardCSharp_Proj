@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            ChallengeDesription();
+            ChallengeDescription();
             string orignalString = "mice";
             int nTimes = 5;
             Console.WriteLine($"       Original string: '{orignalString}', n times: ({nTimes}) --> {RepeatNTimes(orignalString, nTimes)}");
@@ -36,7 +36,7 @@ namespace WhiteboardCSharp
             return string.Join("", returnList);
         }
 
-        public void ChallengeDesription()
+        public void ChallengeDescription()
         {
             Console.WriteLine("       Challenge 18: Repeating Letters N Times");
             Console.WriteLine("       Create a function that repeats each character in a string n times.");
