@@ -20,44 +20,24 @@ namespace WhiteboardCSharp
             numberToTest = 443344;
             theAnswer = IsPalindrome(numberToTest);
             Console.WriteLine($"       Is " + numberToTest + " a Palindrome? " + theAnswer);
-
-
         }
         public bool IsPalindrome(int inputNumber)
         {
             bool isPalindrome = true;
-            string numberAsString = inputNumber.ToString();
-            List<char> numberAsList = numberAsString.ToList();
+            List<char> numberAsList = inputNumber.ToString().ToList();
             int startingPlace = numberAsList.Count / 2;
-            if (numberAsList.Count %2 == 0) // list is even
+            int oddVsEven = (numberAsList.Count % 2 == 0) ? 0 : 1;
+            for (int i = 0; i < startingPlace; i++)
             {
-                for (int i = 0; i < startingPlace; i++)
+                if (numberAsList[startingPlace - 1 - i] == numberAsList[startingPlace + i + oddVsEven])
                 {
-                    if (numberAsList[startingPlace - 1 - i] == numberAsList[startingPlace + i])
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    continue;
+                }
+                else
+                {
+                    return false;
                 }
             }
-            else // list is odd
-            {
-                for (int i = 0; i < startingPlace; i++)
-                {
-                    if (numberAsList[startingPlace + i + 1] == numberAsList[startingPlace - 1 - i])
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-
             return isPalindrome;
         }
         public void ChallengeDescription()
