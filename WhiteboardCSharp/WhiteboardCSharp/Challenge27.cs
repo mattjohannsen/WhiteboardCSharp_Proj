@@ -10,19 +10,19 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 27");
+            ChallengeDescription();
             string originalString = "test";
             string theAnswer = GetMiddle(originalString);
-            Console.WriteLine(theAnswer);
+            Console.WriteLine($"       Get the middle from {originalString} --> {theAnswer}");
             originalString = "testing";
             theAnswer = GetMiddle(originalString);
-            Console.WriteLine(theAnswer);
+            Console.WriteLine($"       Get the middle from {originalString} --> {theAnswer}");
             originalString = "middle";
             theAnswer = GetMiddle(originalString);
-            Console.WriteLine(theAnswer);
+            Console.WriteLine($"       Get the middle from {originalString} --> {theAnswer}");
             originalString = "A";
             theAnswer = GetMiddle(originalString);
-            Console.WriteLine(theAnswer);
+            Console.WriteLine($"       Get the middle from {originalString} --> {theAnswer}");
         }
         public string GetMiddle(string inputString)
         {
@@ -41,6 +41,27 @@ namespace WhiteboardCSharp
                 solutionString = stringAsList[startingPoint].ToString();
             }
             return solutionString;
+        }
+        // Hard to read but down to three lines
+        //public string GetMiddle(string inputString)
+        //{
+        //    List<char> stringAsList = inputString.ToList();
+        //    int startingPoint = stringAsList.Count / 2;
+        //    return (stringAsList.Count % 2 == 0) ? ((stringAsList[startingPoint - 1]).ToString()) + ((stringAsList[startingPoint]).ToString()) : stringAsList[startingPoint].ToString();
+        //}
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 27: Return the Middle Character(s) of a String");
+            Console.WriteLine("       Create a function that takes a string and returns the middle character(s). ");
+            Console.WriteLine("       If the word's length is odd, return the middle character. ");
+            Console.WriteLine("       If the word's length is even, return the middle two characters.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       GetMiddle('test') --> 'es'");
+            Console.WriteLine("       GetMiddle('testing') --> 't'");
+            Console.WriteLine("       GetMiddle('middle') --> 'dd'");
+            Console.WriteLine("       GetMiddle('A') --> 'A'");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       All test cases contain a single word(as a string).\n");
         }
     }
 }
