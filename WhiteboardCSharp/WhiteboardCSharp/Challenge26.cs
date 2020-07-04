@@ -10,22 +10,17 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       challenge 26");
+            ChallengeDescription();
             int numberToTest = 838;
             bool theAnswer = IsPalindrome(numberToTest);
-            Console.WriteLine(theAnswer);
+            Console.WriteLine($"       Is " + numberToTest + " a Palindrome? " + theAnswer);
             numberToTest = 4433;
             theAnswer = IsPalindrome(numberToTest);
-            Console.WriteLine(theAnswer);
+            Console.WriteLine($"       Is " + numberToTest + " a Palindrome? " + theAnswer);
             numberToTest = 443344;
             theAnswer = IsPalindrome(numberToTest);
-            Console.WriteLine(theAnswer);
-            numberToTest = 4436344;
-            theAnswer = IsPalindrome(numberToTest);
-            Console.WriteLine(theAnswer);
-            numberToTest = 4456344;
-            theAnswer = IsPalindrome(numberToTest);
-            Console.WriteLine(theAnswer);
+            Console.WriteLine($"       Is " + numberToTest + " a Palindrome? " + theAnswer);
+
 
         }
         public bool IsPalindrome(int inputNumber)
@@ -38,16 +33,13 @@ namespace WhiteboardCSharp
             {
                 for (int i = 0; i < startingPlace; i++)
                 {
-                    char leftChar = numberAsList[startingPlace - 1 - i];
-                    char rightChar = numberAsList[startingPlace + i];
-                    if (leftChar == rightChar)
+                    if (numberAsList[startingPlace - 1 - i] == numberAsList[startingPlace + i])
                     {
                         continue;
                     }
                     else
                     {
-                        isPalindrome = false;
-                        return isPalindrome;
+                        return false;
                     }
                 }
             }
@@ -61,15 +53,22 @@ namespace WhiteboardCSharp
                     }
                     else
                     {
-                        isPalindrome = false;
-                        return isPalindrome;
+                        return false;
                     }
                 }
             }
 
             return isPalindrome;
         }
-
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 26: Check if a Number is a Palindrome");
+            Console.WriteLine("       Create a function that returns true if a number is a palindrome.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       IsPalindrome(838) --> true");
+            Console.WriteLine("       IsPalindrome(4433) --> false");
+            Console.WriteLine("       IsPalindrome(443344) --> true\n");
+        }
     }
 }
 //Check if a Number is a Palindrome
