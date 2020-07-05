@@ -10,22 +10,26 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 28");
-            int numberToTest = 11;
-            bool theAnswer = isPrime(numberToTest);
-            Console.WriteLine(theAnswer);
+            ChallengeDescription();
+            int numberToTest = 31;
+            bool theAnswer = IsPrime(numberToTest);
+            Console.WriteLine($"       Is {numberToTest} a prime number? --> {theAnswer}");
+            numberToTest = 18;
+            theAnswer = IsPrime(numberToTest);
+            Console.WriteLine($"       Is {numberToTest} a prime number? --> {theAnswer}");
+            numberToTest = 11;
+            theAnswer = IsPrime(numberToTest);
+            Console.WriteLine($"       Is {numberToTest} a prime number? --> {theAnswer}");
         }
 
-        public bool isPrime(int inputNumber)
+        public bool IsPrime(int inputNumber)
         {
             bool isNumberPrime = true;
-            int stoppingPoint = inputNumber / 2;
-            for (int i = 2; i < stoppingPoint; i++)
+            for (int i = 2; i < inputNumber / 2; i++)
             {
                 if (inputNumber % i == 0)
                 {
-                    isNumberPrime = false;
-                    return isNumberPrime;
+                    return false;
                 }
                 else
                 {
@@ -34,14 +38,27 @@ namespace WhiteboardCSharp
             }
             return isNumberPrime;
         }
+
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Check if a Number is Prime");
+            Console.WriteLine("       Create a function that outputs true if a number is prime, and false otherwise.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       isPrime(31) --> true");
+            Console.WriteLine("       isPrime(18) --> false");
+            Console.WriteLine("       isPrime(11) --> true");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       A prime number has no other factors except 1 and itself.");
+            Console.WriteLine("       1 is not considered a prime number.\n");
+        }
     }
 }
-//Check if a Number is Prime
+//Check if a Number is Prime https://edabit.com/challenge/aoR4PFS6FfpJs6v79
 //Create a function that outputs true if a number is prime, and false otherwise.
 //Examples
-//isPrime(31) ➞ true
-//isPrime(18) ➞ false
-//isPrime(11) ➞ true
+//isPrime(31) --> true
+//isPrime(18) --> false
+//isPrime(11) --> true
 //Notes
 //A prime number has no other factors except 1 and itself.
 //1 is not considered a prime number.
