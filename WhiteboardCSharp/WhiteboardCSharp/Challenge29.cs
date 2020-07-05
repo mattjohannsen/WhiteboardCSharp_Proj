@@ -10,31 +10,36 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 29");
+            ChallengeDescription();
             long[] arrayOne = { 9, 5, 42, 2, 77 };
-            Console.WriteLine(SumSmallest(arrayOne));
+            string arrayAsString = string.Join(", ", arrayOne);
+            Console.WriteLine($"       [ {arrayAsString} ] smallest sum --> {SumSmallest(arrayOne)}");
             long[] arrayTwo = { 10, 343445353, 3453445, 3453545353453 };
-            Console.WriteLine(SumSmallest(arrayTwo));
+            arrayAsString = string.Join(", ", arrayTwo);
+            Console.WriteLine($"       [ {arrayAsString} ] smallest sum --> {SumSmallest(arrayTwo)}");
             long[] arrayThree = { 2, 9, 6, -1 };
-            Console.WriteLine(SumSmallest(arrayThree));
+            arrayAsString = string.Join(", ", arrayThree);
+            Console.WriteLine($"       [ {arrayAsString} ] smallest sum --> {SumSmallest(arrayThree)}");
             long[] arrayFour = { 879, 953, 694, -847, 342, 221, -91, -723, 791, -587 };
-            Console.WriteLine(SumSmallest(arrayFour));
+            arrayAsString = string.Join(", ", arrayFour);
+            Console.WriteLine($"       [ {arrayAsString} ] smallest sum --> {SumSmallest(arrayFour)}");
             long[] arrayFive = { 3683, 2902, 3951, -475, 1617, -2385 };
-            Console.WriteLine(SumSmallest(arrayFive));
+            arrayAsString = string.Join(", ", arrayFive);
+            Console.WriteLine($"       [ {arrayAsString} ] smallest sum --> {SumSmallest(arrayFive)}");
         }
         public long SumSmallest(long[] inputArray)
         {
             long valueOne;
             long valueTwo;
             Array.Sort(inputArray);
-            long startingIndex = GetStartingIndex(inputArray);
+            int startingIndex = GetStartingIndex(inputArray);
             valueOne = inputArray[startingIndex];
             valueTwo = inputArray[startingIndex + 1];
             return (valueOne + valueTwo);
         }
-        public long GetStartingIndex(long[] inputArray)
+        public int GetStartingIndex(long[] inputArray)
         {
-            long startingIndex = 0;
+            int startingIndex = 0;
             for (int i = 0; i < inputArray.Length; i++)
             {
                 if (inputArray[i] > 0)
@@ -44,6 +49,21 @@ namespace WhiteboardCSharp
                 }
             }
             return startingIndex;
+        }
+
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Return the Sum of the Two Smallest Numbers");
+            Console.WriteLine("       Create a function that takes an array of numbers and returns the sum of the two lowest positive numbers.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       SumSmallest([19, 5, 42, 2, 77]) --> 7");
+            Console.WriteLine("       SumSmallest([10, 343445353, 3453445, 3453545353453]) --> 3453455");
+            Console.WriteLine("       SumSmallest([2, 9, 6, -1]) --> 8");
+            Console.WriteLine("       SumSmallest([879, 953, 694, -847, 342, 221, -91, -723, 791, -587]) --> 563");
+            Console.WriteLine("       SumSmallest([3683, 2902, 3951, -475, 1617, -2385]) --> 4519");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Don't count negative numbers.");
+            Console.WriteLine("       Floats and empty arrays will not be used in any of the test cases.\n");
         }
     }
 }
