@@ -10,10 +10,10 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("        Challenge 31");
-            Console.WriteLine(PalindromeTimestamps(2, 12, 22, 4, 35, 10));
-            Console.WriteLine(PalindromeTimestamps(12, 12, 12, 13, 13, 13));
-            Console.WriteLine(PalindromeTimestamps(6, 33, 15, 9, 55, 10));
+            ChallengeDescription();
+            Console.WriteLine($"       PalindromeTimestamps(2, 12, 22, 4, 35, 10) --> {PalindromeTimestamps(2, 12, 22, 4, 35, 10)}");
+            Console.WriteLine($"       PalindromeTimestamps(12, 12, 12, 13, 13, 13) --> {PalindromeTimestamps(12, 12, 12, 13, 13, 13)}");
+            Console.WriteLine($"       PalindromeTimestamps(6, 33, 15, 9, 55, 10) --> {PalindromeTimestamps(6, 33, 15, 9, 55, 10)}");
         }
         public static int PalindromeTimestamps(int hours1, int minutes1, int seconds1, int hours2, int minutes2, int seconds2)
         {
@@ -32,29 +32,38 @@ namespace WhiteboardCSharp
         }
         public static bool CheckForPalidrome(string inputString)
         {
-            bool isPalindrome;
-            if (inputString.SequenceEqual(inputString.Reverse()))
-            {
-                isPalindrome = true;
-            }
-            else
-            {
-                isPalindrome = false;
-            }
+            bool isPalindrome = (inputString.SequenceEqual(inputString.Reverse())) ? true : false;
             return isPalindrome;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 31: Palindrome Timestamps");
+            Console.WriteLine("       Create a function that takes two times of day(hours, minutes, seconds)");
+            Console.WriteLine("       and returns the amount of occurences of palendrome timestamps.");
+            Console.WriteLine("       A palindrome timestamp should be read the same hours : minutes : seconds");
+            Console.WriteLine("       as seconds : minutes : hours, keeping in mind the second's and hour's digits");
+            Console.WriteLine("       will reverse.For example, 02 : 11 : 20 is a palindrome timestamp.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       PalindromeTimestamps(2, 12, 22, 4, 35, 10) --> 14");
+            Console.WriteLine("       PalindromeTimestamps(12, 12, 12, 13, 13, 13) --> 6");
+            Console.WriteLine("       PalindromeTimestamps(6, 33, 15, 9, 55, 10) --> 0");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Expect military time.");
+            Console.WriteLine("       Include the given time parameters if they happen to be palindromes.");
+            Console.WriteLine("       The parameter timestamps are chronological.\n");
         }
     }
 }
-//Palindrome Timestamps
+//Palindrome Timestamps https://edabit.com/challenge/asngMFwniLcegJJ7P
 //Create a function that takes two times of day(hours, minutes, seconds) and returns the amount of occurences of palendrome timestamps.
-//A palendrome timestamp should be read the same hours : minutes : seconds as seconds : minutes : hours, keeping in mind the second's and hour's digits will reverse.For example, 02 : 11 : 20 is a palendrome timestamp.
+//A palindrome timestamp should be read the same hours : minutes : seconds as seconds : minutes : hours, keeping in mind the second's and hour's digits will reverse.For example, 02 : 11 : 20 is a palendrome timestamp.
 //Examples
-//PalendromeTimestamps(2, 12, 22, 4, 35, 10) --> 14
-//PalendromeTimestamps(12, 12, 12, 13, 13, 13) --> 6
-//PalendromeTimestamps(6, 33, 15, 9, 55, 10) --> 0
+//PalindromeTimestamps(2, 12, 22, 4, 35, 10) --> 14
+//PalindromeTimestamps(12, 12, 12, 13, 13, 13) --> 6
+//PalindromeTimestamps(6, 33, 15, 9, 55, 10) --> 0
 //Notes
 //Expect military time.
-//Include the given time parameters if they happen to be palendromes.
+//Include the given time parameters if they happen to be palindromes.
 //The parameter timestamps are chronological.
 // Steps
 // Create TimeSpan variables for timeSpan1 and timeSpan2 with corresponding hours, minutes, seconds
