@@ -37,5 +37,20 @@ namespace WhiteboardCSharp_Test
             //Assert
             Assert.AreEqual(expected[1], actual[1]);
         }
+        [TestMethod]
+        public void GetIndeces_SolutionArray_Equals_ExpectedOutcome()
+        {
+            //Arrange
+            Challenge1 challenge1 = new Challenge1();
+            int[] expected = { 3, 0 };
+            int[] inputArray = { 5, 17, 77, 50 };
+            int target = 55;
+
+            //Act
+            int[] actual = challenge1.GetIndeces(inputArray, target);
+
+            //Assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }
