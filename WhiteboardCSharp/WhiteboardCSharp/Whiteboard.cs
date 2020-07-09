@@ -11,7 +11,7 @@ namespace WhiteboardCSharp
         public void ShowWhiteboard()
         {
             //Challenge1 challenge1 = new Challenge1();
-            Challenge2 challenge2 = new Challenge2();
+            //Challenge2 challenge2 = new Challenge2();
             //Challenge3 challenge3 = new Challenge3();
             //Challenge4 challenge4 = new Challenge4();
             //Challenge5 challenge5 = new Challenge5();
@@ -41,12 +41,13 @@ namespace WhiteboardCSharp
             //Challenge29 challenge29 = new Challenge29();
             //Challenge30 challenge30 = new Challenge30();
             //Challenge31 challenge31 = new Challenge31();
+            Challenge32 challenge32 = new Challenge32();
             
             
             Console.WriteLine("\n\n       Welcome to Matt's C# Whiteboard!");
 
             //challenge1.RunChallenge();
-            challenge2.RunChallenge();
+            //challenge2.RunChallenge();
             //challenge3.RunChallenge();
             //challenge4.RunChallenge();
             //challenge5.RunChallenge();
@@ -76,6 +77,7 @@ namespace WhiteboardCSharp
             //challenge29.RunChallenge();
             //challenge30.RunChallenge();
             //challenge31.RunChallenge();
+            challenge32.RunChallenge();
         }
     }
 }
