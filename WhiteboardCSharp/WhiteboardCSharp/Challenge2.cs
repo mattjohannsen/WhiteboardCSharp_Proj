@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WhiteboardCSharp
 {
-    class Challenge2
+    public class Challenge2
     {
         string stringToCheck;
 
@@ -16,6 +16,7 @@ namespace WhiteboardCSharp
             Console.Write("       What word would you like to check?  ");
             stringToCheck = GetUserInput();
             CheckIfPalindrome(stringToCheck);
+            Console.WriteLine($"       Is {stringToCheck} a palindrome? -- > {CheckIfPalindrome(stringToCheck)}");
         }
 
         public void ChallengeDescription()
@@ -33,15 +34,12 @@ namespace WhiteboardCSharp
             return returnString;
         }
 
-        public void CheckIfPalindrome(string inputString)
+        public bool CheckIfPalindrome(string inputString)
         {
-            Console.WriteLine($"       You entered: {inputString}");
-            Console.WriteLine($"       It is this long: {inputString.Length}");
             int loopLength = inputString.Length / 2;
             bool isPalindrome = true;
             if (inputString.Length%2==0)
             {
-                Console.WriteLine($"       Even string");
                 int counter = 1;
                 for (int i = 0; i < loopLength; i++)
                 {
@@ -55,7 +53,6 @@ namespace WhiteboardCSharp
             }
             else
             {
-                Console.WriteLine($"       Odd string");
                 int counter = 1;
                 for (int i = 0; i < loopLength; i++)
                 {
@@ -67,14 +64,7 @@ namespace WhiteboardCSharp
                     counter++;
                 }
             }
-            if (isPalindrome == true)
-            {
-                Console.WriteLine($"       {inputString} is a palindrome!");
-            }
-            else
-            {
-                Console.WriteLine($"       Sorry, {inputString} is NOT a palindrome.");
-            }
+            return isPalindrome;
         }
 
     }
