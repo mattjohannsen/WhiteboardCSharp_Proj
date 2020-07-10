@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WhiteboardCSharp
 {
-    class Challenge32
+    public class Challenge32
     {
         public void RunChallenge()
         {
@@ -27,7 +27,7 @@ namespace WhiteboardCSharp
             }
             return powerRangerCount;
         }
-        static double NthRoot(double A, int N)
+        public double NthRoot(double A, int N)
         {
             return Math.Pow(A, 1.0 / N);
         }
