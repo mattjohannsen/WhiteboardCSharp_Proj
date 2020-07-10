@@ -8,8 +8,8 @@ namespace WhiteboardCSharp
 {
     public class Challenge1
     {
-        int[] challengeArray = { 5, 17, 77, 50 };
-        int target = 55;
+        readonly int[] challengeArray = { 5, 17, 77, 50 };
+        readonly int target = 55;
         int[] indecesArray;
         public void RunChallenge()
         {

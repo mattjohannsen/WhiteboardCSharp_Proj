@@ -32,7 +32,7 @@ namespace WhiteboardCSharp
         }
         public static bool CheckForPalidrome(string inputString)
         {
-            bool isPalindrome = (inputString.SequenceEqual(inputString.Reverse())) ? true : false;
+            bool isPalindrome = inputString.SequenceEqual(inputString.Reverse());
             return isPalindrome;
         }
         public void ChallengeDescription()
