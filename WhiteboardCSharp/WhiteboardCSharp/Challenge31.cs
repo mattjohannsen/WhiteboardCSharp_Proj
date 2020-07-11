@@ -25,6 +25,7 @@ namespace WhiteboardCSharp
                 if (CheckForPalidrome(timeSpan1.ToString()))
                 {
                     palidromeCounter++;
+                    Console.WriteLine(timeSpan1.ToString() + "--> " + CheckForPalidrome(timeSpan1.ToString()));
                 }
                 timeSpan1 = timeSpan1.Add(TimeSpan.FromSeconds(1));
             }
