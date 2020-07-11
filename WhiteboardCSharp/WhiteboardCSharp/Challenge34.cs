@@ -33,16 +33,6 @@ namespace WhiteboardCSharp
         {
             return inputString.Split(' ').Select(word => word.ToArray()).ToArray();
         }
-        //char[][] MakeJaggedArray(string inputString) <-- OLD
-        //{
-        //    string[] stringAsArray = inputString.Split(' ');
-        //    char[][] stringAsJaggedArray = new char[stringAsArray.Length][];
-        //    for (int i = 0; i < stringAsArray.Length; i++)
-        //    {
-        //        stringAsJaggedArray[i] = stringAsArray[i].ToCharArray();
-        //    }
-        //    return stringAsJaggedArray;
-        //}
         char GetLastCharacter(char[] inputArray)
         {
             return inputArray[inputArray.Length - 1];
