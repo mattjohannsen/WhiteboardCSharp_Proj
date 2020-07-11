@@ -10,20 +10,30 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("      Challenge 33");
-            Console.WriteLine(ReversedBinaryInteger(10));
-            Console.WriteLine(ReversedBinaryInteger(12));
-            Console.WriteLine(ReversedBinaryInteger(25));
-            Console.WriteLine(ReversedBinaryInteger(45));
+            ChallengeDescription();
+            Console.WriteLine($"       ReversedBinaryInteger(10) --> {ReversedBinaryInteger(10)}");
+            Console.WriteLine($"       ReversedBinaryInteger(12) --> {ReversedBinaryInteger(12)}");
+            Console.WriteLine($"       ReversedBinaryInteger(25) --> {ReversedBinaryInteger(25)}");
+            Console.WriteLine($"       ReversedBinaryInteger(45) --> {ReversedBinaryInteger(45)}");
         }
         public int ReversedBinaryInteger(int inputNumber)
         {
-            string binaryRepresentation = Convert.ToString(inputNumber, 2);
-            char[] binaryAsArray = binaryRepresentation.ToCharArray();
+            char[] binaryAsArray = Convert.ToString(inputNumber, 2).ToCharArray();
             Array.Reverse(binaryAsArray);
-            string reverseString = string.Join("", binaryAsArray);
-            int integerOfReverse = Convert.ToInt32(reverseString, 2);
-            return integerOfReverse;
+            return Convert.ToInt32(string.Join("", binaryAsArray), 2);
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 33: Reversing a Binary String");
+            Console.WriteLine("       Write a function that takes an integer n, reverses the binary representation of");
+            Console.WriteLine("       that integer, and returns the new integer from the reversed binary.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       ReversedBinaryInteger(10) --> 5");
+            Console.WriteLine("       ReversedBinaryInteger(12) --> 3");
+            Console.WriteLine("       ReversedBinaryInteger(25) --> 19");
+            Console.WriteLine("       ReversedBinaryInteger(45) --> 45");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       All values of n will be positive.\n");
         }
     }
 }
