@@ -10,30 +10,39 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 34");
-            //Console.WriteLine(IsSmooth("Carlos swam masterfully."));
-            Console.WriteLine(IsSmooth("She eats super righteously"));
+            ChallengeDescription();
+            Console.WriteLine($"       Carlos swam masterfully. --> {IsSmooth("Carlos swam masterfully.")}");
+            Console.WriteLine($"       Marta appreciated deep perpendicular right trapezoids --> {IsSmooth("Marta appreciated deep perpendicular right trapezoids")}");
+            Console.WriteLine($"       Someone is outside the doorway --> {IsSmooth("Someone is outside the doorway")}");
+            Console.WriteLine($"       She eats super righteously --> {IsSmooth("She eats super righteously")}");
         }
         bool IsSmooth(string inputString)
         {
             bool sentenceIsSmooth = true;
-            string[] stringAsArray = inputString.Split(' ');
-            char[][] arrayWithWordsAsArrays = new char[stringAsArray.Length][];
-            for (int i = 0; i < stringAsArray.Length; i++)
+            char[][] sentenceArray = MakeJaggedArray(inputString);
+            for (int i = 0; i < sentenceArray.Length-1; i++)
             {
-                arrayWithWordsAsArrays[i] = stringAsArray[i].ToCharArray();
-            }
-            for (int i = 0; i < arrayWithWordsAsArrays.Length-1; i++)
-            {
-                char currentWordLastChar = GetLastCharacter(arrayWithWordsAsArrays[i]);
-                char nextWordFirstChar = GetFirstCharacter(arrayWithWordsAsArrays[i+1]);
-                if (currentWordLastChar != nextWordFirstChar)
+                if (GetLastCharacter(sentenceArray[i]) != GetFirstCharacter(sentenceArray[i + 1]))
                 {
                     return false;
                 }
             }
             return sentenceIsSmooth;
         }
+        char[][] MakeJaggedArray(string inputString)
+        {
+            return inputString.Split(' ').Select(word => word.ToArray()).ToArray();
+        }
+        //char[][] MakeJaggedArray(string inputString) <-- OLD
+        //{
+        //    string[] stringAsArray = inputString.Split(' ');
+        //    char[][] stringAsJaggedArray = new char[stringAsArray.Length][];
+        //    for (int i = 0; i < stringAsArray.Length; i++)
+        //    {
+        //        stringAsJaggedArray[i] = stringAsArray[i].ToCharArray();
+        //    }
+        //    return stringAsJaggedArray;
+        //}
         char GetLastCharacter(char[] inputArray)
         {
             return inputArray[inputArray.Length - 1];
@@ -41,6 +50,19 @@ namespace WhiteboardCSharp
         char GetFirstCharacter(char[] inputArray)
         {
             return inputArray[0];
+        }
+        private void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 34: Smooth Sentences");
+            Console.WriteLine("       Carlos is a huge fan of something he calls smooth sentences.A smooth sentence is one");
+            Console.WriteLine("       where the last letter of each word is identical to the first letter the following word.");
+            Console.WriteLine("       To illustrate, the following would be a smooth sentence: 'Carlos swam masterfully.'");
+            Console.WriteLine("       Since 'Carlos' ends with an 's' and swam begins with an 's' and swam ends with an 'm'");
+            Console.WriteLine("       and masterfully begins with an 'm'.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       IsSmooth('Marta appreciated deep perpendicular right trapezoids') --> true");
+            Console.WriteLine("       IsSmooth('Someone is outside the doorway') --> false");
+            Console.WriteLine("       IsSmooth('She eats super righteously') --> true\n");
         }
     }
 }
