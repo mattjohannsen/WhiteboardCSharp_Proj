@@ -12,14 +12,16 @@ namespace WhiteboardCSharp
         {
             ChallengeDescription();
             Console.WriteLine($"      PowerRanger(2, 49, 65) --> {PowerRanger(2, 49, 65)}");
-            Console.WriteLine($"      PowerRanger(3, 1, 27) --> {PowerRanger(3, 1, 27)}");
-            Console.WriteLine($"      PowerRanger(10, 1, 5) --> {PowerRanger(10, 1, 5)}");
-            Console.WriteLine($"      PowerRanger(5, 31, 33) --> {PowerRanger(5, 31, 33)}");
-            Console.WriteLine($"      PowerRanger(4, 250, 1300) --> {PowerRanger(4, 250, 1300)}");
+            //Console.WriteLine($"      PowerRanger(3, 1, 27) --> {PowerRanger(3, 1, 27)}");
+            //Console.WriteLine($"      PowerRanger(10, 1, 5) --> {PowerRanger(10, 1, 5)}");
+            //Console.WriteLine($"      PowerRanger(5, 31, 33) --> {PowerRanger(5, 31, 33)}");
+            //Console.WriteLine($"      PowerRanger(4, 250, 1300) --> {PowerRanger(4, 250, 1300)}");
         }
         public int PowerRanger(int n, int a, int b)
         {
             int powerRangerCount = 0;
+            int firstNumber = Convert.ToInt32(NthRoot(a, n));
+            int secondNumber = Convert.ToInt32(NthRoot(b, n));
             int loopLength = Convert.ToInt32(NthRoot(b, n)) - Convert.ToInt32(NthRoot(a, n));
             for (int i = 0; i <= loopLength; i++)
             {
