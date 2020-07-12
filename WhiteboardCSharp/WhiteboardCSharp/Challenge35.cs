@@ -10,10 +10,10 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 35");
-            Console.WriteLine(NextPrime(12));
-            Console.WriteLine(NextPrime(24));
-            Console.WriteLine(NextPrime(11));
+            ChallengeDescription();
+            Console.WriteLine($"       NextPrime(12)--> {NextPrime(12)}");
+            Console.WriteLine($"       NextPrime(24)--> {NextPrime(24)}");
+            Console.WriteLine($"       NextPrime(11)--> {NextPrime(11)}");
         }
         private int NextPrime(int inputNumber)
         {
@@ -24,7 +24,6 @@ namespace WhiteboardCSharp
             }
             else
             {
-                //int workingNumber = inputNumber;
                 do
                 {
                     inputNumber++;
@@ -47,6 +46,16 @@ namespace WhiteboardCSharp
                 }
             }
             return isNumberPrime;
+        }
+        private void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 35: Next Prime");
+            Console.WriteLine("       Given an integer, create a function that returns the next prime.If the number is prime, return the number itself.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       NextPrime(12) --> 13");
+            Console.WriteLine("       NextPrime(24) --> 29");
+            Console.WriteLine("       NextPrime(11) --> 11");
+            Console.WriteLine("       11 is a prime, so we return the number itself.\n");
         }
     }
 }
