@@ -59,7 +59,7 @@ namespace WhiteboardCSharp
         }
     }
 }
-//Next Prime
+//Next Prime https://edabit.com/challenge/FKb8JY75nkaHz7B3F
 //Given an integer, create a function that returns the next prime.If the number is prime, return the number itself.
 //Examples
 //NextPrime(12) --> 13
