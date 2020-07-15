@@ -20,8 +20,6 @@ namespace WhiteboardCSharp
         public int PowerRanger(int n, int a, int b)
         {
             int powerRangerCount = 0;
-            int firstNumber = Convert.ToInt32(NthRoot(a, n));
-            int secondNumber = Convert.ToInt32(NthRoot(b, n));
             int loopLength = Convert.ToInt32(NthRoot(b, n)) - Convert.ToInt32(NthRoot(a, n));
             for (int i = 0; i <= loopLength; i++)
             {

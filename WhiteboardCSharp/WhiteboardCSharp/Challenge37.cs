@@ -10,10 +10,10 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 37");
-            Console.WriteLine(SockPairs("AA"));
-            Console.WriteLine(SockPairs("ABABC"));
-            Console.WriteLine(SockPairs("CABBACCC"));
+            ChallengeDescription();
+            Console.WriteLine($"       SockPairs('AA') --> {SockPairs("AA")}");
+            Console.WriteLine($"       SockPairs('ABABC') --> {SockPairs("ABABC")}");
+            Console.WriteLine($"       SockPairs('CABBACCC') --> {SockPairs("CABBACCC")}");
         }
         private int SockPairs(string inputString)
         {
@@ -50,11 +50,27 @@ namespace WhiteboardCSharp
             }
             return sockPairs;
         }
+        private void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 37: Sock Pairs");
+            Console.WriteLine("       Joseph is in the middle of packing for a vacation.");
+            Console.WriteLine("       He's having a bit of trouble finding all of his socks, though.");
+            Console.WriteLine("       Write a function that returns the number of sock pairs he has.");
+            Console.WriteLine("       A sock pair consists of two of the same letter, such as 'AA'.");
+            Console.WriteLine("       The socks are represented as an unordered sequence.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       SockPairs(AA) --> 1");
+            Console.WriteLine("       SockPairs(ABABC) --> 2");
+            Console.WriteLine("       SockPairs(CABBACCC) --> 4");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       If given an empty string (no socks in the drawer), return 0.");
+            Console.WriteLine("       There can be multiple pairs of the same type of sock, such as two pairs of CC for the last example.\n");
+        }
     }
 }
 //Sock Pairs
 //Joseph is in the middle of packing for a vacation.
-//He's having a bit of trouble finding all of his socks, though. Write a function that returns the number of sock pairs he has. A sock pair consists of two of the same letter, such as "AA". The socks are represented as an unordered sequence.
+//He's having a bit of trouble finding all of his socks, though. Write a function that returns the number of sock pairs he has. A sock pair consists of two of the same letter, such as 'AA'. The socks are represented as an unordered sequence.
 //Examples
 //SockPairs("AA") --> 1
 //SockPairs("ABABC") --> 2

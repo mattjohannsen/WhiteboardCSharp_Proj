@@ -25,7 +25,7 @@ namespace WhiteboardCSharp
             {
                 for (int j = 0; j < Int32.Parse(stringToList[i + 1].ToString()); j++)
                 {
-                    solutionString = solutionString + stringToList[i].ToString();
+                    solutionString += stringToList[i].ToString();
                 }
             }
             return solutionString;
