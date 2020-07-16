@@ -10,22 +10,33 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge38");
-            Console.WriteLine(ConvertToHex("hello world"));
-            Console.WriteLine(ConvertToHex("Big Boi"));
-            Console.WriteLine(ConvertToHex("Marty Poppinson"));
+            ChallengeDescription();
+            Console.WriteLine($"       ConvertToHex('hello world') --> {ConvertToHex("hello world")}");
+            Console.WriteLine($"       ConvertToHex('Big Boi') --> {ConvertToHex("Big Boi")}");
+            Console.WriteLine($"       ConvertToHex('Marty Poppinson') --> {ConvertToHex("Marty Poppinson")}");
         }
         private string ConvertToHex(string inputString)
         {
             char[] stringAsArray = inputString.ToCharArray();
-            int arrayLength = stringAsArray.Length;
-            string[] hexArray = new string[arrayLength];
+            string[] hexArray = new string[stringAsArray.Length];
             for (int i = 0; i < stringAsArray.Length; i++)
             {
-                byte tempByte = Convert.ToByte(stringAsArray[i]);
-                hexArray[i] = tempByte.ToString("x");
+                hexArray[i] = Convert.ToByte(stringAsArray[i]).ToString("x");
             }
             return string.Join(" ", hexArray);
+        }
+        private void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 38: Convert to Hex");
+            Console.WriteLine("       Create a function that takes a strings characters as ASCII");
+            Console.WriteLine("       and returns each characters hexadecimal value as a string.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       ConvertToHex(hello world) --> 68 65 6c 6c 6f 20 77 6f 72 6c 64");
+            Console.WriteLine("       ConvertToHex(Big Boi) --> 42 69 67 20 42 6f 69");
+            Console.WriteLine("       ConvertToHex(Marty Poppinson) --> 4d 61 72 74 79 20 50 6f 70 70 69 6e 73 6f 6e");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Each byte must be seperated by a space.");
+            Console.WriteLine("       All alpha hex characters must be lowercase.\n");
         }
     }
 }
