@@ -10,14 +10,14 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge39");
-            Console.WriteLine(IsValidHexCode("#CD5C5C"));
-            Console.WriteLine(IsValidHexCode("#EAECEE"));
-            Console.WriteLine(IsValidHexCode("#eaecee"));
-            Console.WriteLine(IsValidHexCode("#CD5C58C"));
-            Console.WriteLine(IsValidHexCode("#CD5C5Z"));
-            Console.WriteLine(IsValidHexCode("##CD5C&C"));
-            Console.WriteLine(IsValidHexCode("CD5C5C"));
+            ChallengeDescription();
+            Console.WriteLine($"       IsValidHexCode('#CD5C5C') --> {IsValidHexCode("#CD5C5C")}");
+            Console.WriteLine($"       IsValidHexCode('#EAECEE') --> {IsValidHexCode("#EAECEE")}");
+            Console.WriteLine($"       IsValidHexCode('#eaecee') --> {IsValidHexCode("#eaecee")}");
+            Console.WriteLine($"       IsValidHexCode('#CD5C58C') --> {IsValidHexCode("#CD5C58C")}");
+            Console.WriteLine($"       IsValidHexCode('#CD5C5Z') --> {IsValidHexCode("#CD5C5Z")}");
+            Console.WriteLine($"       IsValidHexCode('#CD5C&C') --> {IsValidHexCode("#CD5C&C")}");
+            Console.WriteLine($"       IsValidHexCode('CD5C5C') --> {IsValidHexCode("CD5C5C")}");
         }
         private bool IsValidHexCode(string inputString)
         {
@@ -80,6 +80,25 @@ namespace WhiteboardCSharp
                 return true;
             }
             return false;
+        }
+        private void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 39: Valid Hex Code");
+            Console.WriteLine("       Create a function that determines whether a string is a valid hex code.");
+            Console.WriteLine("       A hex code must begin with a pound key # and is exactly 6 characters in length.");
+            Console.WriteLine("       All alphabetic characters may be uppercase or lowercase.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       IsValidHexCode(#CD5C5C) --> true");
+            Console.WriteLine("       IsValidHexCode(#EAECEE) --> true");
+            Console.WriteLine("       IsValidHexCode(#eaecee) --> true");
+            Console.WriteLine("       IsValidHexCode(#CD5C58C) --> false");
+            Console.WriteLine("       Length exceeds 6");
+            Console.WriteLine("       IsValidHexCode(CABBACCC) --> false");
+            Console.WriteLine("       Not all alphabetic characters in A-F");
+            Console.WriteLine("       IsValidHexCode(CABBACCC) --> false");
+            Console.WriteLine("       Contains unacceptable character");
+            Console.WriteLine("       IsValidHexCode(CD5C5C) --> false");
+            Console.WriteLine("       Missing #\n");
         }
 
     }
