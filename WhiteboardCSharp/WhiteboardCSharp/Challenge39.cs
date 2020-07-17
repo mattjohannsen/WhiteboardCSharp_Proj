@@ -21,65 +21,12 @@ namespace WhiteboardCSharp
         }
         private bool IsValidHexCode(string inputString)
         {
-            bool isValidHexCode = true;
-            bool checkingForHex = true;
             char[] stringAsArray = inputString.ToCharArray();
-            while (checkingForHex)
-            {
-                if (!IsNumSignFirst(stringAsArray[0]))
-                {
-                    return false;
-                }
-                if (!ArrayHas7Elements(stringAsArray))
-                {
-                    return false;
-                }
-                for (int i = 1; i < stringAsArray.Length; i++)
-                {
-                    if (Char.IsLetter(stringAsArray[i]))
-                    {
-                        isValidHexCode = CheckAlphsAtoF(stringAsArray[i]);
-                    }
-                    else if (Char.IsDigit(stringAsArray[i]))
-                    {
-                        isValidHexCode = CheckNum0to9(stringAsArray[i]);
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                checkingForHex = false;
-            }
-            return isValidHexCode;
-        }
-        private bool IsNumSignFirst(char inputChar)
-        {
-            return (inputChar == '#');
-        }
-        private bool ArrayHas7Elements(char[] inputArray)
-        {
-            return (inputArray.Length == 7);
-        }
-        private bool CheckAlphsAtoF(char inputChar)
-        {
-            if (Char.ToUpper(inputChar) >= 'A' && Char.ToUpper(inputChar) <= 'F')
-            {
-                return true;
-            }
-            else
+            if ((stringAsArray[0] != '#') || (stringAsArray.Length != 7))
             {
                 return false;
             }
-        }
-        private bool CheckNum0to9(char inputChar)
-        {
-            int charToInt = (int)Char.GetNumericValue(inputChar);
-            if (charToInt >=0 && charToInt <= 9)
-            {
-                return true;
-            }
-            return false;
+            return inputString.All("#0123456789abcdefABCDEF".Contains);
         }
         private void ChallengeDescription()
         {
