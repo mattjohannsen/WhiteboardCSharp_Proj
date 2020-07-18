@@ -16,9 +16,9 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       ReversedBinaryInteger(25) --> {ReversedBinaryInteger(25)}");
             Console.WriteLine($"       ReversedBinaryInteger(45) --> {ReversedBinaryInteger(45)}");
         }
-        public int ReversedBinaryInteger(int inputNumber)
+        public int ReversedBinaryInteger(int num)
         {
-            char[] binaryAsArray = Convert.ToString(inputNumber, 2).ToCharArray();
+            char[] binaryAsArray = Convert.ToString(num, 2).ToCharArray();
             Array.Reverse(binaryAsArray);
             return Convert.ToInt32(string.Join("", binaryAsArray), 2);
         }
