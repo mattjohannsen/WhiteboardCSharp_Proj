@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 41");
+            ChallengeDescription();
             Console.WriteLine($"       DuplicateCount(abcde) --> {DuplicateCount("abcde")}");
             Console.WriteLine($"       DuplicateCount(aabbcde) --> {DuplicateCount("aabbcde")}");
             Console.WriteLine($"       DuplicateCount(Indivisibilities) --> {DuplicateCount("Indivisibilities")}");
@@ -47,14 +47,22 @@ namespace WhiteboardCSharp
                     duplicateCount++;
                 }
             }
-            if (duplicateCount>1)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
+            return (duplicateCount > 1) ? 1 : 0;
+        }
+        private void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 41: Count the Number of Duplicate Characters");
+            Console.WriteLine("       Create a function that takes a string and returns the number of alphanumeric");
+            Console.WriteLine("       characters that occur more than once.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       DuplicateCount(abcde) --> 0");
+            Console.WriteLine("       DuplicateCount(aabbcde) --> 2");
+            Console.WriteLine("       DuplicateCount(Indivisibilities) --> 2");
+            Console.WriteLine("       DuplicateCount(Aa) --> 0");
+            Console.WriteLine("       Case sensitive");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Duplicate characters are case sensitive.");
+            Console.WriteLine("       The input string will contain only alphanumeric characters.\n");
         }
     }
 }
