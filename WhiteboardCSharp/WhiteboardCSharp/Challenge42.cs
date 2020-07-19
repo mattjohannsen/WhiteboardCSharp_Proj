@@ -10,11 +10,11 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 42");
-            Console.WriteLine(AlmostPalindrome("abcdcbg"));
-            Console.WriteLine(AlmostPalindrome("abccia"));
-            Console.WriteLine(AlmostPalindrome("abcdaaa"));
-            Console.WriteLine(AlmostPalindrome("1234312"));
+            ChallengeDescription();
+            Console.WriteLine($"       AlmostPalindrome(abcdcbg) --> {AlmostPalindrome("abcdcbg")}");
+            Console.WriteLine($"       AlmostPalindrome(abccia) --> {AlmostPalindrome("abccia")}");
+            Console.WriteLine($"       AlmostPalindrome(abcdaaa) --> {AlmostPalindrome("abcdaaa")}");
+            Console.WriteLine($"       AlmostPalindrome(1234312) --> {AlmostPalindrome("1234312")}");
         }
         bool AlmostPalindrome(string inputString)
         {
@@ -24,27 +24,42 @@ namespace WhiteboardCSharp
             int differences = 0;
             for (int i = 0; i < forwardArray.Length; i++)
             {
-                char forwardChar = forwardArray[i];
-                char reverseChar = stringAsArray[i];
-                if (forwardChar != reverseChar)
+                if (forwardArray[i] != stringAsArray[i])
                 {
                     differences++;
                 }
             }
-            return (differences == 2) ? true : false;
+            return (differences == 2);
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 42: Almost Palindrome");
+            Console.WriteLine("       A string is an almost-palindrome if, by changing only one character,");
+            Console.WriteLine("       you can make it a palindrome.Create a function that returns true");
+            Console.WriteLine("       if a string is an almost-palindrome and false otherwise.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       AlmostPalindrome('abcdcbg') --> true");
+            Console.WriteLine("       Transformed to 'abcdcba' by changing 'g' to 'a'.");
+            Console.WriteLine("       AlmostPalindrome('abccia') --> true");
+            Console.WriteLine("       Transformed to 'abccba' by changing 'i' to 'b'.");
+            Console.WriteLine("       AlmostPalindrome('abcdaaa') --> false");
+            Console.WriteLine("       Can't be transformed to a palindrome in exactly 1 turn.");
+            Console.WriteLine("       AlmostPalindrome('1234312') --> false");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Return false if the string is already a palindrome.\n");
         }
     }
 }
 //Almost Palindrome https://edabit.com/challenge/t6R99zCQ7nesR7Rdk
 //A string is an almost-palindrome if, by changing only one character, you can make it a palindrome.Create a function that returns true if a string is an almost-palindrome and false otherwise.
 //Examples
-//AlmostPalindrome("abcdcbg") --> true
-// Transformed to "abcdcba" by changing "g" to "a".
-//AlmostPalindrome("abccia") --> true
-// Transformed to "abccba" by changing "i" to "b".
-//AlmostPalindrome("abcdaaa") --> false
+//AlmostPalindrome('abcdcbg') --> true
+// Transformed to 'abcdcba' by changing 'g' to 'a'.
+//AlmostPalindrome('abccia') --> true
+// Transformed to 'abccba' by changing 'i' to 'b'.
+//AlmostPalindrome('abcdaaa') --> false
 // Can't be transformed to a palindrome in exactly 1 turn.
-//AlmostPalindrome("1234312") --> false
+//AlmostPalindrome('1234312') --> false
 //Notes
 //Return false if the string is already a palindrome.
 // Steps
