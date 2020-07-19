@@ -66,7 +66,7 @@ namespace WhiteboardCSharp
         }
     }
 }
-//Count the Number of Duplicate Characters
+//Count the Number of Duplicate Characters https://edabit.com/challenge/wXCzoLtvvEEYBs3p9
 //Create a function that takes a string and returns the number of alphanumeric characters that occur more than once.
 //Examples
 //DuplicateCount(abcde) --> 0
