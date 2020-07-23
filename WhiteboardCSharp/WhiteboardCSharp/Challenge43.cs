@@ -11,53 +11,69 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
-            Console.WriteLine($"       LongestCommonEnding(multiplication, ration) --> {LongestCommonEnding("multiplication", "ration")}");
-            Console.WriteLine($"       LongestCommonEnding(potent, tent) --> {LongestCommonEnding("potent", "tent")}");
-            Console.WriteLine($"       LongestCommonEnding(skyscraper, carnivore) --> {LongestCommonEnding("skyscraper", "carnivore")}");
+            Console.WriteLine($"       LongestCommonEnding(multiplication, ration) --> '{LongestCommonEnding("multiplication", "ration")}'");
+            Console.WriteLine($"       LongestCommonEnding(potent, tent) --> '{LongestCommonEnding("potent", "tent")}'");
+            Console.WriteLine($"       LongestCommonEnding(skyscraper, carnivore) --> '{LongestCommonEnding("skyscraper", "carnivore")}'");
         }
-        private string LongestCommonEnding(string stringOne, string stringTwo)
+        public string LongestCommonEnding(string stringOne, string stringTwo)
         {
-            char[] arrayOne = stringOne.ToCharArray();
-            char[] arrayTwo = stringTwo.ToCharArray();
-            Array.Reverse(arrayOne);
-            Array.Reverse(arrayTwo);
-            int indexWhereSamenessStops=0;
-            int shortestArrayLength = Math.Min(arrayOne.Length, arrayTwo.Length);
-            for (int i = 0; i < shortestArrayLength; i++)
+            int shortestLength = Math.Min(stringOne.Length, stringTwo.Length);
+            string stringToCheck = "";
+            for (int i = 0; i <= shortestLength -1; i++)
             {
-                
-                if (arrayOne[i]==arrayTwo[i])
+                string oldstringToCheck = stringToCheck;
+                stringToCheck = stringOne[stringOne.Length - 1 - i].ToString() + stringToCheck;
+                bool stringDoesEndWith = stringTwo.EndsWith(stringToCheck, StringComparison.CurrentCulture);
+                if (!stringDoesEndWith)
                 {
-                    if (shortestArrayLength== i+1)
-                    {
-                        indexWhereSamenessStops = i + 1;
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
-                else
-                {
-                    indexWhereSamenessStops = i;
-                    break;
+                    return oldstringToCheck;
                 }
             }
-            List<char> solutionList = new List<char>();
-            if (indexWhereSamenessStops == 0)
-            {
-                return "";
-            }
-            else
-            {
-                for (int j = 0; j < indexWhereSamenessStops; j++)
-                {
-                    solutionList.Add(arrayOne[j]);
-                }
-            }
-            solutionList.Reverse();
-            return string.Join("", solutionList);
+            return stringToCheck;
         }
+        //private string LongestCommonEnding(string stringOne, string stringTwo) // Matt's original solution
+        //{
+        //    char[] arrayOne = stringOne.ToCharArray();
+        //    char[] arrayTwo = stringTwo.ToCharArray();
+        //    Array.Reverse(arrayOne);
+        //    Array.Reverse(arrayTwo);
+        //    int indexWhereSamenessStops=0;
+        //    int shortestArrayLength = Math.Min(arrayOne.Length, arrayTwo.Length);
+        //    for (int i = 0; i < shortestArrayLength; i++)
+        //    {
+
+        //        if (arrayOne[i]==arrayTwo[i])
+        //        {
+        //            if (shortestArrayLength== i+1)
+        //            {
+        //                indexWhereSamenessStops = i + 1;
+        //            }
+        //            else
+        //            {
+        //                continue;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            indexWhereSamenessStops = i;
+        //            break;
+        //        }
+        //    }
+        //    List<char> solutionList = new List<char>();
+        //    if (indexWhereSamenessStops == 0)
+        //    {
+        //        return "";
+        //    }
+        //    else
+        //    {
+        //        for (int j = 0; j < indexWhereSamenessStops; j++)
+        //        {
+        //            solutionList.Add(arrayOne[j]);
+        //        }
+        //    }
+        //    solutionList.Reverse();
+        //    return string.Join("", solutionList);
+        //}
         public void ChallengeDescription()
         {
             Console.WriteLine("       Challenge 43: Longest Common Ending");
