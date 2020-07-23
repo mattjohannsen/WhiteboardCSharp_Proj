@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 43");
+            ChallengeDescription();
             Console.WriteLine($"       LongestCommonEnding(multiplication, ration) --> {LongestCommonEnding("multiplication", "ration")}");
             Console.WriteLine($"       LongestCommonEnding(potent, tent) --> {LongestCommonEnding("potent", "tent")}");
             Console.WriteLine($"       LongestCommonEnding(skyscraper, carnivore) --> {LongestCommonEnding("skyscraper", "carnivore")}");
@@ -58,9 +58,20 @@ namespace WhiteboardCSharp
             solutionList.Reverse();
             return string.Join("", solutionList);
         }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 43: Longest Common Ending");
+            Console.WriteLine("       Write a function that returns the longest common ending between two strings.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       LongestCommonEnding(multiplication, ration) --> ation)");
+            Console.WriteLine("       LongestCommonEnding(potent, tent) --> tent");
+            Console.WriteLine("       LongestCommonEnding(skyscraper, carnivore) --> ");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Return an empty string if there exists no common ending.\n");
+        }
     }
 }
-//Longest Common Ending
+//Longest Common Ending https://edabit.com/challenge/zRNkYPzy8oviqkrWc
 //Write a function that returns the longest common ending between two strings.
 //Examples
 //LongestCommonEnding("multiplication", "ration") --> "ation"
