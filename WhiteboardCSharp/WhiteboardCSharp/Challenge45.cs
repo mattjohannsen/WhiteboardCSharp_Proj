@@ -11,7 +11,7 @@ namespace WhiteboardCSharp
         char charToCheck;
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 45");
+            ChallengeDescription();
             Console.WriteLine(Brackets("(a*(b-c)..... )")); //true
             Console.WriteLine(Brackets(")(a-b-45/7*(a-34))")); //false
             Console.WriteLine(Brackets("sin(90...)+.............cos1)")); //false
@@ -23,7 +23,7 @@ namespace WhiteboardCSharp
             int firstrightBracket = stringAsList.IndexOf(')');
             int lastLeftBracket = stringAsList.LastIndexOf('(');
             int lastRightBracket = stringAsList.LastIndexOf(')');
-            if (charToCheck == ')' || charToCheck == null)
+            if (charToCheck == ')')
             {
                 charToCheck = '(';
                 if (firstleftBracket < firstrightBracket)
@@ -102,9 +102,23 @@ namespace WhiteboardCSharp
             var rightCount = inputString.Count(x => x == ')');
             return (leftCount==rightCount);
         }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 45: Clear Brackets");
+            Console.WriteLine("       Create a function Brackets() that takes a string and checks that the brackets");
+            Console.WriteLine("       in the math expression are correct.The function should return true or false.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       Brackets('(a * (b - c)..... )') --> true");
+            Console.WriteLine("       Brackets(')(a - b - 45 / 7 * (a - 34))') --> false");
+            Console.WriteLine("       Brackets('sin(90...) + .............cos1)') --> false");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       The string may not contain brackets, then return true.");
+            Console.WriteLine("       String may contain spaces.");
+            Console.WriteLine("       The string may be empty.\n");
+        }
     }
 }
-//Clear Brackets
+//Clear Brackets https://edabit.com/challenge/9y3dJ4kWQ7GxdGNN5
 //Create a function Brackets() that takes a string and checks that the brackets in the math expression are correct.The function should return true or false.
 //Examples
 //Brackets("(a*(b-c)..... )") --> true
