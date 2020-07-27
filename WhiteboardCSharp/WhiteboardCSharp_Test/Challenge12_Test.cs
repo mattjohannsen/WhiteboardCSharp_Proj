@@ -17,7 +17,7 @@ namespace WhiteboardCSharp_Test
             bool expected = true;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -32,7 +32,7 @@ namespace WhiteboardCSharp_Test
             bool expected = true;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -47,7 +47,7 @@ namespace WhiteboardCSharp_Test
             bool expected = true;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -62,7 +62,7 @@ namespace WhiteboardCSharp_Test
             bool expected = false;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -77,7 +77,7 @@ namespace WhiteboardCSharp_Test
             bool expected = false;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -92,7 +92,7 @@ namespace WhiteboardCSharp_Test
             bool expected = false;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -107,7 +107,7 @@ namespace WhiteboardCSharp_Test
             bool expected = false;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -122,7 +122,7 @@ namespace WhiteboardCSharp_Test
             bool expected = false;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -137,7 +137,7 @@ namespace WhiteboardCSharp_Test
             bool expected = false;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -152,7 +152,7 @@ namespace WhiteboardCSharp_Test
             bool expected = true;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -167,7 +167,7 @@ namespace WhiteboardCSharp_Test
             bool expected = true;
 
             // Act
-            bool actual = Challenge12.last_dig(a, b, c);
+            bool actual = Challenge12.Last_Dig(a, b, c);
 
             // Assert
             Assert.AreEqual(expected, actual);

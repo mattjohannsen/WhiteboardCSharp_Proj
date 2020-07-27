@@ -23,11 +23,11 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
-            bool theAnswer = last_dig(numberOne, numberTwo, numberThree);
+            bool theAnswer = Last_Dig(numberOne, numberTwo, numberThree);
             Console.WriteLine($"\n       Does ({numberOne}, {numberTwo}, {numberThree}) pass Last Digit Ultimate Challenge?: " + theAnswer);
         }
 
-	    public static bool last_dig(int a, int b, int c)
+	    public static bool Last_Dig(int a, int b, int c)
 	    {
             return Challenge12.GetLastDigit(c) == Challenge12.GetLastDigit(Challenge12.GetLastDigit(a) * Challenge12.GetLastDigit(b));
 	    }
