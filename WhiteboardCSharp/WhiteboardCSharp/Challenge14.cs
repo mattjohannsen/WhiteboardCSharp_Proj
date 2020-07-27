@@ -13,14 +13,14 @@ namespace WhiteboardCSharp
             Console.WriteLine("       This is Challenge14");
             ChallengeDescription();
             string theString = "String";
-            Console.WriteLine($"       {theString} doubled = {DoubleCharactersInString(theString)}");
+            Console.WriteLine($"       {theString} doubled = {DoubleChar(theString)}");
             theString = "Hello World!";
-            Console.WriteLine($"       {theString} doubled = {DoubleCharactersInString(theString)}");
+            Console.WriteLine($"       {theString} doubled = {DoubleChar(theString)}");
             theString = "1234!_ ";
-            Console.WriteLine($"       {theString} doubled = {DoubleCharactersInString(theString)}");
+            Console.WriteLine($"       {theString} doubled = {DoubleChar(theString)}");
         }
 
-        public string DoubleCharactersInString(string inputString)
+        public static string DoubleChar(string inputString)
         {
             List<char> stringAsList = inputString.ToList();
             List<char> doubleList = new List<char>();
@@ -31,8 +31,7 @@ namespace WhiteboardCSharp
                     doubleList.Add(stringAsList[i]);
                 }
             }
-            string doubleString = string.Join("", doubleList);
-            return doubleString;
+            return string.Join("", doubleList);
         }
 
         public void ChallengeDescription()
@@ -40,9 +39,9 @@ namespace WhiteboardCSharp
             Console.WriteLine("       Repeating Letters");
             Console.WriteLine("       Create a function that takes a string and returns a string in which each character is repeated once.");
             Console.WriteLine("       Examples");
-            Console.WriteLine("       DoubleChar('String') ➞ 'SSttrriinngg'");
-            Console.WriteLine("       DoubleChar('Hello World!') ➞ 'HHeelllloo  WWoorrlldd!!'");
-            Console.WriteLine("       DoubleChar('1234!_ ') ➞ '11223344!!__  '");
+            Console.WriteLine("       DoubleChar('String') --> 'SSttrriinngg'");
+            Console.WriteLine("       DoubleChar('Hello World!') --> 'HHeelllloo  WWoorrlldd!!'");
+            Console.WriteLine("       DoubleChar('1234!_ ') --> '11223344!!__  '");
         }
 
     }

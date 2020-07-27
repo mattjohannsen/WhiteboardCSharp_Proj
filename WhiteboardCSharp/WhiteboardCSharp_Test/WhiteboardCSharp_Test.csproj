@@ -55,6 +55,7 @@
     <Compile Include="Challenge32_Test.cs" />
     <Compile Include="Challenge12_Test.cs" />
     <Compile Include="Challenge13_Test.cs" />
+    <Compile Include="Challege14_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
