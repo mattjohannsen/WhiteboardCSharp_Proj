@@ -14,5 +14,10 @@ namespace WhiteboardCSharp
             whiteboard.ShowWhiteboard();
             Console.ReadLine();
         }
+
+        internal static object GetLastDigit(int c)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WhiteboardCSharp
 {
-    class Challenge12
+    public class Challenge12
     {
         //public int numberOne = 25; //Returns true
         //public int numberTwo = 21;
@@ -20,23 +20,19 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
-            bool theAnswer = DoesTwoIntProductEqualThird(numberOne, numberTwo, numberThree);
+            bool theAnswer = last_dig(numberOne, numberTwo, numberThree);
             Console.WriteLine($"\n       Does ({numberOne}, {numberTwo}, {numberThree}) pass Last Digit Ultimate Challenge?: " + theAnswer);
         }
 
-        public bool DoesTwoIntProductEqualThird(int firstNum, int secondNum, int thirdNum)
-        {
-            bool doesSolutionWork = ((GetLastDigit(thirdNum)) == (GetLastDigit(GetLastDigit(firstNum) * GetLastDigit(secondNum)))) ? true : false;
-
-            return doesSolutionWork;
-        }
-
-        public int GetLastDigit(int inputNumber)
-        {
-            List<int> numberList = inputNumber.ToString().Select(c => Convert.ToInt32(c.ToString())).ToList();
-            return numberList[numberList.Count - 1];
-
-        }
+	public static bool last_dig(int a, int b, int c)
+	{
+            return Challenge12.GetLastDigit(c) == Challenge12.GetLastDigit(Challenge12.GetLastDigit(a) * Challenge12.GetLastDigit(b));
+	}
+	 public static int GetLastDigit(int inputNumber)
+	{
+		List<int> numberList = inputNumber.ToString().Select(c => Convert.ToInt32(c.ToString())).ToList();
+		return numberList[numberList.Count - 1];
+	}
         public void ChallengeDescription()
         {
             Console.WriteLine("       This is Challenge 12: Last Digit Ultimate");
