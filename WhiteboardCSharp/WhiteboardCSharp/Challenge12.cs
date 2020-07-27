@@ -14,9 +14,12 @@ namespace WhiteboardCSharp
         //public int numberOne = 55; //Returns true
         //public int numberTwo = 226;
         //public int numberThree = 5190;
-        public int numberOne = 12; //Returns false
-        public int numberTwo = 215;
-        public int numberThree = 2142;
+        //public int numberOne = 12; //Returns false
+        //public int numberTwo = 215;
+        //public int numberThree = 2142;
+        public int numberOne = -15; //Returns false
+        public int numberTwo = 1;
+        public int numberThree = 1;
         public void RunChallenge()
         {
             ChallengeDescription();
@@ -24,15 +27,15 @@ namespace WhiteboardCSharp
             Console.WriteLine($"\n       Does ({numberOne}, {numberTwo}, {numberThree}) pass Last Digit Ultimate Challenge?: " + theAnswer);
         }
 
-	public static bool last_dig(int a, int b, int c)
-	{
+	    public static bool last_dig(int a, int b, int c)
+	    {
             return Challenge12.GetLastDigit(c) == Challenge12.GetLastDigit(Challenge12.GetLastDigit(a) * Challenge12.GetLastDigit(b));
-	}
-	 public static int GetLastDigit(int inputNumber)
-	{
-		List<int> numberList = inputNumber.ToString().Select(c => Convert.ToInt32(c.ToString())).ToList();
-		return numberList[numberList.Count - 1];
-	}
+	    }
+	    public static int GetLastDigit(int inputNumber)
+	    {
+            char[] numberAsArray = inputNumber.ToString().ToCharArray();
+            return int.Parse(numberAsArray[numberAsArray.Length - 1].ToString());
+        }
         public void ChallengeDescription()
         {
             Console.WriteLine("       This is Challenge 12: Last Digit Ultimate");
