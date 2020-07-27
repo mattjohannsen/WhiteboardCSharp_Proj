@@ -14,35 +14,35 @@ namespace WhiteboardCSharp
             ChallengeDescription();
             string initialString = "javascript is cool";
             Console.WriteLine("\n       Initial String: " + initialString);
-            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak2(initialString));
+            Console.WriteLine("        Hacker Speak: " + HackerSpeak(initialString));
             initialString = "programming is fun";
             Console.WriteLine("\n       Initial String: " + initialString);
-            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak2(initialString));
+            Console.WriteLine("        Hacker Speak: " + HackerSpeak(initialString));
             initialString = "become a coder";
             Console.WriteLine("\n       Initial String: " + initialString);
-            Console.WriteLine("        Hacker Speak: " + GetHackerSpeak2(initialString));
-            //Console.WriteLine(GetHackerSpeak2(initialString));
+            Console.WriteLine("        Hacker Speak: " + HackerSpeak(initialString));
+            //Console.WriteLine(HackerSpeak(initialString));
         }
 
-        public string GetHackerSpeak(string inputString)
-        {
-            return new string((ReplaceChar(ReplaceChar(ReplaceChar(ReplaceChar(ReplaceChar(TurnStringIntoList(inputString), 'a', '4'), 'e', '3'), 'i', '1'), 'o', '0'), 's', '5')).ToArray());
-        }
-        public List<char> TurnStringIntoList(string inputString)
-        {
-            return inputString.ToCharArray().ToList();
-        }
-        public List<char> ReplaceChar(List<char> inputList, char unwantedCharacter, char replacmentCharacter)
-        {
-            for (int i = 0; i < inputList.Count; i++)
-            {
-                if (inputList[i] == unwantedCharacter)
-                {
-                    inputList[i] = replacmentCharacter;
-                }
-            }
-            return inputList;
-        }
+        //public string GetHackerSpeak(string inputString)
+        //{
+        //    return new string((ReplaceChar(ReplaceChar(ReplaceChar(ReplaceChar(ReplaceChar(TurnStringIntoList(inputString), 'a', '4'), 'e', '3'), 'i', '1'), 'o', '0'), 's', '5')).ToArray());
+        //}
+        //public List<char> TurnStringIntoList(string inputString)
+        //{
+        //    return inputString.ToCharArray().ToList();
+        //}
+        //public List<char> ReplaceChar(List<char> inputList, char unwantedCharacter, char replacmentCharacter)
+        //{
+        //    for (int i = 0; i < inputList.Count; i++)
+        //    {
+        //        if (inputList[i] == unwantedCharacter)
+        //        {
+        //            inputList[i] = replacmentCharacter;
+        //        }
+        //    }
+        //    return inputList;
+        //}
         public void ChallengeDescription()
         {
             Console.WriteLine("       This is Challenge 13: H4ck3r Sp34k");
@@ -52,12 +52,12 @@ namespace WhiteboardCSharp
             Console.WriteLine("       HackerSpeak('become a coder') --> 'b3c0m3 4 c0d3r'");
         }
 
-        public string GetHackerSpeak2(string inputString)
+        public static string HackerSpeak(string inputString)
         {
             char[][] charactersToReplace = new char[][] { new char[] { 'a', '4' }, new char[] { 'e', '3' }, new char[] { 'i', '1' }, new char[] { 'o', '0' }, new char[] { 's', '5' } };
             return new string(MakeArrayReplacements(inputString.ToCharArray(), charactersToReplace));
         }
-        public char[] MakeArrayReplacements(char[] inputArray, char[][] replacementsArray)
+        public static char[] MakeArrayReplacements(char[] inputArray, char[][] replacementsArray)
         {
             for (int i = 0; i < replacementsArray.Length; i++)
             {

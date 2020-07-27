@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Challenge32_Test.cs" />
     <Compile Include="Challenge12_Test.cs" />
+    <Compile Include="Challenge13_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

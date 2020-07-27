@@ -22,8 +22,8 @@ namespace WhiteboardCSharp
             //Challenge9 challenge9 = new Challenge9();
             //Challenge10 challenge10 = new Challenge10();
             //Challenge11 challenge11 = new Challenge11();
-            Challenge12 challenge12 = new Challenge12();
-            //Challenge13 challenge13 = new Challenge13();
+            //Challenge12 challenge12 = new Challenge12();
+            Challenge13 challenge13 = new Challenge13();
             //Challenge14 challenge14 = new Challenge14();
             //Challenge15 challenge15 = new Challenge15();
             //Challenge16 challenge16 = new Challenge16();
@@ -71,8 +71,8 @@ namespace WhiteboardCSharp
             //challenge9.RunChallenge();
             //challenge10.RunChallenge();
             //challenge11.RunChallenge();
-            challenge12.RunChallenge();
-            //challenge13.RunChallenge();
+            //challenge12.RunChallenge();
+            challenge13.RunChallenge();
             //challenge14.RunChallenge();
             //challenge15.RunChallenge();
             //challenge16.RunChallenge();
