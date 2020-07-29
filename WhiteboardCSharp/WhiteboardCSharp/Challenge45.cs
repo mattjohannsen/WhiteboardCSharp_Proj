@@ -36,12 +36,6 @@ namespace WhiteboardCSharp
             }
             return (count == 0);
         }
-        public bool StringHasEqualParenthesis(string inputString)
-        {
-            var leftCount = inputString.Count(x => x == '(');
-            var rightCount = inputString.Count(x => x == ')');
-            return (leftCount==rightCount);
-        }
         public void ChallengeDescription()
         {
             Console.WriteLine("       Challenge 45: Clear Brackets");
