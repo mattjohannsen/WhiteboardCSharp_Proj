@@ -10,20 +10,17 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 47");
-            Console.WriteLine(Challenge48.TwoToTheNthPowerPlusModulus(3));
-            Console.WriteLine(Challenge48.TwoToTheNthPowerPlusModulus(9));
-            Console.WriteLine(Challenge48.TwoToTheNthPowerPlusModulus(17));
-            Console.WriteLine(Challenge48.TwoToTheNthPowerPlusModulus(24));
-
+            ChallengeDescription();
+            Console.WriteLine($"       3 --> {Challenge48.MysteryFunc(3)}");
+            Console.WriteLine($"       9 --> {Challenge48.MysteryFunc(9)}");
+            Console.WriteLine($"       17 --> {Challenge48.MysteryFunc(17)}");
+            Console.WriteLine($"       24 --> {Challenge48.MysteryFunc(24)}");
         }
-        public static long TwoToTheNthPowerPlusModulus(int inputNumber)
+        public static int MysteryFunc(int inputNumber)
         {
             string returnString = "";
-            int loopLength = inputNumber / 2;
             int nCount = 0;
-            //int loopLength = Convert.ToInt32(Math.Pow(inputNumber, 1 / 2));
-            for (int i = 1; i <= loopLength; i++)
+            for (int i = 1; i <= inputNumber / 2; i++)
             {
                 if (Math.Pow(2, i) < inputNumber)
                 {
@@ -35,35 +32,42 @@ namespace WhiteboardCSharp
                     break;
                 }
             }
-            double nthProductWithoutRemainder = Math.Pow(2, nCount);
             for (int j = 1; j < 10; j++)
             {
-                if (nthProductWithoutRemainder + j == inputNumber)
+                if (Math.Pow(2, nCount) + j == inputNumber)
                 {
                     returnString += j;
                     break;
                 }
             }
-            long returnNumber = Convert.ToInt32(returnString);
-
-            return returnNumber;
+            return Convert.ToInt32(returnString);
         }
-
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 48: Reverse Coding Challenge #2");
+            Console.WriteLine("       This is a reverse coding challenge.");
+            Console.WriteLine("       Your task is to create a function that, when fed the inputs below, produce the sample outputs shown.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       3 --> 21");
+            Console.WriteLine("       9 --> 2221");
+            Console.WriteLine("       17 --> 22221");
+            Console.WriteLine("       24 --> 22228\n");
+        }
     }
 }
-//Reverse Coding Challenge #2
+//Reverse Coding Challenge #2 https://edabit.com/challenge/PGLjsEXWB5AWdoFGY
 //This is a reverse coding challenge.
 
 //Your task is to create a function that, when fed the inputs below, produce the sample outputs shown.
 
 //Examples
-//3 ➞ 21 2+1 = 3
+//3 --> 21 2+1 = 3
 
-//9 ➞ 2221 2*2*2 =  8 + 1 =9
+//9 --> 2221 2*2*2 =  8 + 1 =9
 
-//17 ➞ 22221 2*2*2*2+1 = 17
+//17 --> 22221 2*2*2*2+1 = 17
 
-//24 ➞ 22228 Four 2's 4*2=8 2*2*2*2 + 8
+//24 --> 22228 Four 2's 4*2=8 2*2*2*2 + 8
 //inputNumber = 3
 //2*1
 //Steps
