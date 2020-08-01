@@ -55,19 +55,15 @@ namespace WhiteboardCSharp
         }
     }
 }
+
 //Reverse Coding Challenge #2 https://edabit.com/challenge/PGLjsEXWB5AWdoFGY
 //This is a reverse coding challenge.
-
 //Your task is to create a function that, when fed the inputs below, produce the sample outputs shown.
-
 //Examples
-//3 --> 21 2+1 = 3
-
-//9 --> 2221 2*2*2 =  8 + 1 =9
-
-//17 --> 22221 2*2*2*2+1 = 17
-
-//24 --> 22228 Four 2's 4*2=8 2*2*2*2 + 8
+//3 --> 21
+//9 --> 2221
+//17 --> 22221
+//24 --> 22228
 //inputNumber = 3
 //2*1
 //Steps
