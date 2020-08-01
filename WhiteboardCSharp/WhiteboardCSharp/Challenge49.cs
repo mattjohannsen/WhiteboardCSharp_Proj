@@ -11,34 +11,23 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 49");
-            Console.WriteLine(ToCamelCase("hello_edabit"));
-            Console.WriteLine(ToSnakeCase("helloEdabit"));
-            Console.WriteLine(ToCamelCase("is_modal_open"));
-            Console.WriteLine(ToSnakeCase("getColor"));
+            ChallengeDescription();
+            Console.WriteLine($"       ToCamelCase(hello_edabit) ==> {ToCamelCase("hello_edabit")}");
+            Console.WriteLine($"       ToSnakeCase(helloEdabit) ==> {ToSnakeCase("helloEdabit")}");
+            Console.WriteLine($"       ToCamelCase(is_modal_open) ==> {ToCamelCase("is_modal_open")}");
+            Console.WriteLine($"       ToSnakeCase(getColor) ==> {ToSnakeCase("getColor")}");
         }
         public static string ToCamelCase(string inputString)
         {
             string[] stringAsArray = inputString.Split('_');
-            char[][] wordsAsArray = stringAsArray.Select(w => w.ToCharArray()).ToArray();
-            for (int i = 0; i < wordsAsArray.Length; i++)
+            for (int i = 0; i < stringAsArray.Length; i++)
             {
-                for (int j = 0; j < 1; j++)
+                if (i != 0 && stringAsArray[i] != string.Empty && char.IsLower(stringAsArray[i][0]))
                 {
-                    if (i == 0)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        wordsAsArray[i][j] = char.ToUpper(wordsAsArray[i][j]);
-                    }
+                    stringAsArray[i] = char.ToUpper(stringAsArray[i][0]) + stringAsArray[i].Substring(1);
                 }
             }
-
-            string[] wordsBackAsStrings = wordsAsArray.Select(w => new string(w)).ToArray();
-            string returnString = string.Join("", wordsBackAsStrings);
-            return returnString;
+            return string.Join("", stringAsArray);
         }
         public static string ToSnakeCase(string inputString)
         {
@@ -52,16 +41,27 @@ namespace WhiteboardCSharp
             }
             return string.Join("_", stringAsArray);
         }
-
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 49: camelCase <==> snake_case");
+            Console.WriteLine("       Create two functions ToCamelCase() and ToSnakeCase() that each take a single string and");
+            Console.WriteLine("       convert it into either camelCase or snake_case.If you're not sure what these terms mean,");
+            Console.WriteLine("       check the Resources tab above.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       ToCamelCase(hello_edabit) --> helloEdabit");
+            Console.WriteLine("       ToSnakeCase(helloEdabit) --> hello_edabit");
+            Console.WriteLine("       ToCamelCase(is_modal_open) --> isModalOpen");
+            Console.WriteLine("       ToSnakeCase(getColor)-- > get_color\n");
+        }
     }
 }
 //camelCase <==> snake_case https://edabit.com/challenge/RBqvKrYLxtM57G5FQ
 //Create two functions ToCamelCase() and ToSnakeCase() that each take a single string and convert it into either camelCase or snake_case.If you're not sure what these terms mean, check the Resources tab above.
 //Examples
-//ToCamelCase("hello_edabit") --> "helloEdabit"
-//ToSnakeCase("helloEdabit") --> "hello_edabit"
-//ToCamelCase("is_modal_open") --> "isModalOpen"
-//ToSnakeCase("getColor") --> "get_color"
+//ToCamelCase(hello_edabit) --> helloEdabit
+//ToSnakeCase(helloEdabit) --> hello_edabit
+//ToCamelCase(is_modal_open) --> isModalOpen
+//ToSnakeCase(getColor") --> get_color
 
 // Step ToCamelCase
 // Turn into Array = split string split("_"); --> stringAsArray
