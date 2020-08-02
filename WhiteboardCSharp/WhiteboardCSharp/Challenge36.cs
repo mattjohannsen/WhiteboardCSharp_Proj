@@ -11,15 +11,15 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
-            Console.WriteLine($"       RepeatCharNoOfTimes('A4B5C2') --> {RepeatCharNoOfTimes("A4B5C2")}");
-            Console.WriteLine($"       RepeatCharNoOfTimes('C2F1E5') --> {RepeatCharNoOfTimes("C2F1E5")}");
-            Console.WriteLine($"       RepeatCharNoOfTimes('T4S2V2') --> {RepeatCharNoOfTimes("T4S2V2")}");
-            Console.WriteLine($"       RepeatCharNoOfTimes('A1B2C3D4') --> {RepeatCharNoOfTimes("A1B2C3D4")}");
+            Console.WriteLine($"       RepeatCharNoOfTimes('A4B5C2') --> {MysteryFunc("A4B5C2")}");
+            Console.WriteLine($"       RepeatCharNoOfTimes('C2F1E5') --> {MysteryFunc("C2F1E5")}");
+            Console.WriteLine($"       RepeatCharNoOfTimes('T4S2V2') --> {MysteryFunc("T4S2V2")}");
+            Console.WriteLine($"       RepeatCharNoOfTimes('A1B2C3D4') --> {MysteryFunc("A1B2C3D4")}");
 
         }
-        private string RepeatCharNoOfTimes(string inputString)
+        public static string MysteryFunc(string str)
         {
-            List<char> stringToList = inputString.ToList();
+            List<char> stringToList = str.ToList();
             string solutionString = "";
             for (int i = 0; i < stringToList.Count; i+=2)
             {

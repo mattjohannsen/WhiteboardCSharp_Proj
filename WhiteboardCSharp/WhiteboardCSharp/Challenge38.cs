@@ -15,13 +15,13 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       ConvertToHex('Big Boi') --> {ConvertToHex("Big Boi")}");
             Console.WriteLine($"       ConvertToHex('Marty Poppinson') --> {ConvertToHex("Marty Poppinson")}");
         }
-        private string ConvertToHex(string inputString)
+        public static string ConvertToHex(string str)
         {
-            char[] stringAsArray = inputString.ToCharArray();
-            string[] hexArray = new string[stringAsArray.Length];
-            for (int i = 0; i < stringAsArray.Length; i++)
+            char[] arr = str.ToCharArray();
+            string[] hexArray = new string[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
             {
-                hexArray[i] = Convert.ToByte(stringAsArray[i]).ToString("x");
+                hexArray[i] = Convert.ToByte(arr[i]).ToString("x");
             }
             return string.Join(" ", hexArray);
         }

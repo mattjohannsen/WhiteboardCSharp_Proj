@@ -12,20 +12,21 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
-            Console.WriteLine($"       AlphabetIndex(Wow, does that work?) --> {AlphabetIndex("Wow, does that work?")}");
-            Console.WriteLine($"       AlphabetIndex(The river stole the gods.) --> {AlphabetIndex("The river stole the gods.")}");
-            Console.WriteLine($"       AlphabetIndex(We have a lot of rain in June.) --> {AlphabetIndex("We have a lot of rain in June.")}");
+            //Console.WriteLine($"       AlphabetIndex(Wow, does that work?) --> {AlphabetIndex("Wow, does that work?")}");
+            //Console.WriteLine($"       AlphabetIndex(The river stole the gods.) --> {AlphabetIndex("The river stole the gods.")}");
+            //Console.WriteLine($"       AlphabetIndex(We have a lot of rain in June.) --> {AlphabetIndex("We have a lot of rain in June.")}");
+            Console.WriteLine($"       AlphabetIndex(The#b00k$is*in^fr0nt#0f!the_taBle.) --> {AlphabetIndex("The#b00k$is*in^fr0nt#0f!the_taBle.")}");
         }
-        private string AlphabetIndex(string inputString)
+    public static string AlphabetIndex(string str)
+    {
+        List<char> stringAsList = Regex.Replace(str, "[^A-Za-z]", "").ToList();
+        List<int> solutionList = new List<int>();
+        for (int i = 0; i < stringAsList.Count; i++)
         {
-            List<char> stringAsList = Regex.Replace(inputString, "[^a-zA-Z0-9]", String.Empty).ToList();
-            List<int> solutionList = new List<int>();
-            for (int i = 0; i < stringAsList.Count; i++)
-            {
-                solutionList.Add(char.ToUpper(stringAsList[i]) - 64);
-            }
-            return string.Join(" ", solutionList);
+            solutionList.Add(char.ToUpper(stringAsList[i]) - 64);
         }
+        return string.Join(" ", solutionList);
+    }
         public void ChallengeDescription()
         {
             Console.WriteLine("       Challenge 40: Replace Letters With Position In Alphabet");

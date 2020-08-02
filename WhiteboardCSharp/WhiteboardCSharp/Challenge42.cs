@@ -16,10 +16,10 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       AlmostPalindrome(abcdaaa) --> {AlmostPalindrome("abcdaaa")}");
             Console.WriteLine($"       AlmostPalindrome(1234312) --> {AlmostPalindrome("1234312")}");
         }
-        bool AlmostPalindrome(string inputString)
+        public static bool AlmostPalindrome(string str)
         {
-            char[] stringAsArray = inputString.ToCharArray();
-            char[] forwardArray = inputString.ToCharArray();
+            char[] stringAsArray = str.ToCharArray();
+            char[] forwardArray = str.ToCharArray();
             Array.Reverse(stringAsArray);
             int differences = 0;
             for (int i = 0; i < forwardArray.Length; i++)

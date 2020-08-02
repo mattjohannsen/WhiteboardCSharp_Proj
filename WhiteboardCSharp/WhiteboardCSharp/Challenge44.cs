@@ -11,21 +11,17 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
-            Console.WriteLine($"       ReverseSubstrationDifference(832) --> {ReverseSubstrationDifference(832)}");
-            Console.WriteLine($"       ReverseSubstrationDifference(51) --> {ReverseSubstrationDifference(51)}");
-            Console.WriteLine($"       ReverseSubstrationDifference(7977) --> {ReverseSubstrationDifference(7977)}");
-            Console.WriteLine($"       ReverseSubstrationDifference(1) --> {ReverseSubstrationDifference(1)}");
-            Console.WriteLine($"       ReverseSubstrationDifference(665) --> {ReverseSubstrationDifference(665)}");
-            Console.WriteLine($"       ReverseSubstrationDifference(149) --> {ReverseSubstrationDifference(149)}");
+            Console.WriteLine($"       MysteryFunc(832) --> {MysteryFunc(832)}");
+            Console.WriteLine($"       MysteryFunc(51) --> {MysteryFunc(51)}");
+            Console.WriteLine($"       MysteryFunc(7977) --> {MysteryFunc(7977)}");
+            Console.WriteLine($"       MysteryFunc(1) --> {MysteryFunc(1)}");
+            Console.WriteLine($"       MysteryFunc(665) --> {MysteryFunc(665)}");
+            Console.WriteLine($"       MysteryFunc(149) --> {MysteryFunc(149)}");
         }
-        public int ReverseSubstrationDifference(int inputNumber)
+        public static int MysteryFunc(int num)
         {
-            return (inputNumber - ReverseInteger(inputNumber) >= 0) ? inputNumber - ReverseInteger(inputNumber) : 0;
-        }
-        public int ReverseInteger(int inputNumber)
-        {
-            return Int32.Parse(new string(inputNumber.ToString().Reverse().ToArray()));
-
+            int reverseSortNum = Int32.Parse(new string(num.ToString().OrderBy(x => x).ToArray()));
+            return (num - reverseSortNum >= 0) ? num - reverseSortNum : 0;
         }
         public void ChallengeDescription()
         {

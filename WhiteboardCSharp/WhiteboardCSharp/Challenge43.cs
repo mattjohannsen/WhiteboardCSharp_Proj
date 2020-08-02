@@ -15,15 +15,15 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       LongestCommonEnding(potent, tent) --> '{LongestCommonEnding("potent", "tent")}'");
             Console.WriteLine($"       LongestCommonEnding(skyscraper, carnivore) --> '{LongestCommonEnding("skyscraper", "carnivore")}'");
         }
-        public string LongestCommonEnding(string stringOne, string stringTwo)
+        public static string LongestCommonEnding(string str1, string str2)
         {
-            int shortestLength = Math.Min(stringOne.Length, stringTwo.Length);
+            int shortestLength = Math.Min(str1.Length, str2.Length);
             string stringToCheck = "";
             for (int i = 0; i <= shortestLength -1; i++)
             {
                 string oldstringToCheck = stringToCheck;
-                stringToCheck = stringOne[stringOne.Length - 1 - i].ToString() + stringToCheck;
-                bool stringDoesEndWith = stringTwo.EndsWith(stringToCheck, StringComparison.CurrentCulture);
+                stringToCheck = str1[str1.Length - 1 - i].ToString() + stringToCheck;
+                bool stringDoesEndWith = str2.EndsWith(stringToCheck, StringComparison.CurrentCulture);
                 if (!stringDoesEndWith)
                 {
                     return oldstringToCheck;

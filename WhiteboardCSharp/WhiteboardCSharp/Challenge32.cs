@@ -17,17 +17,17 @@ namespace WhiteboardCSharp
             //Console.WriteLine($"      PowerRanger(5, 31, 33) --> {PowerRanger(5, 31, 33)}");
             //Console.WriteLine($"      PowerRanger(4, 250, 1300) --> {PowerRanger(4, 250, 1300)}");
         }
-        public int PowerRanger(int n, int a, int b)
+        public static int PowerRanger(int n, int a, int b)
         {
             int powerRangerCount = 0;
-            int loopLength = Convert.ToInt32(NthRoot(b, n)) - Convert.ToInt32(NthRoot(a, n));
+            int loopLength = Convert.ToInt32(Challenge32.NthRoot(b, n)) - Convert.ToInt32(Challenge32.NthRoot(a, n));
             for (int i = 0; i <= loopLength; i++)
             {
                 powerRangerCount++;
             }
             return powerRangerCount;
         }
-        public double NthRoot(double A, int N)
+        static double NthRoot(double A, int N)
         {
             return Math.Pow(A, 1.0 / N);
         }

@@ -15,7 +15,7 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       NextPrime(24)--> {NextPrime(24)}");
             Console.WriteLine($"       NextPrime(11)--> {NextPrime(11)}");
         }
-        private int NextPrime(int inputNumber)
+        public static int NextPrime(int inputNumber)
         {
             bool lookingForNextPrime = true;
             if (IsPrime(inputNumber))
@@ -35,7 +35,7 @@ namespace WhiteboardCSharp
                 return inputNumber;
             }
         }
-        private bool IsPrime(int inputNumber)
+        static bool IsPrime(int inputNumber)
         {
             bool isNumberPrime = true;
             for (int i = 2; i < inputNumber/2; i++)

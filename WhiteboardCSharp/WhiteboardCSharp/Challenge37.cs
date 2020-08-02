@@ -15,10 +15,10 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       SockPairs('ABABC') --> {SockPairs("ABABC")}");
             Console.WriteLine($"       SockPairs('CABBACCC') --> {SockPairs("CABBACCC")}");
         }
-        private int SockPairs(string inputString)
+        public static int SockPairs(string str)
         {
             int sockPairs = 0;
-            List<char> stringAsList = inputString.ToList();
+            List<char> stringAsList = str.ToList();
             List<char> charactersInString = new List<char>();
             for (int i = 0; i < stringAsList.Count; i++)
             {

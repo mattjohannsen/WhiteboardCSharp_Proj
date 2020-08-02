@@ -11,33 +11,35 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
-            Console.WriteLine($"       Carlos swam masterfully. --> {IsSmooth("Carlos swam masterfully.")}");
-            Console.WriteLine($"       Marta appreciated deep perpendicular right trapezoids --> {IsSmooth("Marta appreciated deep perpendicular right trapezoids")}");
-            Console.WriteLine($"       Someone is outside the doorway --> {IsSmooth("Someone is outside the doorway")}");
-            Console.WriteLine($"       She eats super righteously --> {IsSmooth("She eats super righteously")}");
+            //Console.WriteLine($"       Carlos swam masterfully. --> {IsSmooth("Carlos swam masterfully.")}");
+            //Console.WriteLine($"       Marta appreciated deep perpendicular right trapezoids --> {IsSmooth("Marta appreciated deep perpendicular right trapezoids")}");
+            //Console.WriteLine($"       Someone is outside the doorway --> {IsSmooth("Someone is outside the doorway")}");
+            //Console.WriteLine($"       She eats super righteously --> {IsSmooth("She eats super righteously")}");
+            Console.WriteLine($"       Rita asks Sam mean numbered dilemmas --> {IsSmooth("Rita asks Sam mean numbered dilemmas")}");
+            
         }
-        bool IsSmooth(string inputString)
+        public static bool IsSmooth(string inputString)
         {
             bool sentenceIsSmooth = true;
-            char[][] sentenceArray = MakeJaggedArray(inputString);
+            char[][] sentenceArray = Challenge34.MakeJaggedArray(inputString);
             for (int i = 0; i < sentenceArray.Length-1; i++)
             {
-                if (GetLastCharacter(sentenceArray[i]) != GetFirstCharacter(sentenceArray[i + 1]))
+                if (char.ToLower(Challenge34.GetLastCharacter(sentenceArray[i])) != char.ToLower(Challenge34.GetFirstCharacter(sentenceArray[i + 1])))
                 {
                     return false;
                 }
             }
             return sentenceIsSmooth;
         }
-        char[][] MakeJaggedArray(string inputString)
+        static char[][] MakeJaggedArray(string inputString)
         {
             return inputString.Split(' ').Select(word => word.ToArray()).ToArray();
         }
-        char GetLastCharacter(char[] inputArray)
+        static char GetLastCharacter(char[] inputArray)
         {
             return inputArray[inputArray.Length - 1];
         }
-        char GetFirstCharacter(char[] inputArray)
+        static char GetFirstCharacter(char[] inputArray)
         {
             return inputArray[0];
         }

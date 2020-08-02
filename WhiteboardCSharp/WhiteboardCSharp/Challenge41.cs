@@ -16,28 +16,32 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       DuplicateCount(Indivisibilities) --> {DuplicateCount("Indivisibilities")}");
             Console.WriteLine($"       DuplicateCount(Aa) --> {DuplicateCount("Aa")}");
         }
-        public int DuplicateCount(string inputString)
+        public static int DuplicateCount(string str)
         {
-            int duplicateCount = 0;
-            char[] stringAsArray = inputString.ToCharArray();
-            List<char> alreadyCounted = new List<char>();
-            for (int i = 0; i < stringAsArray.Length; i++)
-            {
-                if (!alreadyCounted.Contains(stringAsArray[i]))
-                {
-                    int numberToAdd = HowManyOccurances(stringAsArray[i], stringAsArray);
-                    duplicateCount += numberToAdd;
-                    alreadyCounted.Add(stringAsArray[i]);
-                }
-                else
-                {
-                    continue;
-                }
-
-            }
-            return duplicateCount;
+            return str.ToLower().ToCharArray().GroupBy(c => c).Where(c => c.Count() >= 2).Count();
         }
-        public int HowManyOccurances(char inputChar, char[] inputArray)
+        //public static int DuplicateCount(string str)
+        //{
+        //    int duplicateCount = 0;
+        //    char[] stringAsArray = str.ToCharArray();
+        //    List<char> alreadyCounted = new List<char>();
+        //    for (int i = 0; i < stringAsArray.Length; i++)
+        //    {
+        //        if (!alreadyCounted.Contains(stringAsArray[i]))
+        //        {
+        //            int numberToAdd = HowManyOccurances(stringAsArray[i], stringAsArray);
+        //            duplicateCount += numberToAdd;
+        //            alreadyCounted.Add(stringAsArray[i]);
+        //        }
+        //        else
+        //        {
+        //            continue;
+        //        }
+
+        //    }
+        //    return duplicateCount;
+        //}
+        public static int HowManyOccurances(char inputChar, char[] inputArray)
         {
             int duplicateCount = 0;
             for (int i = 0; i < inputArray.Length; i++)

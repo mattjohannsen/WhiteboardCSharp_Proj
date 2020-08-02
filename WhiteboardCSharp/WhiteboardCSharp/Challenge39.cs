@@ -19,14 +19,14 @@ namespace WhiteboardCSharp
             Console.WriteLine($"       IsValidHexCode('#CD5C&C') --> {IsValidHexCode("#CD5C&C")}");
             Console.WriteLine($"       IsValidHexCode('CD5C5C') --> {IsValidHexCode("CD5C5C")}");
         }
-        private bool IsValidHexCode(string inputString)
+        public static bool IsValidHexCode(string str)
         {
-            char[] stringAsArray = inputString.ToCharArray();
-            if ((stringAsArray[0] != '#') || (stringAsArray.Length != 7))
+            char[] arr = str.ToCharArray();
+            if ((arr[0] != '#') || (arr.Length != 7))
             {
                 return false;
             }
-            return inputString.All("#0123456789abcdefABCDEF".Contains);
+            return str.All("#0123456789abcdefABCDEF".Contains);
         }
         private void ChallengeDescription()
         {
