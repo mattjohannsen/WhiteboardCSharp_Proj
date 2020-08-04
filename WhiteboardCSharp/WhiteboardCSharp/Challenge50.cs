@@ -11,7 +11,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 50");
+            ChallengeDescription();
             Console.WriteLine(DoesRhyme("Sam I am!", "Green eggs and ham."));
             Console.WriteLine(DoesRhyme("Sam I am!", "Green eggs and HAM."));
             Console.WriteLine(DoesRhyme("You are off to the races", "a splendid day."));
@@ -19,14 +19,8 @@ namespace WhiteboardCSharp
         }
         public static bool DoesRhyme(string str1, string str2)
         {
-            string[] sentenceOne = str1.Split(' ');
-            string[] sentenceTwo = str2.Split(' ');
-            string lastWordOne = sentenceOne[sentenceOne.Length - 1].ToLower();
-            string lastWordTwo = sentenceTwo[sentenceTwo.Length - 1].ToLower();
-            lastWordOne = Regex.Replace(lastWordOne, "[^a-zA-Z]", "");
-            lastWordTwo = Regex.Replace(lastWordTwo, "[^a-zA-Z]", "");
-            char[] arrayOne = lastWordOne.ToCharArray();
-            char[] arrayTwo = lastWordTwo.ToCharArray();
+            char[] arrayOne = Regex.Replace(str1.Split(' ').Last().ToLower(), "[^a-zA-Z]", "").ToCharArray();
+            char[] arrayTwo = Regex.Replace(str2.Split(' ').Last().ToLower(), "[^a-zA-Z]", "").ToCharArray();
             Array.Reverse(arrayOne);
             Array.Reverse(arrayTwo);
             string vowels = "aeiou";
@@ -46,6 +40,21 @@ namespace WhiteboardCSharp
                 }
             }
             return true;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 50: Rhyme Time");
+            Console.WriteLine("       Create a function that returns true if two lines rhyme and false otherwise.");
+            Console.WriteLine("       For the purposes of this exercise, two lines rhyme if the last word from");
+            Console.WriteLine("       each sentence contains the same vowels.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       DoesRhyme(Sam I am!, Green eggs and ham.) --> true");
+            Console.WriteLine("       DoesRhyme(Sam I am!, Green eggs and HAM.) --> true");
+            Console.WriteLine("       Capitalization and punctuation should not matter.");
+            Console.WriteLine("       DoesRhyme(You are off to the races, a splendid day.) --> false");
+            Console.WriteLine("       DoesRhyme(and frequently do? , you gotta move.) -->false");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Case insensitive.\n");
         }
     }
 }
