@@ -22,7 +22,7 @@ namespace WhiteboardCSharp
             ShowAnswer(ArrayOfMultiples(num, length));
         }
 
-        public int[] ArrayOfMultiples(int num, int length)
+        public static int[] ArrayOfMultiples(int num, int length)
         {
             List<int> solutionList = new List<int>();
             for (int i = 0; i < length; i++)
