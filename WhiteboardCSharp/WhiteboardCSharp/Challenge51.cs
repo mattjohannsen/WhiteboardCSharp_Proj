@@ -10,43 +10,67 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 51");
-            //Console.WriteLine(CommentsCorrect("//////"));
-            
-            Console.WriteLine(CommentsCorrect("///*/**/"));
+            ChallengeDescription();
+            Console.WriteLine($"       CommentsCorrect(//////) ==> {CommentsCorrect("//////")}");
+            Console.WriteLine($"       CommentsCorrect(/**//**////**/) ==> {CommentsCorrect("/**//**////**/")}");
+            Console.WriteLine($"       CommentsCorrect(///*/**/) ==> {CommentsCorrect("///*/**/")}");
+            Console.WriteLine($"       CommentsCorrect(/////) ==> {CommentsCorrect("/////")}");
         }
         public static bool CommentsCorrect(string str)
         {
-            char[] arr = str.ToCharArray();
-            if (arr.Length % 2 != 0)
-            {
-                return false;
-            }
-            for (int i = 0; i < arr.Length-2; i++)
-            {
-                if (arr[i] == '/' && arr[i+1] == '/')
-                {
-                    i ++;
-                    continue;
-                }
-                else if (arr[i] == '/' && arr[i + 1] == '*')
-                {
-                    if (i+2> arr.Length)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        if (arr[i+2] !='*' && arr[i + 3] != '/')
-                        {
-                            return false;
-                        }
-                        i++;
-                        continue;
-                    }
-                }
-            }
-            return true;
+            return str.Replace("/**/", "").Replace("//", "") == "";
+            //char[] arr = str.ToCharArray();
+            //if (arr.Length % 2 != 0)
+            ////{
+            //    return false;
+            //}
+            //for (int i = 0; i < arr.Length-2; i++)
+            //{
+            //    if (arr[i] == '/' && arr[i+1] == '/')
+            //    {
+            //        i ++;
+            //        continue;
+            //    }
+            //    else if (arr[i] == '/' && arr[i + 1] == '*')
+            //    {
+            //        if (i+2> arr.Length)
+            //        {
+            //            return false;
+            //        }
+            //        else
+            //        {
+            //            if (arr[i+2] !='*' && arr[i + 3] != '/')
+            //            {
+            //                return false;
+            //            }
+            //            i++;
+            //            continue;
+            //        }
+            //    }
+            //}
+            //return true;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 51: Valid JavaScript Comments");
+            Console.WriteLine("       In JavaScript, there are two types of comments:");
+            Console.WriteLine("       Single-line comments start with //");
+            Console.WriteLine("       Multi-line or inline comments start with /* and end with */");
+            Console.WriteLine("       The input will be a sequence of //, /* and */.");
+            Console.WriteLine("       Every /* must have a */ that immediately follows it.");
+            Console.WriteLine("       To add, there can be no single-line comments in between multi-line");
+            Console.WriteLine("       comments in between the /* and */.");
+            Console.WriteLine("       Create a function that returns true if comments are properly formatted, and false otherwise.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       CommentsCorrect(//////) --> true");
+            Console.WriteLine("       3 single-line comments: ['//', '//', '//']");
+            Console.WriteLine("       CommentsCorrect(/**//**////**/) --> true");
+            Console.WriteLine("       3 multi-line comments + 1 single-line comment:");
+            Console.WriteLine("       ['/*', '*/', '/*', '*/', '//', '/*', '*/']");
+            Console.WriteLine("       CommentsCorrect(///*/**/) --> false");
+            Console.WriteLine("       The first /* is missing a */");
+            Console.WriteLine("       CommentsCorrect(/////) --> false");
+            Console.WriteLine("       The 5th / is single, not a double //\n");
         }
     }
 }
