@@ -20,35 +20,8 @@ namespace WhiteboardCSharp
         }
         public static string TextToNumberBinary(string str)
         {
-            str = Regex.Replace(str, "zero", "0", RegexOptions.IgnoreCase);
-            str = Regex.Replace(str, "one", "1", RegexOptions.IgnoreCase);
-            str = Regex.Replace(str, "[^01]", "");
+            str = Regex.Replace(Regex.Replace(Regex.Replace(str, "one", "1", RegexOptions.IgnoreCase), "zero", "0", RegexOptions.IgnoreCase), "[^01]", "");
             return str.Substring(0, str.Length - (str.Length % 8));
-
-            //string[] arr = str.ToLower().Split(' ');
-            //List<char> solutionList = new List<char>();
-            //if (arr.Length < 8)
-            //{
-            //    return "";
-            //}
-            //for (int i = 0; i < arr.Length; i++)
-            //{
-            //    if (arr[i] == "zero")
-            //    {
-            //        solutionList.Add('0');
-            //    }
-            //    else if (arr[i] == "one")
-            //    {
-            //        solutionList.Add('1');
-            //    }
-            //}
-            //int loopLength = solutionList.Count / 8;
-            //List<char> returnList = new List<char>();
-            //for (int i = 0; i < loopLength*8; i++)
-            //{
-            //    returnList.Add(solutionList[i]);
-            //}
-            //return string.Join("", returnList.ToArray());
         }
         public void ChallengeDescription()
         {
