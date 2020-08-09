@@ -10,12 +10,12 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 52");
-            Console.WriteLine($"|{TextToNumberBinary("zero one zero one zero one zero one")}|");
-            Console.WriteLine($"|{TextToNumberBinary("Zero one zero ONE zero one zero one")}|");
-            Console.WriteLine($"|{TextToNumberBinary("zero one zero one zero one zero one one two")}|");
-            Console.WriteLine($"|{TextToNumberBinary("zero one zero one zero one zero three")}|");
-            Console.WriteLine($"|{TextToNumberBinary("one one")}|");
+            ChallengeDescription();
+            Console.WriteLine($"       '{TextToNumberBinary("zero one zero one zero one zero one")}'");
+            Console.WriteLine($"       '{TextToNumberBinary("Zero one zero ONE zero one zero one")}'");
+            Console.WriteLine($"       '{TextToNumberBinary("zero one zero one zero one zero one one two")}'");
+            Console.WriteLine($"       '{TextToNumberBinary("zero one zero one zero one zero three")}'");
+            Console.WriteLine($"       '{TextToNumberBinary("one one")}'");
         }
         public static string TextToNumberBinary(string str)
         {
@@ -43,6 +43,23 @@ namespace WhiteboardCSharp
                 returnList.Add(solutionList[i]);
             }
             return string.Join("", returnList.ToArray());
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Convert 'Zero' and 'One' to '1' and '0'");
+            Console.WriteLine("       Create a function that takes a string as an argument.The function must return a string");
+            Console.WriteLine("       containing 1s and 0s based on the string argument's words. If any word in the argument");
+            Console.WriteLine("       is not equal to 'zero' or 'one' (case insensitive), you should ignore it.");
+            Console.WriteLine("       The returned string's length should be a multiple of 8, if the string is not a multiple ");
+            Console.WriteLine("       of 8, if the string is not a multiple of 8 you should remove the numbers in excess.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       TextToNumberBinary('zero one zero one zero one zero one') --> '01010101'");
+            Console.WriteLine("       TextToNumberBinary('Zero one zero ONE zero one zero one') --> '01010101'");
+            Console.WriteLine("       TextToNumberBinary('zero one zero one zero one zero one one two') --> '01010101'");
+            Console.WriteLine("       TextToNumberBinary('zero one zero one zero one zero three') --> ''");
+            Console.WriteLine("       TextToNumberBinary('one one') --> ''");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       You must return the result as a string.\n");
         }
     }
 }
