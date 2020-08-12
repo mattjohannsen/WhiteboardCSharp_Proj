@@ -11,7 +11,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 53");
+            ChallengeDescription();
             Console.WriteLine(Trouble(451999277, 41177722899)); // true
             Console.WriteLine(Trouble(1222345, 12345)); // false
             Console.WriteLine(Trouble(666789, 12345667)); // true
@@ -53,6 +53,18 @@ namespace WhiteboardCSharp
             //var triplesArray = dictOne.Where(pair => pair.Value >= 3).Select(pair => pair.Key).ToArray();
             //var doublesArray = dictTwo.Where(pair => pair.Value >= 2).Select(pair => pair.Key).ToArray();
             //return triplesArray.Intersect(doublesArray).Any();
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 53: Triple + Double = So Much Trouble");
+            Console.WriteLine("       Create a function that takes two integers and returns true if a number repeats three times");
+            Console.WriteLine("       in a row at any place in num1 AND that same number repeats two times in a row in num2.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       Trouble(451999277, 41177722899) --> true");
+            Console.WriteLine("       Trouble(1222345, 12345) --> false");
+            Console.WriteLine("       Trouble(666789, 12345667) --> true");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       You can expect every test case to contain exactly two integers.\n");
         }
     }
 }
