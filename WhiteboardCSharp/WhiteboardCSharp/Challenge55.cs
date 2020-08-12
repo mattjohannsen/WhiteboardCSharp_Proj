@@ -21,13 +21,31 @@ namespace WhiteboardCSharp
         {
             char[] arr = word.ToCharArray();
             Array.Reverse(arr);
-            string returnString = new string(arr);
-            string newString = returnString.Replace("a", "0").Replace("e", "1").Replace("i", "2").Replace("o", "2").Replace("i", "3");
-            newString += "aca";
-            return newString;
-
+            return new string(arr).Replace("a", "0").Replace("e", "1").Replace("i", "2").Replace("o", "2").Replace("u", "3") + "aca";
         }
-
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 55: The Karaca's Encryption Algorithm");
+            Console.WriteLine("       Make a function that encrypts a given input with these steps:");
+            Console.WriteLine("       Input: 'apple'");
+            Console.WriteLine("       Step 1: Reverse the input: 'elppa'");
+            Console.WriteLine("       Step 2: Replace all vowels using the following chart:");
+            Console.WriteLine("       a => 0");
+            Console.WriteLine("       e => 1");
+            Console.WriteLine("       i => 2");
+            Console.WriteLine("       o => 2");
+            Console.WriteLine("       u => 3");
+            Console.WriteLine("       '1lpp0'");
+            Console.WriteLine("       Step 3: Add 'aca' to the end of the word: '1lpp0aca'");
+            Console.WriteLine("       Output: '1lpp0aca'");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       Encrypt(banana) => 0n0n0baca");
+            Console.WriteLine("       Encrypt(karaca) => 0c0r0kaca");
+            Console.WriteLine("       Encrypt(burak) => k0r3baca");
+            Console.WriteLine("       Encrypt(alpaca) => 0c0pl0aca");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       All inputs are strings, no uppercases and all output must be strings.\n");
+        }
     }
 }
 // Steps
