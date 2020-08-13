@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 56");
+            ChallengeDescription();
             Console.WriteLine(CorrectSigns("3 < 7 < 11"));
             Console.WriteLine(CorrectSigns("13 > 44 > 33 > 1"));
             Console.WriteLine(CorrectSigns("1 < 2 < 6 < 9 > 3"));
@@ -31,6 +31,15 @@ namespace WhiteboardCSharp
                 }
             }
             return true;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 56: Correct Inequality Signs");
+            Console.WriteLine("       Create a function that returns true if a given inequality expression is correct and false otherwise.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       CorrectSigns(3 < 7 < 11) --> true");
+            Console.WriteLine("       CorrectSigns(13 > 44 > 33 > 1) --> false");
+            Console.WriteLine("       CorrectSigns(1 < 2 < 6 < 9 > 3) --> true\n");
         }
     }
 }
