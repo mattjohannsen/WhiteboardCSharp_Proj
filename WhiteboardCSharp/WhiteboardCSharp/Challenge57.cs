@@ -10,12 +10,11 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 57");
-            Console.WriteLine(PossiblePalindrome("acabbaa"));
-            Console.WriteLine(PossiblePalindrome("aacbdbc"));
-            Console.WriteLine(PossiblePalindrome("aacbdb"));
-            Console.WriteLine(PossiblePalindrome("abacbb"));
-
+            ChallengeDescription();
+            Console.WriteLine($"       PossiblePalindrome(acabbaa) --> {PossiblePalindrome("acabbaa")}");
+            Console.WriteLine($"       PossiblePalindrome(aacbdbc) --> {PossiblePalindrome("aacbdbc")}");
+            Console.WriteLine($"       PossiblePalindrome(aacbdb) --> {PossiblePalindrome("aacbdb")}");
+            Console.WriteLine($"       PossiblePalindrome(abacbb) --> {PossiblePalindrome("abacbb")}");
         }
         public static bool PossiblePalindrome(string str)
         {
@@ -42,6 +41,18 @@ namespace WhiteboardCSharp
                 }
             }
             return oddCount < 2;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 57: Possible Palindrome");
+            Console.WriteLine("       Create a function that determines whether it is possible to build a palindrome from the characters in a string.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       PossiblePalindrome(acabbaa) --> true");
+            Console.WriteLine("       Can make the following palindrome: aabcbaa");
+            Console.WriteLine("       PossiblePalindrome(aacbdbc) --> true");
+            Console.WriteLine("       Can make the following palindrome: abcdcba");
+            Console.WriteLine("       PossiblePalindrome(aacbdb) --> false");
+            Console.WriteLine("       PossiblePalindrome(abacbb) --> false\n");
         }
     }
 }
