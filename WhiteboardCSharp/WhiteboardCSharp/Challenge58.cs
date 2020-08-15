@@ -42,6 +42,20 @@ namespace WhiteboardCSharp
             }
             return new string(arr);
         }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 53: Mangle the String");
+            Console.WriteLine("       Create a function that takes a string and replaces every letter with the letter  ");
+            Console.WriteLine("       following it in the alphabet(c becomes d, z becomes a, b becomes c, etc).");
+            Console.WriteLine("       Then capitalize every vowel(a, e, i, o, u) and return the new modified string.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       Mangle(Fun times!) --> GvO Ujnft!");
+            Console.WriteLine("       Mangle(The quick brown fox.) --> UIf rvjdl cspxO gpy.");
+            Console.WriteLine("       Mangle(Omega) --> Pnfhb");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       If a letter is already uppercase, return it as uppercase(regardless of being a vowel).");
+            Console.WriteLine("       y is not considered a vowel.\n");
+        }
     }
 }
 //Mangle the String
