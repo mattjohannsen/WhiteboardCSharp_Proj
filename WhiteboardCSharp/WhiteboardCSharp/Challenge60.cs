@@ -10,23 +10,38 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 60");
+            ChallengeDescription();
             Console.WriteLine($"       MinTurns(4089, 5672) ==> {MinTurns("4089", "5672")}");
             Console.WriteLine($"       MinTurns(1111, 1100) ==> {MinTurns("1111", "1100")}");
             Console.WriteLine($"       MinTurns(2391, 4984) ==> {MinTurns("2391", "4984")}");
         }
         public static int MinTurns(string current, string target)
         {
-            int[] solutionArray = new int[4];
-            for (int i = 0; i < solutionArray.Length; i++)
+            int total = 0;
+            for (int i = 0; i < 4; i++)
             {
-                int position1 = Convert.ToInt32(current[i]);
-                int position2 = Convert.ToInt32(target[i]);
-                int turnUp = (position1 < position2) ? position2 - position1 : 10 - position1 + position2;
-                int turnDown = (position1 > position2) ? position1 - position2 : 10 - position2 + position1;
-                solutionArray[i] = (position1 == position2) ? 0 : Math.Min(turnUp, turnDown);
+                int largest = Math.Max(current[i], target[i]);
+                int smallest = Math.Min(current[i], target[i]);
+                total += Math.Min(largest-smallest, Math.Abs(largest - (smallest + 10)));
             }
-            return solutionArray.Sum();
+            return total;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 60: Briefcase Lock");
+            Console.WriteLine("       A briefcase has a 4-digit rolling-lock. Each digit is a number from 0-9 that can be");
+            Console.WriteLine("       rolled either forwards or backwards.");
+            Console.WriteLine("       Create a function that returns the smallest number of turns it takes to transform the");
+            Console.WriteLine("       lock from the current combination to the target combination. One turn is equivalent");
+            Console.WriteLine("       to rolling a number forwards or backwards by one.");
+            Console.WriteLine("       To illustrate:");
+            Console.WriteLine("       current-lock: 4089");
+            Console.WriteLine("       target-lock: 5672");
+            Console.WriteLine("       What is the minimum number of turns it takes to transform 4089 to 5672?");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       MinTurns(4089, 5672) --> 9");
+            Console.WriteLine("       MinTurns(1111, 1100) --> 2");
+            Console.WriteLine("       MinTurns(2391, 4984) --> 10\n");
         }
     }
 }
