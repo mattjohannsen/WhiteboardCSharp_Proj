@@ -12,55 +12,21 @@ namespace WhiteboardCSharp
         {
             Console.WriteLine("       Challenge 60");
             Console.WriteLine($"       MinTurns(4089, 5672) ==> {MinTurns("4089", "5672")}");
+            Console.WriteLine($"       MinTurns(1111, 1100) ==> {MinTurns("1111", "1100")}");
+            Console.WriteLine($"       MinTurns(2391, 4984) ==> {MinTurns("2391", "4984")}");
         }
         public static int MinTurns(string current, string target)
         {
-            int[] currentArray = current.ToCharArray().Select(c => Convert.ToInt32(c.ToString())).ToArray();
-            int[] targetArray = target.ToCharArray().Select(c => Convert.ToInt32(c.ToString())).ToArray();
             int[] solutionArray = new int[4];
-
             for (int i = 0; i < solutionArray.Length; i++)
             {
-                int turnUp = TurnUp(Convert.ToInt32(current[i]), Convert.ToInt32(target[i]));
-                int turnDown = TurnDown(Convert.ToInt32(current[i]), Convert.ToInt32(target[i]));
-                int shortestSolution = Math.Min(turnUp, turnDown);
-                solutionArray[i] = shortestSolution;
+                int position1 = Convert.ToInt32(current[i]);
+                int position2 = Convert.ToInt32(target[i]);
+                int turnUp = (position1 < position2) ? position2 - position1 : 10 - position1 + position2;
+                int turnDown = (position1 > position2) ? position1 - position2 : 10 - position2 + position1;
+                solutionArray[i] = (position1 == position2) ? 0 : Math.Min(turnUp, turnDown);
             }
-
             return solutionArray.Sum();
-        }
-        public static int TurnUp(int current, int target)
-        {
-            int turnUpNumber = 0;
-            if (current == target)
-            {
-                return turnUpNumber;
-            }
-            else if (current < target)
-            {
-                return target - current;
-            }
-            else // (current > target) // 8 ... 2
-            {
-                return 10 - current + target;
-            }
-        }
-        public static int TurnDown(int current, int target)
-        {
-            int turnDownNumber = 0;
-            if (current == target)
-            {
-                return turnDownNumber;
-            }
-            else if (current > target)
-            {
-                return current - target;
-            }
-            else // (current < target)  // 2 ... 8
-            {
-                return 10 - target + current;
-            }
-
         }
     }
 }
