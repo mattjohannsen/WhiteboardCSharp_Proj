@@ -18,6 +18,7 @@ namespace WhiteboardCSharp
         }
         public static string ConvertTime(string time)
         {
+            string returnTime;
             if (time.Contains("m"))
             {
                 string[] arr = time.Split(' ');
@@ -25,36 +26,16 @@ namespace WhiteboardCSharp
                 string[] hoursMinutes = arr[0].Split(':');
                 int hours = Convert.ToInt32(hoursMinutes[0]);
                 string minutes = hoursMinutes[1];
-                if (amPm == "am")
-                {
-                    if (hours != 12)
-                    {
-                        return (hours + 12) + ":" + minutes;
-                    }
-                    else
-                    {
-                        return "0" + ":" + minutes;
-                    }
-                }
-                else
-                {
-                    return (hours + 12) + ":" + minutes;
-                }
+                returnTime = (amPm == "am") ? hours.ToString().Replace("12", "0") + ":" + minutes : (hours + 12) + ":" + minutes;
             }
             else
             {
                 string[] hoursMinutes = time.Split(':');
                 int hours = Convert.ToInt32(hoursMinutes[0]);
                 string minutes = hoursMinutes[1];
-                if (hours > 12)
-                {
-                    return (hours - 12) + ":" + minutes + " pm";
-                }
-                else
-                {
-                    return hours + ":" + minutes + " am";
-                }
+                returnTime = (hours > 12) ? (hours - 12) + ":" + minutes + " pm" : hours + ":" + minutes + " am";
             }
+            return returnTime;
         }
     }
 }
