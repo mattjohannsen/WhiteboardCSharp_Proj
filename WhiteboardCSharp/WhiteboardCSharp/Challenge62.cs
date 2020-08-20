@@ -18,33 +18,21 @@ namespace WhiteboardCSharp
         }
         public static string Simplify(string str)
         {
-            string[] arr = str.Split('/');
-            int[] intArray = new int[2];
-            for (int i = 0; i < arr.Length; i++)
-            {
-                intArray[i] = Int32.Parse(arr[i]);
-            }
+            int[] arr = str.Split('/').Select(o => Convert.ToInt32(o)).ToArray();
             bool fractionIsNotSimplified = true;
             do
             {
-                for (int j = 2; j <= intArray[0]; j++)
+                for (int j = 2; j <= arr[0]; j++)
                 {
-                    if (intArray[0] % j == 0 && intArray[1] % j == 0)
+                    if (arr[0] % j == 0 && arr[1] % j == 0)
                     {
-                        intArray[0] = intArray[0] / j;
-                        intArray[1] = intArray[1] / j;
+                        arr[0] = arr[0] / j;
+                        arr[1] = arr[1] / j;
                     }
                 }
                 fractionIsNotSimplified = false;
             } while (fractionIsNotSimplified);
-            if (intArray[0] % intArray[1] == 0)
-            {
-                return (intArray[0] / intArray[1]).ToString();
-            }
-            else
-            {
-                return String.Join("/", new List<int>(intArray).ConvertAll(i => i.ToString()).ToArray());
-            }
+            return (arr[0] % arr[1] == 0) ? (arr[0] / arr[1]).ToString() : String.Join("/", new List<int>(arr).ConvertAll(i => i.ToString()).ToArray());
         }
         public void ChallengeDescription()
         {
