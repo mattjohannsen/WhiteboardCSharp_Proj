@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 63");
+            ChallengeDescription();
             Console.WriteLine($"       BreakPoint(159780) ==> {BreakPoint(159780)}");
             Console.WriteLine($"       BreakPoint(112) ==> {BreakPoint(112)}");
             Console.WriteLine($"       BreakPoint(1034) ==> {BreakPoint(1034)}");
@@ -20,29 +20,36 @@ namespace WhiteboardCSharp
         public static bool BreakPoint(int num)
         {
             int[] arr = num.ToString().Select(t => int.Parse(t.ToString())).ToArray();
+            int leftSum = 0;
+            int rightSum = arr.Sum();
             for (int i = 0; i < arr.Length; i++)
             {
-                List<int> leftSum = new List<int>();
-                List<int> rightSum = new List<int>();
-                for (int j = 0; j < arr.Length; j++)
-                {
-                    if (j <= i)
-                    {
-                        leftSum.Add(arr[j]);
-                    }
-                    else
-                    {
-                        rightSum.Add(arr[j]);
-                    }
-                }
-                int leftCheck = leftSum.Sum();
-                int rightCheck = rightSum.Sum();
-                if (leftCheck == rightCheck)
+                leftSum += arr[i];
+                rightSum -= arr[i];
+                if (leftSum == rightSum)
                 {
                     return true;
                 }
             }
             return false;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 63: Break Point");
+            Console.WriteLine("       A number has a breakpoint if it can be split in a way where the digits on the left side and ");
+            Console.WriteLine("       the digits on the right side sum to the same number."); 
+            Console.WriteLine("       For instance, the number 35190 can be sliced between the digits 351 and 90, since 3 + 5 + 1 = 9");
+            Console.WriteLine("       and 9 + 0 = 9.");
+            Console.WriteLine("       On the other hand, the number 555 does not have a breakpoint(you must split between digits).");
+            Console.WriteLine("       Create a function that returns true if a number has a breakpoint, and false otherwise.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       BreakPoint(159780) --> true");
+            Console.WriteLine("       BreakPoint(112) --> true");
+            Console.WriteLine("       BreakPoint(1034) --> true");
+            Console.WriteLine("       BreakPoint(10) --> false");
+            Console.WriteLine("       BreakPoint(343)  --> false");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Read each digit as only one number.\n");
         }
     }
 }
@@ -58,7 +65,6 @@ namespace WhiteboardCSharp
 //BreakPoint(343)  --> false
 //Notes
 //Read each digit as only one number.
-//Check the resources tab for a hint.
 // Steps
 // int leftsum;
 // int rightsum;
