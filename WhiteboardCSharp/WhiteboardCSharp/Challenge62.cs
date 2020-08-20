@@ -10,7 +10,11 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 61");
+            ChallengeDescription();
+            Console.WriteLine($"       Simplify(4 / 6)-- > 2 / 3 ==> {Simplify("4 / 6")}");
+            Console.WriteLine($"       Simplify(10 / 11)-- > 10 / 11 ==> {Simplify("10 /11")}");
+            Console.WriteLine($"       Simplify(100 / 400)-- > 1 / 4 ==> {Simplify("100 / 400")}");
+            Console.WriteLine($"       Simplify(8 / 4)-- > 2 ==> {Simplify("8 / 4")}");
         }
         public static string Simplify(string str)
         {
@@ -42,6 +46,20 @@ namespace WhiteboardCSharp
                 return String.Join("/", new List<int>(intArray).ConvertAll(i => i.ToString()).ToArray());
             }
         }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 62: Simplified Fractions");
+            Console.WriteLine("       Create a function that returns the simplified version of a fraction.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       Simplify(4 / 6) --> 2 / 3");
+            Console.WriteLine("       Simplify(10 / 11) --> 10 / 11");
+            Console.WriteLine("       Simplify(100 / 400) --> 1 / 4");
+            Console.WriteLine("       Simplify(8 / 4) --> 2");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       A fraction is simplified if there are no common factors(except 1) between the numerator and ");
+            Console.WriteLine("       the denominator.For example, 4/6 is not simplified, since 4 and 6 both share 2 as a factor.");
+            Console.WriteLine("       If improper fractions can be transformed into integers, do so in your code (see example #4).\n");
+        }
     }
 }
 //Simplified Fractions
@@ -53,5 +71,6 @@ namespace WhiteboardCSharp
 //Simplify("100/400") --> "1/4"
 //Simplify("8/4") --> "2"
 //Notes
-//A fraction is simplified if there are no common factors(except 1) between the numerator and the denominator.For example, 4/6 is not simplified, since 4 and 6 both share 2 as a factor.
+//A fraction is simplified if there are no common factors(except 1) between the numerator and 
+//the denominator.For example, 4/6 is not simplified, since 4 and 6 both share 2 as a factor.
 //If improper fractions can be transformed into integers, do so in your code (see example #4).
