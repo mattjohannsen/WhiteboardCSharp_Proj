@@ -21,45 +21,24 @@ namespace WhiteboardCSharp
         }
         public static bool Overlap(string str1, string str2)
         {
-            int lengthCheck = Math.Min(str1.Length, str2.Length);
-            string str1End = GetStringEnd(lengthCheck, str1);
-            string str2End = GetStringEnd(lengthCheck, str2);
-            if (str1End.Contains("*") || (str2End.Contains("*")))
+            char[] arr1 = str1.Reverse().ToArray();
+            char[] arr2 = str2.Reverse().ToArray();
+            int loopLength = Math.Min(str1.Length, str2.Length);
+            for (int i = 0; i < loopLength; i++)
             {
-                char[] arr1 = str1End.ToCharArray();
-                char[] arr2 = str2End.ToCharArray();
-                char[] string1Array = str1.ToCharArray();
-                char[] string2Array = str2.ToCharArray();
-                for (int i = 0; i < arr2.Length; i++)
+                if (arr1[i] == '*' || arr2[i] == '*')
                 {
-                    if (arr1[i] == '*')
+                    continue;
+                }
+                else
+                {
+                    if (char.ToUpper(arr1[i]) != char.ToUpper(arr2[i]))
                     {
-                        string2Array[string2Array.Length - arr1.Length + i] = '*';
-                            arr2[i] = '*';
-                        }
-                    else if (arr2[i] == '*')
-                    {
-                        string1Array[string1Array.Length - arr2.Length + i] = '*';
-                            arr1[i] = '*';
+                        return false;
                     }
                 }
-                str1End = new string(arr1);
-                str2End = new string(arr2);
-                str1 = new string(string1Array);
-                str2 = new string(string2Array);
             }
-            return (str1.ToUpper().EndsWith(str2End.ToUpper()) || str2.ToUpper().EndsWith(str1End.ToUpper()));
-        }
-        public static string GetStringEnd(int strLength, string str)
-        {
-            char[] arr = str.ToCharArray();
-            Array.Reverse(arr);
-            string returnString = "";
-            for (int j = 0; j < strLength; j++)
-            {
-                returnString += arr[j];
-            }
-            return new string(returnString.Reverse().ToArray());
+            return true;
         }
     }
 }
