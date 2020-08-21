@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 64");
+            ChallengeDescription();
             Console.WriteLine($"       Overlap(ABC, Ican'tsingmyABC) ==> {Overlap("ABC", "Ican'tsingmyABC")}");
             Console.WriteLine($"       Overlap(abc, Ican'tsingmyABC) ==> {Overlap("abc", "Ican'tsingmyABC")}");
             Console.WriteLine($"       Overlap(Ican'tsingmyABC, abc) ==> {Overlap("Ican'tsingmyABC", "abc")}");
@@ -23,22 +23,35 @@ namespace WhiteboardCSharp
         {
             char[] arr1 = str1.Reverse().ToArray();
             char[] arr2 = str2.Reverse().ToArray();
-            int loopLength = Math.Min(str1.Length, str2.Length);
-            for (int i = 0; i < loopLength; i++)
+            for (int i = 0; i < Math.Min(arr1.Length, arr2.Length); i++)
             {
-                if (arr1[i] == '*' || arr2[i] == '*')
+                if (arr1[i] == '*' || arr2[i] == '*' || char.ToUpper(arr1[i]) == char.ToUpper(arr2[i]))
                 {
                     continue;
                 }
                 else
                 {
-                    if (char.ToUpper(arr1[i]) != char.ToUpper(arr2[i]))
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
             return true;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 64: Is One String in the Other?");
+            Console.WriteLine("       Create a function that takes two strings and returns true if either of the ");
+            Console.WriteLine("       strings appears at the very end of the other string. Return false otherwise.");
+            Console.WriteLine("       The character * is a wildcard, so it can take the place of any character.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       Overlap(ABC, Ican'tsingmyABC) --> true");
+            Console.WriteLine("       Overlap(abc, Ican'tsingmyABC) --> true");
+            Console.WriteLine("       Overlap(Ican'tsingmyABC, abc) --> true");
+            Console.WriteLine("       Overlap(hello world, hello) --> false");
+            Console.WriteLine("       Overlap(+=, this should work too +=) --> true");
+            Console.WriteLine("       Overlap(hey, *********) --> true");
+            Console.WriteLine("       Overlap(a*c, *b*) --> true");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Your function should NOT be case sensitive(see example #2).\n");
         }
     }
 }
