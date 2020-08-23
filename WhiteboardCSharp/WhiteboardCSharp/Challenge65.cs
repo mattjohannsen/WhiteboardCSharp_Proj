@@ -10,14 +10,12 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge65");
+            ChallengeDescription();
             Console.WriteLine(EncodeMorse("EDABBIT CHALLENGE"));
             //Console.WriteLine();
         }
         public static string EncodeMorse(string str)
         {
-            str = str.ToLower();
-            char[] arr = str.ToCharArray();
             Dictionary<char, string> codeValues = new Dictionary<char, string>()
             {
                 {'a', ".-"},
@@ -61,37 +59,28 @@ namespace WhiteboardCSharp
                 {'\'', ".----."},
                 {'.', ".-.-.-"},
                 {'?', "..--.."},
-                {'!', "-.-.--"}
+                {'!', "-.-.--"},
+                {' ', " "},
             };
-            string morseCode = "";
-            for (int i = 0; i < arr.Length; i++)
+            List<string> morseCode = new List<string>();
+            foreach (var item in str.ToLower())
             {
-                string result;
-                if (i == arr.Length -1)
-                {
-                    if (codeValues.TryGetValue(arr[i], out result))
-                    {
-                        morseCode += result;
-                    }
-                    else if (Char.IsWhiteSpace(arr[i]))
-                    {
-                        morseCode += arr[i];
-                    }
-                }
-                else
-                {
-                    if (codeValues.TryGetValue(arr[i], out result))
-                    {
-                        morseCode += result + " ";
-                    }
-                    else if (Char.IsWhiteSpace(arr[i]))
-                    {
-                        morseCode += arr[i] + " ";
-                    }
-                }
-
+                morseCode.Add(codeValues[item]);
             }
-            return morseCode.ToString();
+            return string.Join(" ", morseCode);
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 65: Encode Morse");
+            Console.WriteLine("       Create a function that takes a string as an argument and return a non-encoded, encrypted string.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       EncodeMorse(EDABBIT CHALLENGE) --> . - .. .- -... -... ..- -.-. .... .- .- .. .-.. . -. --. .");
+            Console.WriteLine("       EncodeMorse(HELP ME!) --> .... . .-.. .--.   --.   -.-.--");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Input value can be lower or upper case.");
+            Console.WriteLine("       Input string can have digits.");
+            Console.WriteLine("       Input string can have some special characters:");
+            Console.WriteLine("       (e.g.comma, colon, apostrophe, period, question mark, exclamation mark)\n");
         }
     }
 }
