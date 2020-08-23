@@ -10,26 +10,26 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 66");
-            Console.WriteLine(FirstIndex("68 65 6c 6c 6f 20 77 6f 72 6c 64", "world"));
-            Console.WriteLine(FirstIndex("47 6f 6f 64 62 79 65 20 77 6f 72 6c 64", "world"));
-            Console.WriteLine(FirstIndex("42 6f 72 65 64 20 77 6f 72 6c 64", "Bored"));
+            ChallengeDescription();
+            Console.WriteLine($"       FirstIndex(68 65 6c 6c 6f 20 77 6f 72 6c 64, world) --> 6 --> {FirstIndex("68 65 6c 6c 6f 20 77 6f 72 6c 64", "world")}");
+            Console.WriteLine($"       FirstIndex(47 6f 6f 64 62 79 65 20 77 6f 72 6c 64, world) --> 8 --> {FirstIndex("47 6f 6f 64 62 79 65 20 77 6f 72 6c 64", "world")}");
+            Console.WriteLine($"       FirstIndex(42 6f 72 65 64 20 77 6f 72 6c 64, Bored) --> 0 --> {FirstIndex("42 6f 72 65 64 20 77 6f 72 6c 64", "Bored")}");
         }
         public static int FirstIndex(string hexString, string needle)
         {
-            char[] arrNeedle = needle.ToCharArray();
-            string[] hexArray = new string[arrNeedle.Length];
-            for (int i = 0; i < arrNeedle.Length; i++)
-            {
-                hexArray[i] = Convert.ToByte(arrNeedle[i]).ToString("x");
-            }
-            string needleString = string.Join(" ", hexArray);
-            string theNeedle = hexArray[0];
-         
-            string[] hexStringArray = hexString.Split(' ');
-            return Array.IndexOf(hexStringArray, theNeedle);
-            //string testHexString = string.Join(" ", hexArray);
-            return 1;
+            return Array.IndexOf(hexString.Split(' '), Convert.ToByte(needle[0]).ToString("x"));
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Needle in a Hex String");
+            Console.WriteLine("       Find the index of a string within a hex encoded string.");
+            Console.WriteLine("       You will be given a string which needs to be found in another string which has previously");
+            Console.WriteLine("       been translated into hex.");
+            Console.WriteLine("       You will need to return the first index of the needle within the hex encoded string.");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       FirstIndex(68 65 6c 6c 6f 20 77 6f 72 6c 64, world) --> 6");
+            Console.WriteLine("       FirstIndex(47 6f 6f 64 62 79 65 20 77 6f 72 6c 64, world) --> 8");
+            Console.WriteLine("       FirstIndex(42 6f 72 65 64 20 77 6f 72 6c 64, Bored) --> 0\n");
         }
     }
 }
