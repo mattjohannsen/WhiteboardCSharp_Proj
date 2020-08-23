@@ -18,8 +18,8 @@ namespace WhiteboardCSharp
         }
         public static string ConvertTime(string time)
         {
-            DateTime dt = DateTime.Parse(time);
-            return (time.Contains("m")) ? dt.ToString("H:mm") : dt.ToString("h:mm tt").ToLower();
+            DateTime dt = DateTime.Parse(time); 
+            return (time.Contains("am")) || (time.Contains("pm")) ? dt.ToString("H:mm") : dt.ToString("h:mm tt").ToLower();
         }
         public void ChallengeDescription()
         {
