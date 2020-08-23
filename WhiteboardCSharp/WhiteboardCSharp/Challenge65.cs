@@ -60,7 +60,7 @@ namespace WhiteboardCSharp
                 {'.', ".-.-.-"},
                 {'?', "..--.."},
                 {'!', "-.-.--"},
-                {' ', " "},
+                {' ', " "}
             };
             List<string> morseCode = new List<string>();
             foreach (var item in str.ToLower())
