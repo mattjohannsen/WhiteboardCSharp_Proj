@@ -104,6 +104,7 @@
     <Compile Include="Challenge64.cs" />
     <Compile Include="Challenge65.cs" />
     <Compile Include="Challenge66.cs" />
+    <Compile Include="Challenge67.cs" />
     <Compile Include="Challenge7.cs" />
     <Compile Include="Challenge8.cs" />
     <Compile Include="Challenge9.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Challenge56.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rational.cs" />
     <Compile Include="Whiteboard.cs" />
   </ItemGroup>
   <ItemGroup>
