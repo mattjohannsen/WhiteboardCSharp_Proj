@@ -30,30 +30,46 @@ namespace WhiteboardCSharp
             {
                 return new string[0];
             }
+            if (sort == "ASC")
+            {
+                return names.OrderBy(n => n.Split(' ').Last()).ToArray();
+            }
+            else if (sort == "DESC")
+            {
+                return names.OrderByDescending(n => n.Split(' ').Last()).ToArray();
+            }
             else
             {
-                for (int i = 0; i < names.Length - 1; i++)
-                {
-                    for (int j = 0; j < names.Length - 1; j++)
-                    {
-                        int ascOrDesc = string.Compare(names[j].Split(' ')[1], names[j + 1].Split(' ')[1]);
-                        string temp;
-                        if (sort == "ASC" && ascOrDesc == 1)
-                        {
-                            temp = names[j + 1];
-                            names[j + 1] = names[j];
-                            names[j] = temp;
-                        }
-                        else if (sort == "DESC" && ascOrDesc == -1)
-                        {
-                            temp = names[j];
-                            names[j] = names[j + 1];
-                            names[j + 1] = temp;
-                        }
-                    }
-                }
+                return names;
             }
-            return names;
+            //if (names == null || names.Length == 0)
+            //{
+            //    return new string[0];
+            //}
+            //else
+            //{
+            //    for (int i = 0; i < names.Length - 1; i++)
+            //    {
+            //        for (int j = 0; j < names.Length - 1; j++)
+            //        {
+            //            int ascOrDesc = string.Compare(names[j].Split(' ')[1], names[j + 1].Split(' ')[1]);
+            //            string temp;
+            //            if (sort == "ASC" && ascOrDesc == 1)
+            //            {
+            //                temp = names[j + 1];
+            //                names[j + 1] = names[j];
+            //                names[j] = temp;
+            //            }
+            //            else if (sort == "DESC" && ascOrDesc == -1)
+            //            {
+            //                temp = names[j];
+            //                names[j] = names[j + 1];
+            //                names[j + 1] = temp;
+            //            }
+            //        }
+            //    }
+            //}
+            //return names;
         }
         public void ChallengeDescription()
         {
