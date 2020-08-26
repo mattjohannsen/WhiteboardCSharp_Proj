@@ -17,6 +17,12 @@ namespace WhiteboardCSharp
             {
                 Console.WriteLine($"       {sortedArray[i]}");
             }
+            string[] inputArr2 = { "Paul Erdos", "Leonhard Euler", "Carl Gauss" };
+            string[] sortedArray2 = SortContacts(inputArr2, "DESC");
+            for (int i = 0; i < sortedArray2.Length; i++)
+            {
+                Console.WriteLine($"       {sortedArray2[i]}");
+            }
         }
         public static string[] SortContacts(string[] names, string sort)
         {
@@ -24,9 +30,6 @@ namespace WhiteboardCSharp
             {
                 for (int j = 0; j < names.Length -1; j++)
                 {
-                    //string fullName = names[i];
-                    //string[] fullNameArray = fullName.Split(' ');
-                    //string lastNameA = fullNameArray[1];
                     string lastNameA = names[j].Split(' ')[1];
                     string lastNameB = names[j + 1].Split(' ')[1];
                     int sortValue = string.Compare(lastNameA, lastNameB);
@@ -40,7 +43,7 @@ namespace WhiteboardCSharp
                             names[j] = temp;
                         }
                     }
-                    else
+                    else if (sort == "DESC")
                     {
                         if (sortValue == -1)
                         {
