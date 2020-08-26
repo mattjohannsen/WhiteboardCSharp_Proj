@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 68");
+            ChallengeDescription();
             string[] inputArr = { "John Locke", "Thomas Aquinas", "David Hume", "Rene Descartes" };
             string[] sortedArray = SortContacts(inputArr, "ASC");
             for (int i = 0; i < sortedArray.Length; i++)
@@ -26,26 +26,25 @@ namespace WhiteboardCSharp
         }
         public static string[] SortContacts(string[] names, string sort)
         {
-            for (int i = 0; i < names.Length - 1; i++)
+            if (names == null || names.Length == 0)
             {
-                for (int j = 0; j < names.Length -1; j++)
+                return new string[0];
+            }
+            else
+            {
+                for (int i = 0; i < names.Length - 1; i++)
                 {
-                    string lastNameA = names[j].Split(' ')[1];
-                    string lastNameB = names[j + 1].Split(' ')[1];
-                    int sortValue = string.Compare(lastNameA, lastNameB);
-                    string temp;
-                    if (sort == "ASC")
+                    for (int j = 0; j < names.Length - 1; j++)
                     {
-                        if (sortValue == 1)
+                        int ascOrDesc = string.Compare(names[j].Split(' ')[1], names[j + 1].Split(' ')[1]);
+                        string temp;
+                        if (sort == "ASC" && ascOrDesc == 1)
                         {
                             temp = names[j + 1];
                             names[j + 1] = names[j];
                             names[j] = temp;
                         }
-                    }
-                    else if (sort == "DESC")
-                    {
-                        if (sortValue == -1)
+                        else if (sort == "DESC" && ascOrDesc == -1)
                         {
                             temp = names[j];
                             names[j] = names[j + 1];
@@ -55,6 +54,16 @@ namespace WhiteboardCSharp
                 }
             }
             return names;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Contact List");
+            Console.WriteLine("       /Write a sorting function that takes in an array of names and sorts them by last name either alphabetically(ASC)");
+            Console.WriteLine("        or reverse-alphabetically(DESC). ");
+            Console.WriteLine("       John Locke, Thomas Aquinas, David Hume, Rene Descartes, ASC -->");
+            Console.WriteLine("       Thomas Aquinas, Rene Descartes, David Hume, John Locke");
+            Console.WriteLine("       Paul Erdos, Leonhard Euler, Carl Gauss, DESC -->");
+            Console.WriteLine("       Carl Gauss, Leonhard Euler, Paul Erdos\n");
         }
     }
 }
