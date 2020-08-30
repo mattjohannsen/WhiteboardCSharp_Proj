@@ -11,10 +11,34 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             Console.WriteLine("       Challenge 70");
-            Console.WriteLine($"       {CanComplete("butl", "beautiful")}");
+            //Console.WriteLine($"       {CanComplete("butl", "beautiful")}");
+            Console.WriteLine($"       {CanComplete("bbutl", "beautiful")}");
+            //Console.WriteLine($"       {CanComplete("siing", "something")}");
         }
-        public static bool CanComplete(string str1, string str2)
+        public static bool CanComplete(string initial, string word)
         {
+            char[] arr = initial.ToCharArray();
+            int startIndex = 0;
+            int characterFoundIndex = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (!word.Contains(arr[i]))
+                {
+                    return false;
+                }
+                else
+                {
+                    characterFoundIndex = word.IndexOf(arr[i], startIndex);
+                    if (characterFoundIndex == -1)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        startIndex = characterFoundIndex + 1;
+                    }
+                }
+            }
             return true;
         }
 
