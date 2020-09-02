@@ -12,6 +12,10 @@ namespace WhiteboardCSharp
         {
             Console.WriteLine("       Challenge 72");
         }
+        public static bool CannotCapture(int[,] board)
+        {
+            return true || false;
+        }
     }
 }
 //Knights on a Board
