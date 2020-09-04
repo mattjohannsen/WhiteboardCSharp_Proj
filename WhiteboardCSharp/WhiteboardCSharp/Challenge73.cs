@@ -12,7 +12,7 @@ namespace WhiteboardCSharp
         {
             Console.WriteLine("       Challenge 73");
             //int[] inputArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            int[] inputArray = { 73, 74, 75, 76, 77 };
+            int[] inputArray = { 67, 34, 12, 3, 2 };
             
             Console.WriteLine(LCM(inputArray));
             //Console.WriteLine(LCM(xxx));
@@ -23,19 +23,14 @@ namespace WhiteboardCSharp
             int multiplicationFactor = 1;
             for (int i = 0; i < nums.Length; i++)
             {
-                int originalNumber = nums[i];
                 for (int j = 0; j < nums.Length; j++)
                 {
-                    if (nums[j] % originalNumber == 0)
+                    int gcf = GetGCF(nums[i], nums[j]);
+                    if (nums[j] % gcf == 0 && i != j)
                     {
-                        multiplicationFactor *= originalNumber;
-                        for (int k = 0; k < nums.Length; k++)
-                        {
-                            if (nums[k] % originalNumber == 0)
-                            {
-                                nums[k] /= originalNumber;
-                            }
-                        }
+                        multiplicationFactor *= gcf;
+                        nums = ReduceWhenPossible(nums, gcf);
+                        continue;
                     }
                 }
             }
@@ -56,6 +51,17 @@ namespace WhiteboardCSharp
                 }
             }
             return arr;
+        }
+        static int GetGCF(int num1, int num2)
+        {
+            if (num2 == 0)
+            {
+                return num1;
+            }
+            else
+            {
+                return GetGCF(num2, num1 % num2);
+            }
         }
     }
 }
