@@ -11,30 +11,51 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             Console.WriteLine("       Challenge 73");
-            int[] inputArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //int[] inputArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int[] inputArray = { 73, 74, 75, 76, 77 };
+            
             Console.WriteLine(LCM(inputArray));
             //Console.WriteLine(LCM(xxx));
         }
         public static int LCM(int[] nums)
         {
             Array.Sort(nums);
-            int product = 1;
+            int multiplicationFactor = 1;
             for (int i = 0; i < nums.Length; i++)
             {
-                product *= nums[i];
+                int originalNumber = nums[i];
                 for (int j = 0; j < nums.Length; j++)
                 {
-                    if (product % nums[nums.Length - 1 - j]>1 && product % nums[nums.Length - 1 - j] == 0)
+                    if (nums[j] % originalNumber == 0)
                     {
-                        return product;
-                    }
-                    else
-                    {
-                        break;
+                        multiplicationFactor *= originalNumber;
+                        for (int k = 0; k < nums.Length; k++)
+                        {
+                            if (nums[k] % originalNumber == 0)
+                            {
+                                nums[k] /= originalNumber;
+                            }
+                        }
                     }
                 }
             }
-            return product;
+            int lcm = 1;
+            for (int k = 0; k < nums.Length; k++)
+            {
+                lcm *= nums[k];
+            }
+            return lcm * multiplicationFactor;
+        }
+        public static int[] ReduceWhenPossible(int[] arr, int divisor)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] % divisor == 0)
+                {
+                    arr[i] /= divisor;
+                }
+            }
+            return arr;
         }
     }
 }
