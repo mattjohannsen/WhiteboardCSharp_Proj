@@ -10,8 +10,8 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 74");
-            Console.WriteLine(UniqueFract());
+            ChallengeDescription();
+            Console.WriteLine($"       UniqueFract() --> {UniqueFract()}");
         }
         public static double UniqueFract()
         {
@@ -32,26 +32,28 @@ namespace WhiteboardCSharp
                 }
             }
             var distinctList = arrayList.GroupBy(c => String.Join(",", c)).Select(c => c.First().ToList()).ToList();
-            //var distinctList = arrayList.Distinct().ToList();
             double returnSum = 0;
             for (int i = 0; i < distinctList.Count; i++)
             {
-                int top = distinctList[i][0];
-                int bottom = distinctList[i][1];
-                returnSum += (double) top / bottom;
+                returnSum += (double)distinctList[i][0] / distinctList[i][1];
             }
             return returnSum;
         }
         public static int GetGCF(int num1, int num2)
         {
-            if (num2 == 0)
-            {
-                return num1;
-            }
-            else
-            {
-                return GetGCF(num2, num1 % num2);
-            }
+            return (Convert.ToBoolean(num1)) ? GetGCF(num2 % num1, num1) : num2;
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 74: Amount of Unique Fractions");
+            Console.WriteLine("       Create a function double UniqueFract(), which should sum all irreducible regular fractions");
+            Console.WriteLine("       between 0 and 1, in the numerator and denominator of which there are only single-digit numbers:");
+            Console.WriteLine("       1/2, 1/3, 1/4, ... 2/3, 2/4, ... 8/9.");
+            Console.WriteLine("       Task");
+            Console.WriteLine("       UniqueFract() --> 13.5");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Of the fractions 1/2 2/4 3/6 4/8, only 1/2 is included in the sum.");
+            Console.WriteLine("       Don't include any values >= 1.\n");
         }
     }
 }
