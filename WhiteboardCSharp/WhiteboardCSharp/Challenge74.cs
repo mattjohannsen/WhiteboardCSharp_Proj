@@ -16,17 +16,14 @@ namespace WhiteboardCSharp
         public static double UniqueFract()
         {
             List<int[]> arrayList = new List<int[]>();
-            int numerator, denominator;
             for (int i = 1; i < 10; i++)
             {
-                numerator = i;
                 for (int j = 1; j < 10; j++)
                 {
-                    denominator = j;
-                    if (numerator < denominator)
+                    if (i < j)
                     {
-                        int gcd = GetGCF(numerator, denominator);
-                        int[] arrayToAdd = { numerator / gcd, denominator / gcd };
+                        int gcd = GetGCF(i, j);
+                        int[] arrayToAdd = { i / gcd, j / gcd };
                         arrayList.Add(arrayToAdd);
                     }
                 }
