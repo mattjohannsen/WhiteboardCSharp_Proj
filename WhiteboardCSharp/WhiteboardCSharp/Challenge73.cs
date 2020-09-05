@@ -55,7 +55,7 @@ namespace WhiteboardCSharp
             }
             return arr;
         }
-        static int GetGCF(int num1, int num2)
+        public static int GetGCF(int num1, int num2)
         {
             if (num2 == 0)
             {
