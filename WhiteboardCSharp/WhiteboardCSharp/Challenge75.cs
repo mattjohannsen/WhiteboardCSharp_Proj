@@ -15,29 +15,13 @@ namespace WhiteboardCSharp
         }
         public static int OverlappingRectangles(int[] rect1, int[] rect2)
         {
-            int rect1xStart = rect1[0];
-            int rect1yStart = rect1[1];
-            int rect1width = rect1[2];
-            int rect1height = rect1[3];
-            int rect2xStart = rect2[0];
-            int rect2yStart = rect2[1];
-            int rect2width = rect2[2];
-            int rect2height = rect2[3];
-            int xOverlapCount = Math.Min(rect1xStart + rect1width, rect2xStart + rect2width) - Math.Max(rect1xStart, rect2xStart);
-            if (xOverlapCount < 0)
-            {
-                xOverlapCount = 0;
-            }
-            int yOverlapCount = Math.Min(rect1yStart + rect1height, rect2yStart + rect2height) - Math.Max(rect1yStart, rect2yStart);
-            if (yOverlapCount < 0)
-            {
-                yOverlapCount = 0;
-            }
-            return xOverlapCount * yOverlapCount;
+            int xOverlap = Math.Min(rect1[0] + rect1[2], rect2[0] + rect2[2]) - Math.Max(rect1[0], rect2[0]);
+            int yOverlap = Math.Min(rect1[1] + rect1[3], rect2[1] + rect2[3]) - Math.Max(rect1[1], rect2[1]);
+            return ((xOverlap < 0) ? 0 : xOverlap) * ((yOverlap < 0) ? 0 : yOverlap);
         }
     }
 }
-//Area of Overlapping Rectangles
+//Area of Overlapping Rectangles https://edabit.com/challenge/Jj6S7qQgtfAo4L2QR
 //Create a function that returns the area of the overlap between two rectangles.The function will receive two rectangles, each with the coordinates of the lower left corner followed by the width and the height int[] { x, y, width, height }.
 //Examples
 //OverlappingRectangles(new int[] { 2, 1, 3, 4 }, new int[] { 3, 2, 2, 5  }) --> 6
