@@ -158,8 +158,10 @@ namespace WhiteboardCSharp
             //challenge72.RunChallenge();
             //Challenge73 challenge73 = new Challenge73();
             //challenge73.RunChallenge();
-            Challenge74 challenge74 = new Challenge74();
-            challenge74.RunChallenge();
+            //Challenge74 challenge74 = new Challenge74();
+            //challenge74.RunChallenge();
+            Challenge75 challenge75 = new Challenge75();
+            challenge75.RunChallenge();
         }
     }
 }
