@@ -10,55 +10,55 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge76()
         {
-            Console.WriteLine("       Challenge 76");
-            //Console.WriteLine($"       AnagramStrStr(\"abc\", \"abcd\") --> {AnagramStrStr("dab", "abcd")}");
+            ChallengeDescription();
             Console.WriteLine($"       AnagramStrStr(\"car\", \"race\") --> {AnagramStrStr("car", "race")}"); //true
             Console.WriteLine($"       AnagramStrStr(\"nod\", \"done\") --> {AnagramStrStr("nod", "done")}"); //true
             Console.WriteLine($"       AnagramStrStr(\"bag\", \"grab\") --> {AnagramStrStr("bag", "grab")}"); //false
         }
         public static bool AnagramStrStr(string needle, string haystack)
         {
-            List<string> permutationList = new List<string>();
-            Permute(needle, 0, needle.Length - 1, permutationList);
-            for (int i = 0; i < permutationList.Count; i++)
+            string[] permutations = Permutations(needle.ToCharArray()).Select(x => new string(x.ToArray())).ToArray();
+            for (int i = 0; i < permutations.Length; i++)
             {
-                if (haystack.Contains(permutationList[i]))
+                if (haystack.Contains(permutations[i]))
                 {
                     return true;
                 }
             }
             return false;
         }
-        public static void Permute(string str, int l, int r, List<string> permutations)
+        private static IEnumerable<IEnumerable<T>> Permutations<T>(IEnumerable<T> str)
         {
-            if (l == r)
+            var counter = str.Count();
+            if (counter == 1)
             {
-                Console.WriteLine(str);
-                AddToPermutationList(permutations, str);
+                yield return str;
             }
             else
             {
-                for (int i = l; i <= r; i++)
+                for (int i = 0; i < counter; i++)
                 {
-                    str = Swap(str, l, i);
-                    Permute(str, l + 1, r, permutations);
-                    str = Swap(str, l, i);
+                    foreach (var permutation in Permutations(str.Take(i).Concat(str.Skip(i + 1))))
+                    {
+                        yield return str.Skip(i).Take(1).Concat(permutation);
+                    }
                 }
             }
         }
-        public static List<string> AddToPermutationList(List<string> inputList, string str)
+        public void ChallengeDescription()
         {
-            inputList.Add(str);
-            return inputList;
-        }
-        public static string Swap(string a, int i, int j)
-        {
-            char temp;
-            char[] charArray = a.ToCharArray();
-            temp = charArray[i];
-            charArray[i] = charArray[j];
-            charArray[j] = temp;
-            return new string(charArray);
+            Console.WriteLine("       Challenge 76: Find an Anagram of a String in Another String");
+            Console.WriteLine("       Create a function that takes two strings and determines if an anagram of the first string");
+            Console.WriteLine("       is in the second string. Anagrams of \"bag\" are \"bag\", \"bga\", \"abg\", \"agb\", \"gab\", \"gba\".");
+            Console.WriteLine("       Since none of those anagrams are in \"grab\", the answer is false.");
+            Console.WriteLine("       A \"g\", \"a\", and \"b\" are in the string \"grab\", but they're split up by the \"r\".");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       AnagramStrStr(\"car\", \"race\") --> true");
+            Console.WriteLine("       AnagramStrStr(\"nod\", \"done\") --> true");
+            Console.WriteLine("       AnagramStrStr(\"bag\", \"grab\") --> false");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       Inputs will be valid strings in all lowercase letters.");
+            Console.WriteLine("       There exists a linear time algorithm for this.\n");
         }
     }
 }
