@@ -29,6 +29,7 @@ namespace WhiteboardCSharp
             {
                 return inputInteger;
             }
+            //return (inputInteger != 1) ? inputInteger * GetFactorial(inputInteger - 1) : inputInteger;
         }
 
         public void ChallengeDesription()
