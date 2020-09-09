@@ -14,11 +14,10 @@ namespace WhiteboardCSharp_Test
             int n = 2;
             int a = 49;
             int b = 65;
-            Challenge32 challenge32 = new Challenge32();
             int expected = 2;
 
             // Act
-            int actual = challenge32.PowerRanger(n, a, b);
+            int actual = Challenge32.PowerRanger(n, a, b);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -30,11 +29,10 @@ namespace WhiteboardCSharp_Test
             int n = 3;
             int a = 1;
             int b = 27;
-            Challenge32 challenge32 = new Challenge32();
             int expected = 3;
 
             // Act
-            int actual = challenge32.PowerRanger(n, a, b);
+            int actual = Challenge32.PowerRanger(n, a, b);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -46,11 +44,10 @@ namespace WhiteboardCSharp_Test
             int n = 10;
             int a = 1;
             int b = 5;
-            Challenge32 challenge32 = new Challenge32();
             int expected = 1;
 
             // Act
-            int actual = challenge32.PowerRanger(n, a, b);
+            int actual = Challenge32.PowerRanger(n, a, b);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -62,11 +59,10 @@ namespace WhiteboardCSharp_Test
             int n = 5;
             int a = 31;
             int b = 33;
-            Challenge32 challenge32 = new Challenge32();
             int expected = 1;
 
             // Act
-            int actual = challenge32.PowerRanger(n, a, b);
+            int actual = Challenge32.PowerRanger(n, a, b);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -78,11 +74,10 @@ namespace WhiteboardCSharp_Test
             int n = 4;
             int a = 250;
             int b = 1300;
-            Challenge32 challenge32 = new Challenge32();
             int expected = 3;
 
             // Act
-            int actual = challenge32.PowerRanger(n, a, b);
+            int actual = Challenge32.PowerRanger(n, a, b);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -93,11 +88,10 @@ namespace WhiteboardCSharp_Test
             // Arrange 
             double A = 49;
             int N = 2;
-            Challenge32 challenge32 = new Challenge32();
             double expected = 7;
 
             // Act
-            double actual = challenge32.NthRoot(A, N);
+            double actual = Challenge32.NthRoot(A, N);
 
             // Assert
             Assert.AreEqual(expected, actual);
