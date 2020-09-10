@@ -12,32 +12,26 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             Console.WriteLine("       Challenge 77");
-            //Console.WriteLine(ValidatePassword("P1zz@")); //false;
-            //Console.WriteLine(ValidatePassword("iLoveYou")); //false;
+            Console.WriteLine(ValidatePassword("P1zz@")); //false;
+            Console.WriteLine(ValidatePassword("P1zz@P1zz@P1zz@P1zz@P1zz@")); //false;
+            Console.WriteLine(ValidatePassword("mypassword11")); //false;
+            Console.WriteLine(ValidatePassword("MYPASSWORD11")); //false;
+            Console.WriteLine(ValidatePassword("iLoveYou")); //false;
+            Console.WriteLine(ValidatePassword("Pè7$areLove")); //false;
+            Console.WriteLine(ValidatePassword("Repeeea7!") + "<--Should be false"); //false;
+            Console.WriteLine(ValidatePassword("H4(k+x0")); //true;
             Console.WriteLine(ValidatePassword("Fhg93@")); //true;
-            //Console.WriteLine(ValidatePassword("Pè7$areLove")); //false;
-            //Console.WriteLine(ValidatePassword("azAZ09è")); //false;
+            Console.WriteLine(ValidatePassword("aA0!@#$%^&*()+=_-{}[]:;\"")); //true;
+            Console.WriteLine(ValidatePassword("zZ9'?<>,.")); //true;
+            //Console.WriteLine((new Regex(@"(?!.*([.])\1{2})").IsMatch("Repeeea7!")));
+            //Console.WriteLine((new Regex(@"(?!.*?(.)\1{2,})").IsMatch("Repeeea7!")));
+            //Console.WriteLine(new Regex(@"/ (.)\1{ 2, } /").IsMatch("ad"));
+            //Console.WriteLine(new Regex(@"([a-zA-Z0-9!])\1{2}").IsMatch("aa")); // this works aaaa true aa false
+            //Console.WriteLine(new Regex(@"([a-zA-Z0-9])\1{2}").IsMatch("Repeeea7!")); // this works Repeea7! true Repeea7! false
+
         }
-        //public static bool ValidatePassword(string password)
-        //{
-        //    foreach (var character in password)
-        //    {                                                                                 //!@#$%^&*()+=_-{}[]:;\"'?<>,.
-        //        if (!Regex.IsMatch(character.ToString(), @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()+=_-{}[]:;""'?<>,.])[A-Za-z\d!@#$%^&*()+=_-{}[]:;""'?<>,.]{6,24}$"))
-        //        if (!Regex.IsMatch(character.ToString(), @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()+=_-{}[]:;""'?<>,.])[A-Za-z\d!@#$%^&*()+=_-{}[]:;""'?<>,.]{6,24}$"))
-        //            //if (!Regex.IsMatch(character.ToString(), @"^(?=[^A - Z] *[A - Z])(?=[^a - z] *[a - z])(?=[^0 - 9] *[0 - 9])(?:([\w\d *? !:;])\1 ? (? !\1))+$(?=.*[!@#$%^&*()+=_-{}[]:;""'?<>,.])[A-Za-z\d!@#$%^&*()+=_-{}[]:;""'?<>,.]{6,24}$")) "
-
-        //            {
-        //            return false;
-        //        }
-        //    }
-        //    return true;
-        //    //^(?=.*?[A - Z])(?=.*?[a - z])(?=.*?[0 - 9])(([a - z0 - 9])\2 ? (? !\2))+$(?=.{ 6,24}$)
-
-        //    //return Regex.IsMatch(password, "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,24}$");
-        //}
         public static bool ValidatePassword(string password)
         {
-            //"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$"
             if (!CheckPasswordLength(password))
             {
                 return false;
@@ -54,11 +48,11 @@ namespace WhiteboardCSharp
             {
                 return false;
             }
-            if (!CheckForTriples(password))
+            if (!AlphaNumericOrAllowed(password))
             {
                 return false;
             }
-            if (!AlphaNumericOrAllowed(password))
+            if (ConsecutiveCharsOkay(password))
             {
                 return false;
             }
@@ -80,16 +74,32 @@ namespace WhiteboardCSharp
         {
             return (new Regex(@"(\d)").IsMatch(password));
         }
-        public static bool CheckForTriples(string password)
+        public static bool ConsecutiveCharsOkay(string password)
         {
-            for (int i = 0; i < password.Length - 2; i++)
-            {
-                if (password[i] == password[i + 1] && password[i] == password[i + 2])
-                {
-                    return false;
-                }
-            }
-            return true;
+            //for (int i = 0; i < password.Length - 2; i++)
+            //{
+            //    if (password[i] == password[i + 1] && password[i] == password[i + 2])
+            //    {
+            //        return false;
+            //    }
+            //}
+            //return true;
+            //return (new Regex(@"(?!.*?(.)\1{2,})").IsMatch(password)); //only 5th last test fails
+            //return (new Regex(@"(?!.*?(.)\1{2,})").IsMatch(password));
+            //return (new Regex(@"^(.)(?!\1\1){3,}$").IsMatch(password)); last four tests fail
+            //return (new Regex(@"(([.])\2 ? (? !\2))+$").IsMatch(password)); 
+            //return (new Regex(@"(?: ([\w\d *? !:;])\1 ? (? !\1))+$").IsMatch(password)); 
+            //return (new Regex(@"(?!.*([A-Za-z0-9])\1{2})").IsMatch(password)); //only 5th last test fails
+            //eturn (new Regex(@"(?!.*([.])\1{2})").IsMatch(password));
+            //return (new Regex(@"(?!.*([.])\1{2})").IsMatch(password));
+            //return (new Regex(@"(^?!.*([A-Za-z0-9!])\1{2})+$").IsMatch(password));
+            //return (new Regex(@"/(\b(?:([A-Za-z0-9])(?!\2{2}))+\b)/").IsMatch(password));
+            //return(new Regex(@"^/([a-zA-Z0-9!])\1{2,}$/i").IsMatch(password));
+            //return (new Regex(@"(?!.*([.])\1{2})").IsMatch(password)); // only 5th test fails
+            //return (new Regex(@"(?!.*?(.)\1{2,})").IsMatch(password)); //only 5th last test fails
+            //return (new Regex(@"/ (.)\1{ 2,}/").IsMatch(password));
+            //return (new Regex(@"([a-zA-Z0-9])\1{2}").IsMatch("password"));
+            return (new Regex(@"([a-zA-Z0-9])\1{2}").IsMatch(password));
         }
         public static bool AlphaNumericOrAllowed(string password)
         {
