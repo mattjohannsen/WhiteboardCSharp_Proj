@@ -29,15 +29,15 @@ namespace WhiteboardCSharp
         }
         public static bool ValidatePassword(string password)
         {
-            if (!new Regex("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,24}$").IsMatch(password))
+            if (!Regex.IsMatch(password , "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,24}$"))
             {
                 return false;
             }
-            if (!new Regex(@"^([a-zA-Z0-9!@#$%^&*()+=_\-{}[\]\'"":;?<>,.])*$").IsMatch(password))
+            else if (!Regex.IsMatch(password, @"^([a-zA-Z0-9!@#$%^&*()+=_\-{}[\]\'"":;?<>,.])*$"))
             {
                 return false;
             }
-            if (new Regex(@"([a-zA-Z0-9])\1{2}").IsMatch(password))
+            else if (Regex.IsMatch(password, @"([a-zA-Z0-9])\1{2}"))
             {
                 return false;
             }
