@@ -74,25 +74,11 @@ namespace WhiteboardCSharp
         }
         public static bool CheckForLower(string password)
         {
-            for (int i = 0; i < password.Length; i++)
-            {
-                if (Char.IsLower(password[i]))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return (new Regex("(?=.*[a-z])").IsMatch(password));
         }
         public static bool CheckForNumber(string password)
         {
-            for (int i = 0; i < password.Length; i++)
-            {
-                if (Char.IsDigit(password[i]))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return (new Regex(@"(\d)").IsMatch(password));
         }
         public static bool CheckForTriples(string password)
         {
