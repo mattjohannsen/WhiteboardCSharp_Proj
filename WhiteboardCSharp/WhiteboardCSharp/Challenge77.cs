@@ -29,75 +29,19 @@ namespace WhiteboardCSharp
         }
         public static bool ValidatePassword(string password)
         {
-            if (!CheckPasswordLength(password))
+            if (!new Regex("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,24}$").IsMatch(password))
             {
                 return false;
             }
-            if (!CheckForUpper(password))
+            if (!new Regex(@"^([a-zA-Z0-9!@#$%^&*()+=_\-{}[\]\'"":;?<>,.])*$").IsMatch(password))
             {
                 return false;
             }
-            if (!CheckForLower(password))
-            {
-                return false;
-            }
-            if (!CheckForNumber(password))
-            {
-                return false;
-            }
-            if (!AlphaNumericOrAllowed(password))
-            {
-                return false;
-            }
-            if (ConsecutiveCharsOkay(password))
+            if (new Regex(@"([a-zA-Z0-9])\1{2}").IsMatch(password))
             {
                 return false;
             }
             return true;
-        }
-        public static bool CheckPasswordLength(string password)
-        {
-            return (new Regex("^.{6,24}$").IsMatch(password));
-        }
-        public static bool CheckForUpper(string password)
-        {
-            return (new Regex("(?=.*[A-Z])").IsMatch(password));
-        }
-        public static bool CheckForLower(string password)
-        {
-            return (new Regex("(?=.*[a-z])").IsMatch(password));
-        }
-        public static bool CheckForNumber(string password)
-        {
-            return (new Regex(@"(\d)").IsMatch(password));
-        }
-        public static bool ConsecutiveCharsOkay(string password)
-        {
-            return (new Regex(@"([a-zA-Z0-9])\1{2}").IsMatch(password));
-        }
-        public static bool AlphaNumericOrAllowed(string password)
-        {
-            //for (int i = 0; i < password.Length; i++)
-            //{
-            //    char currentChar = password[i];
-            //    string allowed = "!@#$%^&*()+=_-{}[]:;\"'?<>,.";
-            //    if (Regex.IsMatch(currentChar.ToString(), "^[a-zA-Z0-9!@#$%^&*()+=_-{}[]:;\"\'?<>,.]*$"))
-            //    {
-            //        continue;
-            //    }
-            //    else
-            //    {
-            //        if (allowed.Contains(password[i]))
-            //        {
-            //            continue;
-            //        }
-            //        else
-            //        {
-            //            return false;
-            //        }
-            //    }
-            //}
-            return (new Regex(@"^[a-zA-Z0-9!@#$%^&*()+=_\-{}[\]\'"":;?<>,.]*$").IsMatch(password));
         }
         public void ChallengeDescription()
         {
