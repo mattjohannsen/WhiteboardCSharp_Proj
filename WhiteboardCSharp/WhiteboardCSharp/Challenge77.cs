@@ -66,20 +66,11 @@ namespace WhiteboardCSharp
         }
         public static bool CheckPasswordLength(string password)
         {
-            //return (password.Length >= 6 && password.Length <= 24);
-            Regex constraints = new Regex("^.{6,24}$");
-            return (constraints.IsMatch(password));
+            return (new Regex("^.{6,24}$").IsMatch(password));
         }
         public static bool CheckForUpper(string password)
         {
-            for (int i = 0; i < password.Length; i++)
-            {
-                if (Char.IsUpper(password[i]))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return (new Regex("(?=.*[A-Z])").IsMatch(password));
         }
         public static bool CheckForLower(string password)
         {
