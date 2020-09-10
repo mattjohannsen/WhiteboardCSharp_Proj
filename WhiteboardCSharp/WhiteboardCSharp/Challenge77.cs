@@ -12,9 +12,20 @@ namespace WhiteboardCSharp
         public void RunChallenge()
         {
             ChallengeDescription();
-            Console.WriteLine($"       ValidatePassword(\"P1zz@\") --> {ValidatePassword("P1zz@")}");
-            Console.WriteLine($"       ValidatePassword(\"iLoveYou\") --> {ValidatePassword("iLoveYou")}");
-            Console.WriteLine($"       ValidatePassword(\"Fhg93@\") --> {ValidatePassword("Fhg93@")}");
+            //Console.WriteLine($"       ValidatePassword(\"P1zz@\") --> {ValidatePassword("P1zz@")}");
+            //Console.WriteLine($"       ValidatePassword(\"iLoveYou\") --> {ValidatePassword("iLoveYou")}");
+            //Console.WriteLine($"       ValidatePassword(\"Fhg93@\") --> {ValidatePassword("Fhg93@")}");
+            Console.WriteLine(ValidatePassword("P1zz@")); //false;
+            Console.WriteLine(ValidatePassword("P1zz@P1zz@P1zz@P1zz@P1zz@")); //false;
+            Console.WriteLine(ValidatePassword("mypassword11")); //false;
+            Console.WriteLine(ValidatePassword("MYPASSWORD11")); //false;
+            Console.WriteLine(ValidatePassword("iLoveYou")); //false;
+            Console.WriteLine(ValidatePassword("Pè7$areLove")); //false;
+            Console.WriteLine(ValidatePassword("Repeeea7!") + "<--Should be false"); //false;
+            Console.WriteLine(ValidatePassword("H4(k+x0")); //true;
+            Console.WriteLine(ValidatePassword("Fhg93@")); //true;
+            Console.WriteLine(ValidatePassword("aA0!@#$%^&*()+=_-{}[]:;\"")); //true;
+            Console.WriteLine(ValidatePassword("zZ9'?<>,.")); //true;
         }
         public static bool ValidatePassword(string password)
         {
@@ -66,27 +77,27 @@ namespace WhiteboardCSharp
         }
         public static bool AlphaNumericOrAllowed(string password)
         {
-            for (int i = 0; i < password.Length; i++)
-            {
-                char currentChar = password[i];
-                string allowed = "!@#$%^&*()+=_-{}[]:;\"'?<>,.";
-                if (Regex.IsMatch(currentChar.ToString(), "^[a-zA-Z0-9]*$"))
-                {
-                    continue;
-                }
-                else
-                {
-                    if (allowed.Contains(password[i]))
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
+            //for (int i = 0; i < password.Length; i++)
+            //{
+            //    char currentChar = password[i];
+            //    string allowed = "!@#$%^&*()+=_-{}[]:;\"'?<>,.";
+            //    if (Regex.IsMatch(currentChar.ToString(), "^[a-zA-Z0-9!@#$%^&*()+=_-{}[]:;\"\'?<>,.]*$"))
+            //    {
+            //        continue;
+            //    }
+            //    else
+            //    {
+            //        if (allowed.Contains(password[i]))
+            //        {
+            //            continue;
+            //        }
+            //        else
+            //        {
+            //            return false;
+            //        }
+            //    }
+            //}
+            return (new Regex(@"^[a-zA-Z0-9!@#$%^&*()+=_\-{}[\]\'"":;?<>,.]*$").IsMatch(password));
         }
         public void ChallengeDescription()
         {
