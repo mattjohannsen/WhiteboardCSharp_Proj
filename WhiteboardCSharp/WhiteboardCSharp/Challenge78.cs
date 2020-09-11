@@ -20,17 +20,8 @@ namespace WhiteboardCSharp
         }
         public static string WrapAround(string input, int offset)
         {
-            if (System.Math.Abs(offset) > input.Length || offset < 0)
-            {
-                offset %= input.Length;
-                return (offset < 0)
-                    ? input.Substring(input.Length + offset) + input.Substring(0, input.Length + offset)
-                    : input.Substring(offset) + input.Substring(0, offset);
-            }
-            else
-            {
-                return input.Substring(offset) + input.Substring(0, offset);
-            }
+            if (System.Math.Abs(offset) > input.Length || offset < 0) offset %= input.Length;
+            return (offset < 0) ? input.Substring(input.Length + offset) + input.Substring(0, input.Length + offset) : input.Substring(offset) + input.Substring(0, offset);
         }
     }
 }
