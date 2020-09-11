@@ -10,18 +10,29 @@ namespace WhiteboardCSharp
     {
         public void RunChallenge()
         {
-            Console.WriteLine("       Challenge 78");
-            //Console.WriteLine($"       (\"Hello, World!\", 2) --> {WrapAround("Hello, World!", 2)}");
+            ChallengeDescription();
+            Console.WriteLine($"       (\"Hello, World!\", 2) --> {WrapAround("Hello, World!", 2)}");
             Console.WriteLine($"       (\"From what I gathered\", -4) --> {WrapAround("From what I gathered", -4)}");
-            //Console.WriteLine($"       (\"S\", -60) --> {WrapAround("S", -60)}");
-            //Console.WriteLine($"       (\"Nonscience\", -12) --> {WrapAround("Nonscience", -12)}");
-            //Console.WriteLine($"       (\"Excelsior\", 30) --> {WrapAround("Excelsior", 30)}");
-            //Console.WriteLine($"       (\"Incomprehensibilities\", 50) --> {WrapAround("Incomprehensibilities", 50)}");
+            Console.WriteLine($"       (\"No Changes\", 0) --> {WrapAround("No Changes", 0)}");
+            Console.WriteLine($"       (\"Nonscience\", -12) --> {WrapAround("Nonscience", -12)}");
         }
         public static string WrapAround(string input, int offset)
         {
             if (System.Math.Abs(offset) > input.Length || offset < 0) offset %= input.Length;
             return (offset < 0) ? input.Substring(input.Length + offset) + input.Substring(0, input.Length + offset) : input.Substring(offset) + input.Substring(0, offset);
+        }
+        public void ChallengeDescription()
+        {
+            Console.WriteLine("       Challenge 78: Wrap Around");
+            Console.WriteLine("       Create a function to reproduce the wrap around effect shown:");
+            Console.WriteLine("       Examples");
+            Console.WriteLine("       WrapAround(\"Hello, World!\", 2) --> \"llo, World!He\"");
+            Console.WriteLine("       WrapAround(\"From what I gathered\", -4) --> \"eredFrom what I gath\"");
+            Console.WriteLine("       WrapAround(\"No Changes\", 0) --> \"No Changes\"");
+            Console.WriteLine("       WrapAround(\"Nonscience\", -12) --> \"ceNonscien\"");
+            Console.WriteLine("       Notes");
+            Console.WriteLine("       The offset can be negative.");
+            Console.WriteLine("       The offset can be greater than input.\n");
         }
     }
 }
