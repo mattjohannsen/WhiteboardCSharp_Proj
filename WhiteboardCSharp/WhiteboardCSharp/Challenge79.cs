@@ -39,37 +39,6 @@ namespace WhiteboardCSharp
                 }
             }
             return new string(reversed);
-            //char[] arr = txt.ToCharArray();
-            //bool[] spaces = new bool[arr.Length];
-            //for (int i = 0; i < spaces.Length; i++)
-            //{
-            //    bool value = (arr[i] == ' ');
-            //    spaces[i] = value;
-            //}
-            //bool[] upperCase = new bool[arr.Length];
-            //for (int i = 0; i < arr.Length; i++)
-            //{
-            //    bool value = (arr[i] == Char.ToUpper(arr[i]));
-            //    upperCase[i] = value;
-            //}
-            //char[] onlyChars = txt.Trim().ToCharArray().Reverse().ToArray();
-            ////string onlyChars = new string(txt.Trim().ToCharArray().Reverse().ToArray());
-            //string solution = "";
-            //for (int i = 0; i < spaces.Length; i++)
-            //{
-            //    if (spaces[i])
-            //    {
-            //        solution += ' ';
-            //    }
-            //    else
-            //    {
-            //        if (upperCase[i])
-            //        {
-            //            solution += ' ';
-            //        }
-            //    }
-            //}
-            //return new string(solution.ToArray());
         }
     }
 }
