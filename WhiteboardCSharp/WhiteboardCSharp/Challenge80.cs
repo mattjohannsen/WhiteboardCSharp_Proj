@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public static int square_areas_difference(int radius)
         {
-            return ((radius * 2) * (radius * 2)) - (Convert.ToInt32(radius * Math.Sqrt(2) * (radius * Math.Sqrt(2))));
+            return Convert.ToInt32(Math.Pow(radius*2, 2)) - Convert.ToInt32(Math.Pow(radius * Math.Sqrt(2), 2));
         }
     }
 }
