@@ -8,15 +8,9 @@ namespace WhiteboardCSharp
 {
     public class Challenge80
     {
-        public void RunChallenge()
-        {
-            Console.WriteLine("       Challenge80");    
-        }
         public static int square_areas_difference(int radius)
         {
-            int bigBoxArea = (radius * 2) * (radius * 2);
-            int smallBoxArea = Convert.ToInt32(radius * Math.Sqrt(2) * (radius * Math.Sqrt(2)));
-            return bigBoxArea - smallBoxArea;
+            return ((radius * 2) * (radius * 2)) - (Convert.ToInt32(radius * Math.Sqrt(2) * (radius * Math.Sqrt(2))));
         }
     }
 }
