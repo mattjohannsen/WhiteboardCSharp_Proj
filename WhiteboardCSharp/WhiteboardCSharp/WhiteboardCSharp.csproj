@@ -120,6 +120,7 @@
     <Compile Include="Challenge79.cs" />
     <Compile Include="Challenge8.cs" />
     <Compile Include="Challenge80.cs" />
+    <Compile Include="Challenge81.cs" />
     <Compile Include="Challenge9.cs" />
     <Compile Include="Challenge55.cs" />
     <Compile Include="Challenge56.cs" />
