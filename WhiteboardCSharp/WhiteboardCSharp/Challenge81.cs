@@ -10,20 +10,7 @@ namespace WhiteboardCSharp
     {
         public static double[] FindLargest(double[][] values)
         {
-            double[] solution = new double[values.Length];
-            for (int i = 0; i < values.Length; i++)
-            {
-                double maxValue = values[i][0];
-                for (int j = 0; j < values[i].Length; j++)
-                {
-                    if (values[i][j] > maxValue)
-                    {
-                        maxValue = values[i][j];
-                    }
-                }
-                solution[i] = maxValue;
-            }
-            return solution;
+            return values.Select(subArray => subArray.Max()).ToArray();
         }
     }
 }
