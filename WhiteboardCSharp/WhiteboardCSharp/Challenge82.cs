@@ -10,12 +10,7 @@ namespace WhiteboardCSharp
     {
         public static string ReverseCase(string str)
         {
-            char[] arr = str.ToCharArray();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = (arr[i] == Char.ToUpper(arr[i])) ? Char.ToLower(arr[i]) : arr[i] = Char.ToUpper(arr[i]);
-            }
-            return new string(arr);
+            return new string(str.Select(c => char.IsLetter(c) ? (char.IsUpper(c) ? char.ToLower(c) : char.ToUpper(c)) : c).ToArray());
         }
     }
 }
