@@ -10,7 +10,19 @@ namespace WhiteboardCSharp
     {
         public static string ReverseCase(string str)
         {
-            return str;
+            char[] arr = str.ToCharArray();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == Char.ToUpper(arr[i]))
+                {
+                    arr[i] = Char.ToLower(arr[i]);
+                }
+                else if (arr[i] == Char.ToLower(arr[i]))
+                {
+                    arr[i] = Char.ToUpper(arr[i]);
+                }
+            }
+            return new string(arr);
         }
     }
 }

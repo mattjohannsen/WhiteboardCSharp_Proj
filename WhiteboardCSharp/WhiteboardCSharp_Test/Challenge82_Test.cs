@@ -20,5 +20,44 @@ namespace WhiteboardCSharp_Test
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void ReverseCase_ALLCAPS_ReturnsAllLowerCase()
+        {
+            // Arrange
+            string input = "MANY THANKS";
+            string expected = "many thanks";
+
+            // Act
+            string actual = Challenge82.ReverseCase(input);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ReverseCase_AlternateingLowerUpper_ReturnsAlternatingUpperLower()
+        {
+            // Arrange
+            string input = "sPoNtAnEoUs";
+            string expected = "SpOnTaNeOuS";
+
+            // Act
+            string actual = Challenge82.ReverseCase(input);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ReverseCase_MixedCaseWithPunctuation_ReturnsPunctuation()
+        {
+            // Arrange
+            string input = "eXCELLENT, yOuR mAJESTY";
+            string expected = "Excellent, YoUr Majesty";
+
+            // Act
+            string actual = Challenge82.ReverseCase(input);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
