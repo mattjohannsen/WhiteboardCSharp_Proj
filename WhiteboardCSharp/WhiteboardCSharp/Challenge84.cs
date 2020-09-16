@@ -14,7 +14,7 @@ namespace WhiteboardCSharp
         }
     }
 }
-//Count Ones in Binary Representation of Integer
+//Count Ones in Binary Representation of Integer https://edabit.com/challenge/zn3A3AAzoE7vezw7Q
 //Count the amount of ones in the binary representation of an integer.So for example, since 12 is '1100' in binary, the return value should be 2.
 //Examples
 //CountOnes(0) --> 0
