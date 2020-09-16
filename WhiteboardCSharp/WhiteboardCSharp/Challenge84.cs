@@ -10,7 +10,8 @@ namespace WhiteboardCSharp
     {
         public static int CountOnes(int i)
         {
-            return 1;
+            string binary = Convert.ToString(i, 2);
+            return binary.ToCharArray().Count(c => c == '1');
         }
     }
 }
@@ -22,3 +23,6 @@ namespace WhiteboardCSharp
 //CountOnes(999) --> 8
 //Notes
 //The input will always be a valid integer(number).
+// Steps
+// Turn i into binary representation string
+// 
