@@ -10,8 +10,7 @@ namespace WhiteboardCSharp
     {
         public static int CountOnes(int i)
         {
-            string binary = Convert.ToString(i, 2);
-            return binary.ToCharArray().Count(c => c == '1');
+            return Convert.ToString(i, 2).Count(c => c == '1');
         }
     }
 }
