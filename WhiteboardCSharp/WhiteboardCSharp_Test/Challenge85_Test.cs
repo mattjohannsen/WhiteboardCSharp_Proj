@@ -20,11 +20,12 @@ namespace WhiteboardCSharp_Test
             //Assert
             Assert.AreEqual(actual, expected);
         }
+        [TestMethod]
         public void TestMethod2()
         {
             //Arrange
             string txt = "Hey, did you find it?";
-            string expected = "Hey, did you find it?";
+            string expected = "There is no bomb, relax.";
 
             //Act
             string actual = Challenge85.Bomb(txt);
@@ -32,6 +33,7 @@ namespace WhiteboardCSharp_Test
             //Assert
             Assert.AreEqual(actual, expected);
         }
+        [TestMethod]
         public void TestMethod3()
         {
             //Arrange
@@ -44,11 +46,12 @@ namespace WhiteboardCSharp_Test
             //Assert
             Assert.AreEqual(actual, expected);
         }
+        [TestMethod]
         public void TestMethod4()
         {
             //Arrange
-            string txt = "Hey, did you think there is a bomb?";
-            string expected = "Hey, did you find it?";
+            string txt = "This goes boom!!!";
+            string expected = "There is no bomb, relax.";
 
             //Act
             string actual = Challenge85.Bomb(txt);
@@ -56,6 +59,7 @@ namespace WhiteboardCSharp_Test
             //Assert
             Assert.AreEqual(actual, expected);
         }
+        [TestMethod]
         public void TestMethod5()
         {
             //Arrange
@@ -68,6 +72,7 @@ namespace WhiteboardCSharp_Test
             //Assert
             Assert.AreEqual(actual, expected);
         }
+        [TestMethod]
         public void TestMethod6()
         {
             //Arrange
