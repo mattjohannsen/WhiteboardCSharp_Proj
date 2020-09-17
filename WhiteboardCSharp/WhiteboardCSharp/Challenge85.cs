@@ -10,11 +10,7 @@ namespace WhiteboardCSharp
     {
         public static string Bomb(string txt)
         {
-<<<<<<< HEAD
-            return txt;
-=======
             return txt.ToLower().Contains("bomb") ? "Duck!!!" : "There is no bomb, relax.";
->>>>>>> challenge85
         }
     }
 }
