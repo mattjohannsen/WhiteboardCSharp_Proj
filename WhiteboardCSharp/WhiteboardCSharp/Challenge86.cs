@@ -10,21 +10,7 @@ namespace WhiteboardCSharp
     {
         public static string GetMiddle(string str)
         {
-            char[] arr = str.ToCharArray();
-            string returnString = "";
-            if (arr.Length == 1)
-            {
-                return str;
-            }
-            else if (arr.Length % 2 == 0)
-            {
-                returnString += arr[arr.Length / 2 - 1].ToString() + arr[arr.Length / 2].ToString();
-            }
-            else
-            {
-                returnString += arr[arr.Length / 2];
-            }
-            return returnString;
+            return str.Length % 2 == 0 ? str[str.Length / 2 - 1].ToString() + str[str.Length / 2].ToString() : str[str.Length / 2].ToString();
         }
     }
 }
