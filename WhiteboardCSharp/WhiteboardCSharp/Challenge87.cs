@@ -8,9 +8,26 @@ namespace WhiteboardCSharp
 {
     public class Challenge87
     {
+        public void RunChallenge()
+        {
+            Console.WriteLine("Challenge 87");
+            Console.WriteLine(BlockPlayer(0,3));
+        }
         public static int BlockPlayer(int a, int b)
         {
-            return 1;
+            int[][] solutions = { new int[] { 0, 1, 2 }, new int[] { 3, 4, 5 }, new int[] { 6, 7, 8 }, new int[] { 0, 3, 6}, new int[] { 1, 4, 7 }, new int[] { 2, 5, 8 }, new int[] { 0, 4, 8 }, new int[] { 2, 4, 6 } };
+            string blockString = "";
+            for (int i = 0; i < solutions.Length; i++)
+            {
+                if (solutions[i].Contains(a) && solutions[i].Contains(b))
+                {
+                    blockString = string.Join("", solutions[i]).Replace(a.ToString(), "").Replace(b.ToString(), "");
+                    //blockString = solutions[i].ToString().Replace(a.ToString(), "").Replace(b.ToString(), "");
+                    break;
+                }
+            }
+            int blockValue = Convert.ToInt32(blockString); 
+            return blockValue;
         }
     }
 }
@@ -24,3 +41,12 @@ namespace WhiteboardCSharp
 //BlockPlayer(3, 5) --> 4
 //Notes
 //The values given will always have two filled squares in a line.
+//0	1	2
+//3	4	5
+//6	7	8
+//0	3	6
+//1	4	7
+//2	5	8
+//0	4	8
+//2	4	6
+
