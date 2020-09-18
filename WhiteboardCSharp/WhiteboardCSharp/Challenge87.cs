@@ -16,18 +16,16 @@ namespace WhiteboardCSharp
         public static int BlockPlayer(int a, int b)
         {
             int[][] solutions = { new int[] { 0, 1, 2 }, new int[] { 3, 4, 5 }, new int[] { 6, 7, 8 }, new int[] { 0, 3, 6}, new int[] { 1, 4, 7 }, new int[] { 2, 5, 8 }, new int[] { 0, 4, 8 }, new int[] { 2, 4, 6 } };
-            string blockString = "";
+            int block = 0;
             for (int i = 0; i < solutions.Length; i++)
             {
                 if (solutions[i].Contains(a) && solutions[i].Contains(b))
                 {
-                    blockString = string.Join("", solutions[i]).Replace(a.ToString(), "").Replace(b.ToString(), "");
-                    //blockString = solutions[i].ToString().Replace(a.ToString(), "").Replace(b.ToString(), "");
+                    block = Convert.ToInt32(string.Join("", solutions[i]).Replace(a.ToString(), "").Replace(b.ToString(), ""));
                     break;
                 }
             }
-            int blockValue = Convert.ToInt32(blockString); 
-            return blockValue;
+            return block;
         }
     }
 }
