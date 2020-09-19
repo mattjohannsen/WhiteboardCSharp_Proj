@@ -10,7 +10,8 @@ namespace WhiteboardCSharp
     {
         public static bool IsSymmetrical(int num)
         {
-            return false;
+            string str = num.ToString();
+            return str.SequenceEqual(str.Reverse());
         }
     }
 }
