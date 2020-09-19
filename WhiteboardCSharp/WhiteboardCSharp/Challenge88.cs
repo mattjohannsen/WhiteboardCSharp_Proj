@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public static string GetWord(string left, string right)
         {
-            return left;
+            return string.Concat(char.ToUpper(left[0]) + left.Substring(1), right);
         }
     }
 }

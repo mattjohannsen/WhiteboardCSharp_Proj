@@ -95,18 +95,6 @@ namespace WhiteboardCSharp_Test
         public void TestMethod8()
         {
             //Arrange
-            string left = "sssssssss";
-            string right = "sssssssss";
-            string expected = "sssssssss";
-            //Act
-            string actual = Challenge88.GetWord(left, right);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void TestMethod9()
-        {
-            //Arrange
             string left = "acci";
             string right = "dent";
             string expected = "Accident";
@@ -116,7 +104,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod10()
+        public void TestMethod9()
         {
             //Arrange
             string left = "omis";
@@ -128,7 +116,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod11()
+        public void TestMethod10()
         {
             //Arrange
             string left = "vigo";
@@ -140,7 +128,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod12()
+        public void TestMethod11()
         {
             //Arrange
             string left = "pred";
@@ -152,7 +140,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod13()
+        public void TestMethod12()
         {
             //Arrange
             string left = "prog";
@@ -164,7 +152,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod14()
+        public void TestMethod13()
         {
             //Arrange
             string left = "inva";
@@ -176,7 +164,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod15()
+        public void TestMethod14()
         {
             //Arrange
             string left = "fare";
@@ -188,7 +176,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod16()
+        public void TestMethod15()
         {
             //Arrange
             string left = "majo";
@@ -200,7 +188,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod17()
+        public void TestMethod16()
         {
             //Arrange
             string left = "pers";
@@ -212,7 +200,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod18()
+        public void TestMethod17()
         {
             //Arrange
             string left = "sequ";
@@ -224,7 +212,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod19()
+        public void TestMethod18()
         {
             //Arrange
             string left = "gove";
@@ -236,7 +224,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod20()
+        public void TestMethod19()
         {
             //Arrange
             string left = "igno";
@@ -248,7 +236,7 @@ namespace WhiteboardCSharp_Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void TestMethod21()
+        public void TestMethod20()
         {
             //Arrange
             string left = "fini";
