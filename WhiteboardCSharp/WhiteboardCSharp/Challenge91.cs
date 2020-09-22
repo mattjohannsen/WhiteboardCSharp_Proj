@@ -10,13 +10,7 @@ namespace WhiteboardCSharp
     {
         public static string Maskify(string str)
         {
-            if (str.Length <= 4) return str;
-            char[] arr = str.ToCharArray();
-            for (int i = 0; i < arr.Length - 4; i++)
-            {
-                arr[i] = '#';
-            }
-            return new string(arr);
+            return str.Length > 4 ? new String('#', str.Length - 4) + str.Substring(str.Length - 4) : str;
         }
     }
 }
