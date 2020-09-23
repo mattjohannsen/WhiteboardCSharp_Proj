@@ -134,6 +134,7 @@
     <Compile Include="Challenge56.cs" />
     <Compile Include="Challenge90.cs" />
     <Compile Include="Challenge91.cs" />
+    <Compile Include="Challenge92.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rational.cs" />
