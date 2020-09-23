@@ -10,14 +10,7 @@ namespace WhiteboardCSharp
     {
         public static bool ValidatePIN(string pin)
         {
-        if (pin.Length == 4 || pin.Length == 6 && pin.All(char.IsDigit))
-        {
-            return pin.All(char.IsDigit);
-        }
-        else
-        {
-            return false;
-        }
+            return pin.All(char.IsDigit) && pin.Length == 4 || pin.Length == 6;
         }
     }
 }
