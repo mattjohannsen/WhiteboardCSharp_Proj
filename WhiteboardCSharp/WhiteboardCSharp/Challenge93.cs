@@ -25,15 +25,7 @@ namespace WhiteboardCSharp
         }
         public static int[] FilterArray(object[] arr)
         {
-            List<int> returnList = new List<int>();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i].GetType() == typeof(int))
-                {
-                    returnList.Add(Convert.ToInt32(arr[i]));
-                }
-            }
-            return returnList.ToArray();
+            return arr.OfType<int>().ToArray();
         }
     }
 }
