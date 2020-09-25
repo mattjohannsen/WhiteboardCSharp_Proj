@@ -10,7 +10,6 @@ namespace WhiteboardCSharp
     {
         public static bool IsPalindrome(int num)
         {
-            //return num.ToString().SequenceEqual(num.ToString().Reverse());
             if (num < 0)
             {
                 return false;
