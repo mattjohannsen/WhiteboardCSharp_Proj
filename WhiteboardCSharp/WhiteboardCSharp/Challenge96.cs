@@ -10,29 +10,21 @@ namespace WhiteboardCSharp
     {
         public static int[] CountPosSumNeg(double[] arr)
         {
-            int positiveCount = 0;
-            int negativeSum = 0;
+        int positiveCount = 0;
+        int negativeSum = 0;
 
-            for (int i = 0; i < arr.Length; i++)
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] > 0)
             {
-                if (arr[i] > 0)
-                {
-                    positiveCount++;
-                }
-                else
-                {
-                    negativeSum += Convert.ToInt32(arr[i]);
-                }
-            }
-            int[] returnArray = new int[] { positiveCount, negativeSum };
-            if (arr.Length != 0)
-            {
-                return returnArray;
+                positiveCount++;
             }
             else
             {
-                return new int[] { };
+                negativeSum += Convert.ToInt32(arr[i]);
             }
+        }
+        return (arr.Length != 0) ? new int[] { positiveCount, negativeSum } : new int[] { };
         }
     }
 }
