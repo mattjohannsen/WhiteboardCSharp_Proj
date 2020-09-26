@@ -10,10 +10,6 @@ namespace WhiteboardCSharp
     {
         public static bool IsPalindrome(int num)
         {
-            if (num < 0)
-            {
-                return false;
-            }
             return (num == ReverseNumber(num));
         }
         public static int ReverseNumber(int num)
