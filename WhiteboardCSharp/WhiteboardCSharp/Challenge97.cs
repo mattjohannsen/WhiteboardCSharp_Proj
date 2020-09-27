@@ -10,19 +10,11 @@ namespace WhiteboardCSharp
     {
         public static bool IsPrime(int x)
         {
-            if (x == 1)
+            if (x <= 1) return false;
+            int max = x / 2;
+            for (int i = 2; i <= max; i++)
             {
-                return false;
-            }
-            else
-            {
-                for (int i = 2; i < x; i++)
-                {
-                    if (x % i == 0)
-                    {
-                        return false;
-                    }
-                }
+                if (x % i == 0) return false;
             }
             return true;
         }
