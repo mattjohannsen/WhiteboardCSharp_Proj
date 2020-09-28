@@ -10,9 +10,8 @@ namespace WhiteboardCSharp
     {
         public static string HighLow(string str)
         {
-            int[] arr = Array.ConvertAll(str.Split(' '), s => int.Parse(s));
-            int[] solution = new int[] { arr.Max(), arr.Min() };
-            return string.Join(" ", solution);
+            int[] arr = str.Split(' ').Select(s => int.Parse(s)).ToArray();
+            return $"{arr.Max()} {arr.Min()}";
         }
     }
 }
