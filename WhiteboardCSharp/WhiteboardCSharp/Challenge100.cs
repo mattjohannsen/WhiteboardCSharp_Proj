@@ -11,15 +11,7 @@ namespace WhiteboardCSharp
     {
         public static bool IsIsogram(string str)
         {
-            char[] arr = str.ToCharArray();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (Regex.Matches(str.ToLower(), arr[i].ToString().ToLower()).Count > 1)
-                {
-                    return false;
-                }
-            }
-            return true;
+            return str.Length == str.ToLower().Distinct().Count();
         }
     }
 }
