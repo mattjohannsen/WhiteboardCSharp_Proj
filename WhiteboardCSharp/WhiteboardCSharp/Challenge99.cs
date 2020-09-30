@@ -10,19 +10,7 @@ namespace WhiteboardCSharp
     {
         public static int SumSmallest(int[] values)
         {
-            Array.Sort(values);
-            int value1 = 0;
-            int value2 = 0;
-            for (int i = 0; i < values.Length; i++)
-            {
-                if (values[i] >= 0)
-                {
-                    value1 = values[i];
-                    value2 = values[i + 1];
-                    break;
-                }
-            }
-            return value1 + value2;
+            return values.Where(x => x > 0).OrderBy(x => x).Take(2).Sum();
         }
     }
 }
