@@ -141,6 +141,7 @@
     <Compile Include="Challenge96.cs" />
     <Compile Include="Challenge97.cs" />
     <Compile Include="Challenge98.cs" />
+    <Compile Include="Challenge99.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rational.cs" />

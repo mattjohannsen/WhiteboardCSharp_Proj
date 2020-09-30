@@ -69,6 +69,7 @@
     <Compile Include="Challenge96_Test.cs" />
     <Compile Include="Challenge97_Test.cs" />
     <Compile Include="Challenge98_Test.cs" />
+    <Compile Include="Challenge99_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Challenge32_Test.cs" />
     <Compile Include="Challenge12_Test.cs" />
