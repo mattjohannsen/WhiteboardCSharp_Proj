@@ -10,14 +10,7 @@ namespace WhiteboardCSharp
     {
         public static bool IsStrangePair(string str1, string str2)
         {
-            if (str1.Length == 0 || str2.Length ==0)
-            {
-                return (str1.Length == 0 && str2.Length == 0);
-            }
-            else
-            {
-                return (str2.EndsWith(str1[0].ToString()) && str1.EndsWith(str2[0].ToString()));
-            }
+            return (str1.Length == 0 || str2.Length == 0) ? (str1.Length == 0 && str2.Length == 0) : (str2.EndsWith(str1[0].ToString()) && str1.EndsWith(str2[0].ToString()));
         }
     }
 }
