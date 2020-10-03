@@ -16,8 +16,7 @@ namespace WhiteboardCSharp
         }
         public static int SortDescending(int num)
         {
-            int[] arr = num.ToString().Select(n => int.Parse(n.ToString())).OrderByDescending(c => c).ToArray();
-            return int.Parse(string.Join("", arr));
+            return int.Parse(string.Join("", num.ToString().Select(n => int.Parse(n.ToString())).OrderByDescending(c => c).ToArray()));
         }
     }
 }
