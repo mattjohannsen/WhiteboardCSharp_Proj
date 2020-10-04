@@ -10,23 +10,7 @@ namespace WhiteboardCSharp
     {
         public static int GCD(int n1, int n2)
         {
-            if (n1 == n2)
-            {
-                return n1;
-            }
-            int smaller = Math.Min(n1, n2);
-            int larger = Math.Max(n1, n2);
-            for (int i = smaller; i > 1; i--)
-            {
-                if (smaller % i == 0)
-                {
-                    if (larger % i == 0)
-                    {
-                        return i;
-                    }
-                }
-            }
-            return 1;
+            return (Convert.ToBoolean(n1)) ? GCD(n2 % n1, n1) : n2;
         }
     }
 }
