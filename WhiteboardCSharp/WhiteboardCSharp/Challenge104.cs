@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public static int GCD(int n1, int n2)
         {
-            return (Convert.ToBoolean(n1)) ? GCD(n2 % n1, n1) : n2;
+            return (n1 == 0) ? n2 : GCD(n2 % n1, n1);
         }
     }
 }
