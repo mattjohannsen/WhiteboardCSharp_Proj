@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WhiteboardCSharp
 {
@@ -10,7 +11,7 @@ namespace WhiteboardCSharp
     {
         public static string GetFilename(string path)
         {
-            return path;
+            return Path.GetFileName(path);
         }
     }
 }

@@ -54,6 +54,7 @@
     <Compile Include="Challenge103_Test.cs" />
     <Compile Include="Challenge104_Test.cs" />
     <Compile Include="Challenge105_Test.cs" />
+    <Compile Include="Challenge106_Test.cs" />
     <Compile Include="Challenge1_Test.cs" />
     <Compile Include="Challenge2_Test.cs" />
     <Compile Include="Challenge80_Test.cs" />
