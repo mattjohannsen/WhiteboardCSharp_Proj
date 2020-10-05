@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WhiteboardCSharp
 {
-    public class Challenge104
+    public class Challenge106
     {
-        public static int GCD(int n1, int n2)
+        public static string GetFilename(string path)
         {
-            return (n1 == 0) ? n2 : GCD(n2 % n1, n1);
+            return path;
         }
     }
 }
