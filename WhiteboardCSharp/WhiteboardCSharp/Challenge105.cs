@@ -10,7 +10,16 @@ namespace WhiteboardCSharp
     {
         public static bool IsFactorial(int n)
         {
-            return true;
+            int current = 1;
+            for (int i = 1; i < n; i++)
+            {
+                current *= i;
+                if (n == current) return true;
+                else if (current > n) break;
+            }
+            return false;
         }
     }
 }
+//Steps
+// 
