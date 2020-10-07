@@ -11,9 +11,7 @@ namespace WhiteboardCSharp
     {
 		public static bool KToK(string n, int k)
 		{
-			BigInteger bigIntFromString = BigInteger.Parse(n);
-			BigInteger bigIntFromKToK = BigInteger.Pow(k, k);
-			return (BigInteger.Compare(bigIntFromString, bigIntFromKToK) == 0);
+			return (BigInteger.Compare(BigInteger.Parse(n), BigInteger.Pow(k, k)) == 0);
 		}
 	}
 }
