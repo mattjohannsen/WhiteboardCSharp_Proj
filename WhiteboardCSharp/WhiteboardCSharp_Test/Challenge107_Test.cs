@@ -155,7 +155,7 @@ namespace WhiteboardCSharp_Test
         {
             //Arrange
             string str = "(519) 505-6498";
-            bool expected = false;
+            bool expected = true;
             //Act
             bool actual = Challenge107.IsValidPhoneNumber(str);
             //Assert
