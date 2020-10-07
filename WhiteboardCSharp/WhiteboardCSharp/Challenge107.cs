@@ -11,9 +11,7 @@ namespace WhiteboardCSharp
     {
         public static bool IsValidPhoneNumber(string str)
         {
-            var pattern = @"^\([0-9]{3}\)+\s+[0-9]{3}-[0-9]{4}$";
-            var match = Regex.Match(str, pattern, RegexOptions.IgnoreCase);
-            return (match.Success);
+            return Regex.IsMatch(str, @"^\([0-9]{3}\)+\s+[0-9]{3}-[0-9]{4}$");
         }
     }
 }
