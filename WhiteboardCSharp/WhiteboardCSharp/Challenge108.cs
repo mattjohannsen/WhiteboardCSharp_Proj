@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,9 @@ namespace WhiteboardCSharp
     {
 		public static bool KToK(string n, int k)
 		{
-			return false;
+			BigInteger bigIntFromString = BigInteger.Parse(n);
+			BigInteger bigIntFromKToK = BigInteger.Pow(k, k);
+			return (BigInteger.Compare(bigIntFromString, bigIntFromKToK) == 0);
 		}
 	}
 }
