@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public static string FormatNum(int num)
         {
-            return String.Format("{0:n0}", num);
+            return num.ToString("N0");
         }
     }
 }
