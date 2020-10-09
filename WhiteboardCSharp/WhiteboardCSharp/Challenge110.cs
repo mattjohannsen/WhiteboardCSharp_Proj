@@ -10,13 +10,7 @@ namespace WhiteboardCSharp
     {
         public static int MysteryFunc(int num)
         {
-        int[] arr = num.ToString().Select(c => Convert.ToInt32(c.ToString())).ToArray();
-        int product = 1;
-        for (int i = 0; i < arr.Length; i++)
-        {
-            product *= arr[i];
-        }
-        return product;
+            return num.ToString().Select(c => Convert.ToInt32(c.ToString())).ToArray().Aggregate(1, (x, y) => x * y);
         }
     }
 }
