@@ -11,9 +11,7 @@ namespace WhiteboardCSharp
     {
         public static int Equation(string s)
         {
-            var solution = new DataTable().Compute(s, "");
-            int returnValue = Convert.ToInt32(solution.ToString());
-            return returnValue;
+            return Convert.ToInt32(new DataTable().Compute(s, "").ToString());
         }
     }
 }
