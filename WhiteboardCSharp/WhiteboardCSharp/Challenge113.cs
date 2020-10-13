@@ -12,10 +12,7 @@ namespace WhiteboardCSharp
         public static string NoYelling(string phrase)
         {
             string[] arr = phrase.Split(' ');
-            string last = arr.Last();
-            char punctuation = last.Last();
-            string correctedLastWord = Regex.Replace(last, "[!?.]*([!?.])", "$1");
-            arr[arr.Length - 1] = correctedLastWord;
+            arr[arr.Length - 1] = Regex.Replace(arr.Last(), "[!?.]*([!?.])", "$1");
             return string.Join(" ", arr);
         }
     }
