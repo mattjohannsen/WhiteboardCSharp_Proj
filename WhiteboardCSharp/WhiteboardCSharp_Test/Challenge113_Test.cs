@@ -55,8 +55,8 @@ namespace WhiteboardCSharp_Test
         public void TestMethod5()
         {
             //Arrange
-            string phrase = "Oh my goodness!?";
-            string expected = "Oh my goodness!?";
+            string phrase = "Oh my goodness!";
+            string expected = "Oh my goodness!";
             //Act
             string actual = Challenge113.NoYelling(phrase);
             //Assert

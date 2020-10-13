@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace WhiteboardCSharp
@@ -10,7 +11,12 @@ namespace WhiteboardCSharp
     {
         public static string NoYelling(string phrase)
         {
-            return "";
+            string[] arr = phrase.Split(' ');
+            string last = arr.Last();
+            char punctuation = last.Last();
+            string correctedLastWord = Regex.Replace(last, "[!?.]*([!?.])", "$1");
+            arr[arr.Length - 1] = correctedLastWord;
+            return string.Join(" ", arr);
         }
     }
 }
