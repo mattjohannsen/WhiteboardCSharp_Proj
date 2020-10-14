@@ -177,7 +177,7 @@ namespace WhiteboardCSharp_Test
         {
             //Arrange
             string str = "16/31";
-            bool expected = true;
+            bool expected = false;
             //Act
             bool actual = Challenge114.GreaterThanOne(str);
             //Assert
