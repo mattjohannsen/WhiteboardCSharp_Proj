@@ -10,10 +10,8 @@ namespace WhiteboardCSharp
     {
 		public static bool GreaterThanOne(string str)
 		{
-            string[] arr = str.Split('/');
-            int numerator = Convert.ToInt32(arr[0]);
-            int denominator = Convert.ToInt32(arr[1]);
-            return numerator > denominator;
-        }
+			string[] arr = str.Split('/');
+			return Convert.ToInt32(arr[0]) > Convert.ToInt32(arr[1]);
+		}
 	}
 }
