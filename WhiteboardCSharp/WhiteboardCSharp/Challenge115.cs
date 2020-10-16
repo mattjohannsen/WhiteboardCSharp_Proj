@@ -19,14 +19,7 @@ namespace WhiteboardCSharp
         }
         public static int GetTriangular(int num)
         {
-            if (num != 1)
-            {
-                return num + GetTriangular(num - 1);
-            }
-            else
-            {
-                return num;
-            }
+            return (num != 1) ? num + GetTriangular(num - 1) : num;
         }
     }
 }
