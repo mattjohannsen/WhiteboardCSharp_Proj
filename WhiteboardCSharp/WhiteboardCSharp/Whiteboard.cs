@@ -176,8 +176,8 @@ namespace WhiteboardCSharp
             //challenge93.RunChallenge();
             //Challenge102 challenge102 = new Challenge102();
             //challenge102.RunChallenge();
-            string value = "What went wrong?????????";
-            Console.WriteLine(Challenge113.NoYelling(value));
+            int value = 2;
+            Console.WriteLine(Challenge115.Tetra(value));
         }
     }
 }

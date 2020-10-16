@@ -10,7 +10,23 @@ namespace WhiteboardCSharp
     {
         public static int Tetra(int n)
         {
-            return 1;
+            int sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                sum += GetTriangular(i);
+            }
+            return sum;
+        }
+        public static int GetTriangular(int num)
+        {
+            if (num != 1)
+            {
+                return num + GetTriangular(num - 1);
+            }
+            else
+            {
+                return num;
+            }
         }
     }
 }
