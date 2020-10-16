@@ -73,71 +73,71 @@ namespace WhiteboardCSharp_Test
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        [TestMethod]
-        public void GetTriangular_1()
-        {
-            //Arrange
-            int num = 1;
-            int expected = 1;
-            //Act
-            int actual = Challenge115.GetTriangular(num);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void GetTriangular_2()
-        {
-            //Arrange
-            int num = 2;
-            int expected = 3;
-            //Act
-            int actual = Challenge115.GetTriangular(num);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void GetTriangular_3()
-        {
-            //Arrange
-            int num = 2;
-            int expected = 3;
-            //Act
-            int actual = Challenge115.GetTriangular(num);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void GetTriangular_4()
-        {
-            //Arrange
-            int num = 2;
-            int expected = 3;
-            //Act
-            int actual = Challenge115.GetTriangular(num);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void GetTriangular_5()
-        {
-            //Arrange
-            int num = 2;
-            int expected = 3;
-            //Act
-            int actual = Challenge115.GetTriangular(num);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void GetTriangular_6()
-        {
-            //Arrange
-            int num = 6;
-            int expected = 21;
-            //Act
-            int actual = Challenge115.GetTriangular(num);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //[TestMethod]
+        //public void GetTriangular_1()
+        //{
+        //    Arrange
+        //    int num = 1;
+        //    int expected = 1;
+        //    Act
+        //    int actual = Challenge115.GetTriangular(num);
+        //    Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+        //[TestMethod]
+        //public void GetTriangular_2()
+        //{
+        //    Arrange
+        //    int num = 2;
+        //    int expected = 3;
+        //    Act
+        //    int actual = Challenge115.GetTriangular(num);
+        //    Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+        //[TestMethod]
+        //public void GetTriangular_3()
+        //{
+        //    Arrange
+        //    int num = 2;
+        //    int expected = 3;
+        //    Act
+        //    int actual = Challenge115.GetTriangular(num);
+        //    Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+        //[TestMethod]
+        //public void GetTriangular_4()
+        //{
+        //    Arrange
+        //    int num = 2;
+        //    int expected = 3;
+        //    Act
+        //    int actual = Challenge115.GetTriangular(num);
+        //    Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+        //[TestMethod]
+        //public void GetTriangular_5()
+        //{
+        //    Arrange
+        //    int num = 2;
+        //    int expected = 3;
+        //    Act
+        //    int actual = Challenge115.GetTriangular(num);
+        //    Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+        //[TestMethod]
+        //public void GetTriangular_6()
+        //{
+        //    Arrange
+        //    int num = 6;
+        //    int expected = 21;
+        //    Act
+        //    int actual = Challenge115.GetTriangular(num);
+        //    Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
     }
 }
