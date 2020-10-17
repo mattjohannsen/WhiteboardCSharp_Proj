@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Challenge118_Test.cs" />
     <Compile Include="Challenge100_Test.cs" />
     <Compile Include="Challenge102_Test.cs" />
     <Compile Include="Challenge103_Test.cs" />
