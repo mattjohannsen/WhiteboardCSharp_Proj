@@ -176,8 +176,8 @@ namespace WhiteboardCSharp
             //challenge93.RunChallenge();
             //Challenge102 challenge102 = new Challenge102();
             //challenge102.RunChallenge();
-            int num = 6;
-            Console.WriteLine(Challenge116.CheckPerfect(num));
+            //int num = 132;
+            //Console.WriteLine(Challenge117.Moran(num));
         }
     }
 }
