@@ -176,8 +176,8 @@ namespace WhiteboardCSharp
             //challenge93.RunChallenge();
             //Challenge102 challenge102 = new Challenge102();
             //challenge102.RunChallenge();
-            int value = 2;
-            Console.WriteLine(Challenge115.Tetra(value));
+            int num = 6;
+            Console.WriteLine(Challenge116.CheckPerfect(num));
         }
     }
 }
