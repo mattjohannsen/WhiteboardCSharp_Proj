@@ -66,6 +66,7 @@
     <Compile Include="Challenge116.cs" />
     <Compile Include="Challenge117.cs" />
     <Compile Include="Challenge118.cs" />
+    <Compile Include="Challenge119.cs" />
     <Compile Include="Challenge12.cs" />
     <Compile Include="Challenge13.cs" />
     <Compile Include="Challenge14.cs" />
