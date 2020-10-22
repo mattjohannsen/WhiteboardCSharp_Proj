@@ -10,25 +10,15 @@ namespace WhiteboardCSharp
     {
         public static int SumPrimes(int[] arr)
         {
-            List<int> primes = new List<int>();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (IsPrime(arr[i]))
-                {
-                    primes.Add(arr[i]);
-                }
-            }
-            return primes.Sum();
+            return arr.Where(n => IsPrime(n)).Sum();
         }
         public static bool IsPrime(int num)
         {
-            if (num <= 1) return false;
-            if (num == 2) return true;
+            if (num < 3) return num > 1;
             if (num % 2 == 0) return false;
             var limit = (int)Math.Floor(Math.Sqrt(num));
             for (int i = 3; i <= limit; i += 2)
-                if (num % i == 0)
-                    return false;
+                if (num % i == 0) return false;
             return true;
         }
     }
