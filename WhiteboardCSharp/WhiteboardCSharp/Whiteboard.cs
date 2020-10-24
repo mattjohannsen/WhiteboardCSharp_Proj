@@ -12,8 +12,8 @@ namespace WhiteboardCSharp
         public void ShowWhiteboard()
         {
             Console.WriteLine("\n\n       Welcome to Matt's C# Whiteboard!");
-            string sentence = "I am Ne mo Nemo !";
-            Console.WriteLine(Challenge118.FindNemo(sentence));
+            string str = "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!";
+            Console.WriteLine(Challenge125.IsPalindrome(str));
         }
     }
 }

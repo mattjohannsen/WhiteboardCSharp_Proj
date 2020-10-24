@@ -100,6 +100,7 @@
     <Compile Include="Challege14_Test.cs" />
     <Compile Include="Challenge83_Test.cs" />
     <Compile Include="Challenge112_Test.cs" />
+    <Compile Include="Challenge125_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
