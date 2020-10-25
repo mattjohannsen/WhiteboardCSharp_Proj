@@ -10,30 +10,12 @@ namespace WhiteboardCSharp
     {
         public static string Accum(string str)
         {
-
-            char[] arr = str.ToCharArray();
-            List<char> solution = new List<char>();
-            for (int i = 0; i < arr.Length; i++)
+            StringBuilder sb = new StringBuilder("");
+            for (int i = 0; i < str.Length; i++)
             {
-                int count = 0;
-                for (int j = 0; j < i + 1; j++)
-                {
-                    if (count == 0)
-                    {
-                        solution.Add(Char.ToUpper(arr[i]));
-                    }
-                    else
-                    {
-                        solution.Add(Char.ToLower(arr[i]));
-                    }
-                    count++;
-                }
-                if (i < arr.Length - 1)
-                {
-                    solution.Add(Char.ToLower('-'));
-                }
+                sb.Append(char.ToUpper(str[i]) + new string(char.ToLower(str[i]), i) + '-');
             }
-            return new string(solution.ToArray());
+            return sb.ToString().Substring(0, sb.Length - 1);
         }
     }
 }
