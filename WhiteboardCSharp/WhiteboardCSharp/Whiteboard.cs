@@ -12,8 +12,8 @@ namespace WhiteboardCSharp
         public void ShowWhiteboard()
         {
             Console.WriteLine("\n\n       Welcome to Matt's C# Whiteboard!");
-            string str = "A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!";
-            Console.WriteLine(Challenge125.IsPalindrome(str));
+            string str = "abcd";
+            Console.WriteLine(Challenge126.Accum(str));
         }
     }
 }
