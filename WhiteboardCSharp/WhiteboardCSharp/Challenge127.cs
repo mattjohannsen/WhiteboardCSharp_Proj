@@ -10,7 +10,7 @@ namespace WhiteboardCSharp
     {
         public static int[] RemoveSmallest(int[] values)
         {
-            return (values.Length > 1) ? values.Where((source, index) => index != Array.IndexOf(values, values.Min())).ToArray() : new int[0];
+            return values.Where((value, index) => index != Array.IndexOf(values, values.Min())).ToArray();
         }
     }
 }
