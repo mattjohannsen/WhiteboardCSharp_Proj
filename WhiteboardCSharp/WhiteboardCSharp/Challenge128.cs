@@ -11,9 +11,7 @@ namespace WhiteboardCSharp
     {
         public static string ToScottishScreaming(string str)
         {
-            string allCaps = str.ToUpper();
-            var vowels = "AEIOU";
-            return string.Concat(allCaps.Select(c => vowels.Contains(c) ? 'E' : c));
+            return string.Concat(str.ToUpper().Select(c => ("AIOU").Contains(c) ? 'E' : c));
         }
     }
 }
