@@ -11,7 +11,7 @@ namespace WhiteboardCSharp
     {
         public static string ToScottishScreaming(string str)
         {
-            return string.Concat(str.ToUpper().Select(c => ("AIOU").Contains(c) ? 'E' : c));
+            return Regex.Replace(str.ToUpper(), @"[AIOU]", "E");
         }
     }
 }
