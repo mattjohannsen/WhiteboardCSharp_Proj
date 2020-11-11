@@ -10,16 +10,9 @@ namespace WhiteboardCSharp
     {
         public static double[] FindVertex(int a, int b, int c)
         {
-            decimal x = -1m * (b / (2m * a));
-            decimal y = (a * x * x) + (b * x) + c;
-            x = Math.Round(x, 2, MidpointRounding.AwayFromZero);
-            y = Math.Round(y, 2, MidpointRounding.AwayFromZero);
-            string stringX = x.ToString();
-            string stringY = y.ToString();
-            double doubleX = Convert.ToDouble(stringX);
-            double doubleY = Convert.ToDouble(stringY);
-            double[] solution = { doubleX, doubleY };
-            return solution;
+            decimal x = Math.Round(-1m * b / (2m * a), 2);
+            decimal y = Math.Round(a * x * x + b * x + c, 2);
+            return new double[] { Convert.ToDouble(x), Convert.ToDouble(y) };
         }
     }
 }
