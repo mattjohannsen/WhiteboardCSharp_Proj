@@ -12,8 +12,11 @@ namespace WhiteboardCSharp
         public void ShowWhiteboard()
         {
             Console.WriteLine("\n\n       Welcome to Matt's C# Whiteboard!");
-            string str = "abcd";
-            Console.WriteLine(Challenge126.Accum(str));
+            int a = 8;
+            int b = 4;
+            int c = 0;
+            //double[] expected = { -0.25d, -0.5d };
+            Console.WriteLine(Challenge129.FindVertex(a, b, c));
         }
     }
 }
