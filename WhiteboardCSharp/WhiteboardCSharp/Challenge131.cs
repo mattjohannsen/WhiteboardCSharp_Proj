@@ -10,17 +10,7 @@ namespace WhiteboardCSharp
     {
         public static string Reverse(string str)
         {
-            string[] arr = str.Split(' ');
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i].Length >= 5)
-                {
-                    char[] temp = arr[i].ToCharArray();
-                    Array.Reverse(temp);
-                    arr[i] = new string(temp);
-                }
-            }
-            return string.Join(" ", arr);
+            return string.Join(" ", str.Split(' ').Select(x => x.Length >= 5 ? new String(x.Reverse().ToArray()) : x));
         }
     }
 }
