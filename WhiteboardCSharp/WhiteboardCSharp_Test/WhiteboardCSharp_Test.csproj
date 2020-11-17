@@ -77,6 +77,7 @@
     <Compile Include="Challenge129_Test.cs" />
     <Compile Include="Challenge130_Test.cs" />
     <Compile Include="Challenge131_Test.cs" />
+    <Compile Include="Challenge132_Test.cs" />
     <Compile Include="Challenge1_Test.cs" />
     <Compile Include="Challenge2_Test.cs" />
     <Compile Include="Challenge80_Test.cs" />
