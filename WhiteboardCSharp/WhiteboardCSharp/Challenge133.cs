@@ -24,11 +24,12 @@ namespace WhiteboardCSharp
             }
             else
             {
-                char[] arr = str.ToCharArray();
-                char temp = arr[0];
-                arr[0] = arr[arr.Length - 1];
-                arr[arr.Length - 1] = temp;
-                return new string(arr);
+                //char[] arr = str.ToCharArray();
+                //char temp = arr[0];
+                //arr[0] = arr[arr.Length - 1];
+                //arr[arr.Length - 1] = temp;
+                //return new string(arr);
+                return (new StringBuilder(str).Remove(str.Length - 1, 1).Remove(0, 1).Insert(0, str[str.Length - 1]).Insert(str.Length - 1, str[0])).ToString();
             }
         }
     }
