@@ -8,9 +8,28 @@ namespace WhiteboardCSharp
 {
     public class Challenge133
     {
-        public static string FlipEndChars(object str)
+        public static string FlipEndChars(string str)
         {
-            return "";
+            if (str.Length < 2)
+            {
+                return "Incompatible";
+            }
+            if (!str.Equals(typeof(string)))
+            {
+                return "Incompatible";
+            }
+            if (str[0]==str[str.Length-1])
+            {
+                return "Two's a pair.";
+            }
+            else
+            {
+                char[] arr = str.ToCharArray();
+                char temp = arr[0];
+                arr[0] = arr[arr.Length - 1];
+                arr[arr.Length - 1] = temp;
+                return new string(arr);
+            }
         }
     }
 }
