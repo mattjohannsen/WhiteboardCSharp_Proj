@@ -10,11 +10,31 @@ namespace WhiteboardCSharp
     {
         public static string FlipEndChars(object str)
         {
-            return "";
+            if (str.Length < 2)
+            {
+                return "Incompatible";
+            }
+            if (!str.Equals(typeof(string)))
+            {
+                return "Incompatible";
+            }
+            if (str[0] == str[str.Length - 1])
+            {
+                return "Two's a pair.";
+            }
+            else
+            {
+                //char[] arr = str.ToCharArray();
+                //char temp = arr[0];
+                //arr[0] = arr[arr.Length - 1];
+                //arr[arr.Length - 1] = temp;
+                //return new string(arr);
+                return (new StringBuilder(str).Remove(str.Length - 1, 1).Remove(0, 1).Insert(0, str[str.Length - 1]).Insert(str.Length - 1, str[0])).ToString();
+            }
         }
     }
 }
-//Switcharoo
+//Switcharoo https://edabit.com/challenge/FZ765MhPzbuTW7rzE
 //Create a function that takes a string and returns a new string with its first and last characters swapped, except under three conditions:
 
 //If the length of the string is less than two, return "Incompatible.".
